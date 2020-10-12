@@ -2,17 +2,34 @@ package modelo;
 
 import java.sql.Date;
 
-public class usuario extends tipo_us{
+public class usuario {
     
     private int id_usuario;
     private String nombre_us;
     private String apellidos_us;
-    private Date fecha_nacimineto;
+    private Date fecha_nacimiento;
     private String dni_us;
     private String contrasena_us;
     private String correo_us;
     private String sexo_us;
+    private String id_tipo_us;
+    private String nombre_tipo_us;
     private String avatar;
+
+    public usuario() {
+    }
+
+    public usuario(String nombre_us, String apellidos_us, Date fecha_nacimiento, String dni_us, String contrasena_us, String correo_us, String sexo_us, String id_tipo_us, String avatar) {
+        this.nombre_us = nombre_us;
+        this.apellidos_us = apellidos_us;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.dni_us = dni_us;
+        this.contrasena_us = contrasena_us;
+        this.correo_us = correo_us;
+        this.sexo_us = sexo_us;
+        this.id_tipo_us = id_tipo_us;
+        this.avatar = avatar;
+    }    
 
     public int getId_usuario() {
         return id_usuario;
@@ -36,14 +53,6 @@ public class usuario extends tipo_us{
 
     public void setApellidos_us(String apellidos_us) {
         this.apellidos_us = apellidos_us;
-    }
-
-    public Date getFecha_nacimineto() {
-        return fecha_nacimineto;
-    }
-
-    public void setFecha_nacimineto(Date fecha_nacimineto) {
-        this.fecha_nacimineto = fecha_nacimineto;
     }
 
     public String getDni_us() {
@@ -84,6 +93,30 @@ public class usuario extends tipo_us{
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public Date getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    public String getId_tipo_us() {
+        return id_tipo_us;
+    }
+
+    public void setId_tipo_us(String id_tipo_us) {
+        this.id_tipo_us = id_tipo_us;
+    }
+
+    public String getNombre_tipo_us() {
+        return nombre_tipo_us;
+    }
+
+    public void setNombre_tipo_us(String nombre_tipo_us) {
+        this.nombre_tipo_us = nombre_tipo_us;
     }
     
     

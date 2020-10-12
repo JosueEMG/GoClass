@@ -1,6 +1,6 @@
 package modelo;
 
-public class video extends curso{
+public class video {
     
     private int id_video;
     private String link;

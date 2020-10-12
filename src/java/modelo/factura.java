@@ -2,7 +2,7 @@ package modelo;
 
 import java.sql.Date;
 
-public class factura extends usuario{
+public class factura {
     
     private int id_factura;
     private Date fecha;

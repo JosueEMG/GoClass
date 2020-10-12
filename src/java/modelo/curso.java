@@ -1,6 +1,7 @@
 package modelo;
 
-public class curso extends usuario{
+public class curso {
+    
     private int id_curso;
     private String nombre;
     private double precio;
