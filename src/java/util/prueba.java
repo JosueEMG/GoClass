@@ -6,7 +6,6 @@ import java.util.Date;
 import modelo.factura;
 import modelo.metodo_pago;
 import modelo.usuario;
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import util.MySQLConexion;
 public class prueba {
 
