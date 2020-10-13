@@ -131,14 +131,14 @@ public class UsuarioController {
     }
     
     //update de alumno a docente
-    public void updateUsuario(int id) {
+    public void updateUsuario(int idUsuario) {
         Connection conn = null;
 
         try {
             conn = MySQLConexion.getConexion();
             String sql = "update usuario set tipo_us = 2 where id_usuario = ?;";
             PreparedStatement st = conn.prepareStatement(sql);
-            st.setInt(1, id);
+            st.setInt(1, idUsuario);
             st.executeUpdate();
             //llenar el arraylist con la clase entidad
         } catch (Exception ex) {
@@ -155,14 +155,14 @@ public class UsuarioController {
     }
     
     //downgrade de docente a alumno
-    public void downgradeUsuario(int id) {
+    public void downgradeUsuario(int idUsuario) {
         Connection conn = null;
 
         try {
             conn = MySQLConexion.getConexion();
             String sql = "update usuario set tipo_us = 3 where id_usuario = ?;";
             PreparedStatement st = conn.prepareStatement(sql);
-            st.setInt(1, id);
+            st.setInt(1, idUsuario);
             st.executeUpdate();
             //llenar el arraylist con la clase entidad
         } catch (Exception ex) {

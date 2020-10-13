@@ -60,7 +60,7 @@ public class FacturaController {
     }
     
     //listar facturas por idUsuario
-    public List<factura> listaFacturas(int id) {
+    public List<factura> listaFacturas(int idUsuario) {
         List<factura> lis = new ArrayList<>();
         Connection conn = null;
 
@@ -70,7 +70,7 @@ public class FacturaController {
             "from factura f, usuario u, curso c, metodo_pago m\n" +
             "where f.id_usuario = u.id_usuario and f.id_curso = c.id_curso and f.id_met_pago = m.id_met_pago and u.id_usuario = ?;";
             PreparedStatement st = conn.prepareStatement(sql);
-            st.setInt(1, id);
+            st.setInt(1, idUsuario);
             ResultSet rs = st.executeQuery();
             //llenar el arraylist con la clase entidad
             while (rs.next()) {
