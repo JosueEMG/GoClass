@@ -16,7 +16,7 @@ public class CursoController {
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select id_curso, nombre, precio, detalle_curso from curso where id_especialidad=?";
+            String sql = "select detalle_curso from curso where id_especialidad=?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
