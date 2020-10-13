@@ -7,19 +7,19 @@ public class usuario {
     private int id_usuario;
     private String nombre_us;
     private String apellidos_us;
-    private Date fecha_nacimiento;
+    private String fecha_nacimiento;
     private String dni_us;
     private String contrasena_us;
     private String correo_us;
     private String sexo_us;
-    private String id_tipo_us;
+    private int id_tipo_us;
     private String nombre_tipo_us;
     private String avatar;
 
     public usuario() {
     }
 
-    public usuario(String nombre_us, String apellidos_us, Date fecha_nacimiento, String dni_us, String contrasena_us, String correo_us, String sexo_us, String id_tipo_us, String avatar) {
+    public usuario(String nombre_us, String apellidos_us, String fecha_nacimiento, String dni_us, String contrasena_us, String correo_us, String sexo_us, int id_tipo_us, String avatar) {
         this.nombre_us = nombre_us;
         this.apellidos_us = apellidos_us;
         this.fecha_nacimiento = fecha_nacimiento;
@@ -95,19 +95,19 @@ public class usuario {
         this.avatar = avatar;
     }
 
-    public Date getFecha_nacimiento() {
+    public String getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
+    public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getId_tipo_us() {
+    public int getId_tipo_us() {
         return id_tipo_us;
     }
 
-    public void setId_tipo_us(String id_tipo_us) {
+    public void setId_tipo_us(int id_tipo_us) {
         this.id_tipo_us = id_tipo_us;
     }
 
