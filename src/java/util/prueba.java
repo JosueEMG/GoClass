@@ -1,4 +1,5 @@
 package util;
+import controlador.CursoController;
 import controlador.FacturaController;
 import controlador.MetodoPagoController;
 import controlador.UsuarioController;
