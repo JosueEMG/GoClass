@@ -3,6 +3,7 @@ package modelo;
 public class video {
     
     private int id_video;
+    private int id_curso;
     private String link;
 
     public int getId_video() {
@@ -20,7 +21,13 @@ public class video {
     public void setLink(String link) {
         this.link = link;
     }
-    
-    
-    
+
+    public int getId_curso() {
+        return id_curso;
+    }
+
+    public void setId_curso(int id_curso) {
+        this.id_curso = id_curso;
+    }
+  
 }

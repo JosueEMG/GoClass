@@ -1,7 +1,7 @@
 package modelo;
 
 public class curso {
-    
+    private int id_usuario;
     private int id_curso;
     private String nombre;
     private double precio;
@@ -9,6 +9,7 @@ public class curso {
     private int id_especialidad;
     private int prod_present;
     private String detalle;
+    private String nombre_especialidad;
 
     public int getId_curso() {
         return id_curso;
@@ -64,6 +65,22 @@ public class curso {
 
     public void setProd_present(int prod_present) {
         this.prod_present = prod_present;
+    }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public String getNombre_especialidad() {
+        return nombre_especialidad;
+    }
+
+    public void setNombre_especialidad(String nombre_especialidad) {
+        this.nombre_especialidad = nombre_especialidad;
     }
     
 }
