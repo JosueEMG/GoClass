@@ -16,7 +16,11 @@ public class CursoController {
 
         try {
             conn = MySQLConexion.getConexion();
+<<<<<<< HEAD
             String sql = "select detalle_curso from curso where id_especialidad=?";
+=======
+            String sql = "select id_curso, nombre, precio, banner, prod_present, detalle_curso from curso where id_especialidad=?";
+>>>>>>> 4915bbe695f15b80dc8ea54144c88de1d377350d
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
@@ -26,6 +30,7 @@ public class CursoController {
                 c.setId_curso(rs.getInt(1));
                 c.setNombre(rs.getString(2));
                 c.setPrecio(rs.getDouble(3));
+                c.setBanner(rs.getString(4));
                 c.setProd_present(rs.getInt(5));
                 c.setDetalle(rs.getString(6));
                 lis.add(c);
