@@ -61,6 +61,75 @@ public class UsuarioController {
         return lis;
     }
     
+    //listar usuarios por nombre
+    public List<usuario> listaUsuarios(String nombre) {
+        List<usuario> lis = new ArrayList<>();
+        Connection conn = null;
+
+        try {
+            if(!nombre.equals("")) {
+                conn = MySQLConexion.getConexion();
+            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, contrasena_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
+            "from usuario u inner join tipo_us t\n" +
+            "on u.tipo_us = t.id_tipo_us where nombre_us like ?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, nombre);
+            ResultSet rs = st.executeQuery();
+            //llenar el arraylist con la clase entidad
+            while (rs.next()) {
+                usuario a = new usuario();
+                a.setId_usuario(rs.getInt(1));
+                a.setNombre_us(rs.getString(2));
+                a.setApellidos_us(rs.getString(3));
+                a.setFecha_nacimiento(rs.getString(4));
+                a.setDni_us(rs.getString(5));
+                a.setContrasena_us(rs.getString(6));
+                a.setCorreo_us(rs.getString(7));
+                a.setSexo_us(rs.getString(8));
+                a.setNombre_tipo_us(rs.getString(9));
+                a.setAvatar(rs.getString(10));
+                lis.add(a);
+            }
+            }
+            else {
+                conn = MySQLConexion.getConexion();
+            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, contrasena_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
+            "from usuario u inner join tipo_us t\n" +
+            "on u.tipo_us = t.id_tipo_us";
+            PreparedStatement st = conn.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            //llenar el arraylist con la clase entidad
+            while (rs.next()) {
+                usuario a = new usuario();
+                a.setId_usuario(rs.getInt(1));
+                a.setNombre_us(rs.getString(2));
+                a.setApellidos_us(rs.getString(3));
+                a.setFecha_nacimiento(rs.getString(4));
+                a.setDni_us(rs.getString(5));
+                a.setContrasena_us(rs.getString(6));
+                a.setCorreo_us(rs.getString(7));
+                a.setSexo_us(rs.getString(8));
+                a.setNombre_tipo_us(rs.getString(9));
+                a.setAvatar(rs.getString(10));
+                lis.add(a);
+            }
+            }
+           
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+        return lis;
+    }
+    
     //update de alumno a docente
     public void updateUsuario(int id) {
         Connection conn = null;
@@ -176,6 +245,30 @@ public class UsuarioController {
             st.setString(7, u.getSexo_us());
             st.setInt(8, u.getId_tipo_us());
             st.setString(9, u.getAvatar());
+            st.executeUpdate();
+            //llenar el arraylist con la clase entidad
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+    }
+    
+    //Eliminar usuario
+    public void deleteUser(int idUsuario) {
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "delete from usuario where id_usuario = ?;";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setInt(1, idUsuario);
             st.executeUpdate();
             //llenar el arraylist con la clase entidad
         } catch (Exception ex) {

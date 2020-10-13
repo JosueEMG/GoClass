@@ -10,16 +10,18 @@ public class factura {
     private String nombre_usuario;
     private String nombre_curso;
     private String nombre_metodo_pago;
-
+    private double precio;
+    
     public factura() {
         
     }
     
-    public factura(String fecha, int id_usuario, int id_curso, int id_metodo_pago) {
+    public factura(String fecha, int id_usuario, int id_curso, int id_metodo_pago, double precio) {
         this.fecha = fecha;
         this.id_usuario = id_usuario;
         this.id_curso = id_curso;
         this.id_metodo_pago = id_metodo_pago;
+        this.precio = precio;
     }
 
     public int getId_factura() {
@@ -84,6 +86,14 @@ public class factura {
 
     public void setId_metodo_pago(int id_metodo_pago) {
         this.id_metodo_pago = id_metodo_pago;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
 
