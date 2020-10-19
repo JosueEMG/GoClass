@@ -12,5 +12,7 @@ package controlador;
  */
 public class InscripcionController {
 
+    //procedure para agregar
     
+    //procedure para eliminar inscripcion 
 }
