@@ -153,6 +153,8 @@ public class UsuarioController {
             }
         }
     }
+    //Cambiar datos de usuario
+    
     
     //downgrade de docente a alumno
     public void downgradeUsuario(int idUsuario) {
@@ -213,6 +215,34 @@ public class UsuarioController {
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, contrasena);
             st.setInt(2, idUsuario);
+            st.executeUpdate();
+            //llenar el arraylist con la clase entidad
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+    }
+    //Editar datos perssonales
+    public void changePersonalInformation(String nombre, String apellidos, String fechaNacimiento, String correo, String sexo, int idUsuario) {
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "update usuario set nombre_us = ?, apellidos_us = ?, fecha_nacimiento = ?, correo_us = ?, sexo_us = ? where id_usuario = ?;";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, nombre);
+            st.setString(2, apellidos);
+            st.setString(3, fechaNacimiento);
+            st.setString(4, correo);
+            st.setString(5, sexo);
+            st.setInt(6, idUsuario);
             st.executeUpdate();
             //llenar el arraylist con la clase entidad
         } catch (Exception ex) {
