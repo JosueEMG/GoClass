@@ -25,7 +25,7 @@ public class UsuarioController {
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, contrasena_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
+            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
             "from usuario u inner join tipo_us t\n" +
             "on u.tipo_us = t.id_tipo_us;";
             //st.setString(1, cad);
@@ -39,11 +39,10 @@ public class UsuarioController {
                 a.setApellidos_us(rs.getString(3));
                 a.setFecha_nacimiento(rs.getString(4));
                 a.setDni_us(rs.getString(5));
-                a.setContrasena_us(rs.getString(6));
-                a.setCorreo_us(rs.getString(7));
-                a.setSexo_us(rs.getString(8));
-                a.setNombre_tipo_us(rs.getString(9));
-                a.setAvatar(rs.getString(10));
+                a.setCorreo_us(rs.getString(6));
+                a.setSexo_us(rs.getString(7));
+                a.setNombre_tipo_us(rs.getString(8));
+                a.setAvatar(rs.getString(9));
                 lis.add(a);
             }
         } catch (Exception ex) {
@@ -69,7 +68,7 @@ public class UsuarioController {
         try {
             if(!nombre.equals("")) {
                 conn = MySQLConexion.getConexion();
-            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, contrasena_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
+            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
             "from usuario u inner join tipo_us t\n" +
             "on u.tipo_us = t.id_tipo_us where nombre_us like ?";
             PreparedStatement st = conn.prepareStatement(sql);
@@ -83,17 +82,16 @@ public class UsuarioController {
                 a.setApellidos_us(rs.getString(3));
                 a.setFecha_nacimiento(rs.getString(4));
                 a.setDni_us(rs.getString(5));
-                a.setContrasena_us(rs.getString(6));
-                a.setCorreo_us(rs.getString(7));
-                a.setSexo_us(rs.getString(8));
-                a.setNombre_tipo_us(rs.getString(9));
-                a.setAvatar(rs.getString(10));
+                a.setCorreo_us(rs.getString(6));
+                a.setSexo_us(rs.getString(7));
+                a.setNombre_tipo_us(rs.getString(8));
+                a.setAvatar(rs.getString(9));
                 lis.add(a);
             }
             }
             else {
                 conn = MySQLConexion.getConexion();
-            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, contrasena_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
+            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
             "from usuario u inner join tipo_us t\n" +
             "on u.tipo_us = t.id_tipo_us";
             PreparedStatement st = conn.prepareStatement(sql);
@@ -106,11 +104,10 @@ public class UsuarioController {
                 a.setApellidos_us(rs.getString(3));
                 a.setFecha_nacimiento(rs.getString(4));
                 a.setDni_us(rs.getString(5));
-                a.setContrasena_us(rs.getString(6));
-                a.setCorreo_us(rs.getString(7));
-                a.setSexo_us(rs.getString(8));
-                a.setNombre_tipo_us(rs.getString(9));
-                a.setAvatar(rs.getString(10));
+                a.setCorreo_us(rs.getString(6));
+                a.setSexo_us(rs.getString(7));
+                a.setNombre_tipo_us(rs.getString(8));
+                a.setAvatar(rs.getString(9));
                 lis.add(a);
             }
             }
