@@ -1,0 +1,12 @@
+  .shadow-box-example {
+    height: 120px;
+    width: 100%;
+    background-color: #343a40;
+  }
+  
+  .white-text{
+      text-align: center;
+      color: white;
+      padding-top: 10%;
+  }
+

@@ -1,18 +1,15 @@
 package util;
 import controlador.CursoController;
 import controlador.FacturaController;
-import controlador.MetodoPagoController;
 import controlador.UsuarioController;
 import java.util.Date;
 import modelo.factura;
-import modelo.metodo_pago;
 import modelo.usuario;
 import util.MySQLConexion;
 public class prueba {
 
     public static void main(String[] args) {
         controlador.UsuarioController uc = new UsuarioController();
-        controlador.MetodoPagoController mpc = new MetodoPagoController();
         uc.deleteUser(19);
         
 
@@ -27,10 +24,6 @@ public class prueba {
         fc.listaFacturas().forEach((f)->{
             System.out.println(f.getNombre_curso()+"\t"+f.getNombre_metodo_pago()+"\t"+f.getNombre_usuario()+"\t"+f.getPrecio());
         });*/
-        mpc.deleteMetodoPago(4);
-        mpc.listaMetodoPago().forEach((mp1)->{
-            System.out.println(mp1.getNombre_met_pago());
-        });
         
     }
     
