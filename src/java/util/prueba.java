@@ -11,7 +11,7 @@ public class prueba {
     public static void main(String[] args) {
         controlador.UsuarioController uc = new UsuarioController();
         usuario u = null;
-        if (uc.userVerify("12345", "12345")) {
+        if (uc.userVerify("12345", null)) {
             u = uc.getUser("12345");
             System.out.println("Logueado");
             System.out.print(u.getNombre_us());

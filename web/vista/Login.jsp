@@ -3,8 +3,11 @@
     Created on : 15/10/2020, 09:19:44 AM
     Author     : JuanCML
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession ses = request.getSession();
+    if (ses.getAttribute("tipo") == null) {
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,3 +57,10 @@
 
 </body>
 </html>
+
+<%
+    }
+    else {
+        response.sendRedirect("Tienda.jsp");
+    }
+%>

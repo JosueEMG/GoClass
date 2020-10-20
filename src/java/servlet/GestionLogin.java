@@ -69,7 +69,6 @@ public class GestionLogin extends HttpServlet {
             }
             else {
                 pagina = "../GoClass/vista/Login.jsp";
-                
             }
         }
         response.sendRedirect(pagina);   

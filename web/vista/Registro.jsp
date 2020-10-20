@@ -1,4 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession ses = request.getSession();
+    if (ses.getAttribute("tipo") == null) {
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,3 +65,10 @@
         </div>
     </body>
 </html>
+
+<%
+    }
+    else {
+        response.sendRedirect("Tienda.jsp");
+    }
+%>

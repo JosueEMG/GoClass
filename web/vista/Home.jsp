@@ -5,7 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%
+    HttpSession ses = request.getSession();
+    if (ses.getAttribute("tipo") == null) {
+%>
 <!DOCTYPE html>
 <html style="height: auto; min-height: 100%;">
     <head>
@@ -793,4 +796,9 @@
     </body>
 </html>
 
-
+<%
+    }
+    else {
+        response.sendRedirect("Tienda.jsp");
+    }
+%>
