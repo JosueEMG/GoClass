@@ -64,7 +64,7 @@
 
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
-                    <a href="sesion.jsp"><button type="button" class="btn btn-success">Iniciar sesión</button></a>
+                    <a href="Login.jsp"><button type="button" class="btn btn-success">Iniciar sesión</button></a>
                 </ul>
             </nav>
             <!-- ESTE ES EL SLIDEBAR -->

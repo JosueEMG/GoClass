@@ -24,7 +24,7 @@ $(document).ready(function () {
                                     <h4 class="card-title">${curso.nombre}</h4>
                                     <br>
                                     <hr>
-                                    <p class="card-text">${curso.detalle}</p>
+                                    <p class="card-text text-justify">${curso.detalle}</p>
                                     <div class="price-wrap h5">
                                         <span class="price-new text-right">$${curso.precio}</span>
                                     </div>
@@ -44,7 +44,7 @@ $(document).ready(function () {
                                     <h4 class="card-title">${curso.nombre}</h4>
                                     <br>
                                     <hr>
-                                    <p class="card-text">${curso.detalle}</p>
+                                    <p class="card-text text-justify">${curso.detalle}</p>
                                     <div class="price-wrap h5">
                                         <span class="price-new text-right">$${curso.precio}</span>
                                     </div>
@@ -64,7 +64,7 @@ $(document).ready(function () {
                                     <h4 class="card-title">${curso.nombre}</h4>
                                     <br>
                                     <hr>
-                                    <p class="card-text">${curso.detalle}</p>
+                                    <p class="card-text text-justify">${curso.detalle}</p>
                                     <div class="price-wrap h5">
                                         <span class="price-new text-right">$${curso.precio}</span>
                                     </div>
@@ -76,7 +76,7 @@ $(document).ready(function () {
                         </div>`;
                         break;
                     case 4: templateEdicion += `
-                        <div  idCurso=${curso.id_curso}class="col-md-3 mb-3" style="float:left">
+                        <div idCurso=${curso.id_curso} class="col-md-3 mb-3" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="../img/imagenCardSlide/${curso.banner}" alt="Card image cap">
@@ -84,7 +84,7 @@ $(document).ready(function () {
                                     <h4 class="card-title">${curso.nombre}</h4>
                                     <br>
                                     <hr>
-                                    <p class="card-text">${curso.detalle}</p>
+                                    <p class="card-text text-justify">${curso.detalle}</p>
                                     <div class="price-wrap h5">
                                         <span class="price-new text-right">$${curso.precio}</span>
                                     </div>
@@ -104,7 +104,7 @@ $(document).ready(function () {
                                     <h4 class="card-title">${curso.nombre}</h4>
                                     <br>
                                     <hr>
-                                    <p class="card-text">${curso.detalle}</p>
+                                    <p class="card-text text-justify">${curso.detalle}</p>
                                     <div class="price-wrap h5">
                                         <span class="price-new text-right">$${curso.precio}</span>
                                     </div>
@@ -124,7 +124,7 @@ $(document).ready(function () {
                                     <h4 class="card-title">${curso.nombre}</h4>
                                     <br>
                                     <hr>
-                                    <p class="card-text">${curso.detalle}</p>
+                                    <p class="card-text text-justify">${curso.detalle}</p>
                                     <div class="price-wrap h5">
                                         <span class="price-new text-right">$${curso.precio}</span>
                                     </div>

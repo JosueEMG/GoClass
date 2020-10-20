@@ -1,4 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession ses = request.getSession();
+    if (ses.getAttribute("tipo")!=null) {
+%>
 <%@include file = "layouts/Cabecera.jsp"%>
 <title>UnitClass | Lista Cursos</title>
 <%@include file = "layouts/Nav.jsp"%>
@@ -316,6 +320,13 @@
 
 <!-- FOOTER -->
 <%@include file = "layouts/Footer.jsp"%>
+
+<%
+    }   
+    else{
+        response.sendRedirect("Login.jsp");
+    }
+%>
 <script src="../js/GestionTienda.js" type="text/javascript"></script>
 
 

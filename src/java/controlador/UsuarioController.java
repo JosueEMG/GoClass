@@ -60,6 +60,45 @@ public class UsuarioController {
         return lis;
     }
     
+    public usuario getUser(String dni) {
+        usuario a = null;
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select * from usuario where dni_us = ?;";     
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, dni);
+            ResultSet rs = st.executeQuery();
+            //llenar el arraylist con la clase entidad
+            while (rs.next()) {
+                a = new usuario();
+                a.setId_usuario(rs.getInt(1));
+                a.setNombre_us(rs.getString(2));
+                a.setApellidos_us(rs.getString(3));
+                a.setFecha_nacimiento(rs.getString(4));
+                a.setDni_us(rs.getString(5));
+                a.setCorreo_us(rs.getString(6));
+                a.setSexo_us(rs.getString(7));
+                a.setNombre_tipo_us(rs.getString(8));
+                a.setAvatar(rs.getString(9));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+        return a;
+    }
+
+    
     //listar usuarios por nombre
     public List<usuario> listaUsuarios(String nombre) {
         List<usuario> lis = new ArrayList<>();
@@ -150,7 +189,42 @@ public class UsuarioController {
             }
         }
     }
-    //Cambiar datos de usuario
+    
+    public boolean userVerify(String dni, String contraseña) {
+        boolean var = false;
+        String contrasenaUser = "";
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select contrasena_us from usuario where dni_us = ?;";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, dni);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                contrasenaUser = rs.getString(1);
+            }
+            
+            if (contrasenaUser.equals(contraseña)) {
+                var = true;
+            }
+            else {
+                var = false;
+            }
+            //llenar el arraylist con la clase entidad
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return var;
+    }
     
     
     //downgrade de docente a alumno

@@ -8,6 +8,10 @@
         <servlet-name>GestionTienda</servlet-name>
         <servlet-class>servlet.GestionTienda</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionLogin</servlet-name>
+        <servlet-class>servlet.GestionLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>gestionUsuario</servlet-name>
         <url-pattern>/gestionUsuario</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>GestionTienda</servlet-name>
         <url-pattern>/GestionTienda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionLogin</servlet-name>
+        <url-pattern>/GestionLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

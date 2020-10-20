@@ -24,38 +24,33 @@
 
         <!-- STYLESESION-->
         <link href="../css/cssSlider/styleSesion.css" rel="stylesheet" type="text/css"/>
-        
+
 
     </head>
     <body>
         <div class="modal-dialog text-center">
-            <div class="col-sm-8 main-section">
+            <center>
+                <div class="col-sm-8 main-section">
                 <div class="modal-content">
                     <div class="col-12 user-img">
                         <img src="../img/imagenSesion/user_icon.png" th:src="@{imagenSesion/user_icon.png}"/>
                     </div>
-                    <form class="col-12" th:action="@{/login}" method="get">
+                    <form action="../GestionLogin?opc=1" class="col-12" method="post">
                         <h3 style="color: white">Login</h3>
                         <div class="form-group" id="user-group">
-                            <input type="text" class="form-control" placeholder="DNI" name="username"/>
+                            <input type="text" name="dni" class="form-control" placeholder="DNI"/>
                         </div>
                         <div class="form-group" id="contrasena-group">
-                            <input type="password" class="form-control" placeholder="Contrasena" name="password"/>
+                            <input type="password" name="contrasena" class="form-control" placeholder="Contrasena"/>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
-                        <a href="registro.jsp"><button type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i> Registrar </button></a>   
+                        <a href="Registro.jsp"><button type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i> Registrar </button></a>   
                     </form>
-                    <div class="col-12 forgot">
-                        <a href="#">Recordar contrasena?</a>
-                    </div>
-                    <div th:if="${param.error}" class="alert alert-danger" role="alert">
-                        Invalid username and password.
-                    </div>
-                    <div th:if="${param.logout}" class="alert alert-success" role="alert">
-                        You have been logged out.
-                    </div>
                 </div>
             </div>
+            </center>
+            
         </div>
-    </body>
+
+</body>
 </html>

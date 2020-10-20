@@ -42,7 +42,7 @@
 
    
             <ul class="navbar-nav ml-auto">
-                <a href="home.jsp" class="btn btn-danger">
+                <a href="../GestionLogin?opc=2" class="btn btn-danger">
                 Cerrar Sesión</a>
 
             </ul>
@@ -91,7 +91,7 @@
 
                         <!-- MIS CURSOS -->
                         <li class="nav-item">
-                            <a href="misCursos.jsp" class="nav-link">
+                            <a href="MisCursos.jsp" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Mis Cursos
@@ -109,7 +109,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="usuario.jsp" class="nav-link">
+                            <a href="Usuario.jsp" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Usuarios
