@@ -16,6 +16,14 @@
         <servlet-name>GestionMisCursos</servlet-name>
         <servlet-class>servlet.GestionMisCursos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionCurso</servlet-name>
+        <servlet-class>servlet.GestionCurso</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GestionContenido</servlet-name>
+        <servlet-class>servlet.GestionContenido</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>gestionUsuario</servlet-name>
         <url-pattern>/gestionUsuario</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>GestionMisCursos</servlet-name>
         <url-pattern>/GestionMisCursos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionCurso</servlet-name>
+        <url-pattern>/GestionCurso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionContenido</servlet-name>
+        <url-pattern>/GestionContenido</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

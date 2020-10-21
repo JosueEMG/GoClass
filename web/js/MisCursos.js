@@ -15,12 +15,12 @@ $(document).ready(function () {
                             <img class="card-img-top" src="../img/imagenCardSlide/${miCurso.banner}" alt="Card image cap" width="100%">
 
                             <div class="card-body">
-                                <h3 class="card-title">${miCurso.nombre}</h3>
+                                <h3 class="card-title" nombreCurso="nombreCurso">${miCurso.nombre}</h3>
                                 <br>
                                 <hr>
                                 <p class="card-text text-justify">${miCurso.detalle_curso}</p> 
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer" nombreCurso="${miCurso.nombre}">
                                 <button class="ver btn btn-dark">Ver</button>
                             </div>
                         </div>
@@ -33,9 +33,14 @@ $(document).ready(function () {
     
     $(document).on("click", ".ver", (e) => {
         const elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement;
+        const elemento1 = $(this)[0].activeElement.parentElement;
         const idCurso = $(elemento).attr("idCurso");
-        console.log(idCurso);
-        
+        const nombreCurso = $(elemento1).attr("nombreCurso");
+        funcion = "ver";
+      
+        $.post("../GestionCurso", {idCurso, nombreCurso, funcion}, (response) => {
+            window.location="Curso.jsp";
+        })
         
     })
 })
