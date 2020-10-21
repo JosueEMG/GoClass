@@ -1,3 +1,7 @@
+<%
+    HttpSession ses = request.getSession();
+    int tipo = (int)ses.getAttribute("tipo");
+%>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Font Awesome -->
 
@@ -38,9 +42,6 @@
                     <a href="Ayuda.jsp" class="nav-link">Contactanos</a>
                 </li>
             </ul>
-
-
-   
             <ul class="navbar-nav ml-auto">
                 <a href="../GestionLogin?opc=2" class="btn btn-danger">
                 Cerrar Sesión</a>
@@ -48,37 +49,35 @@
             </ul>
         </nav>
         <!-- ESTE ES EL SLIDEBAR -->
-
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="ListaCursos.jsp" class="brand-link">
+            <a href="Tienda.jsp" class="brand-link">
                 <img src="../img/unitclass_icon.png"
                      alt="UnitClass"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
                 <span class="brand-text font-weight-light">UnitClass</span>
             </a>
-
             <!-- SIDEBAR -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         
-                        <img src="../img/user_icon.png" class="img-circle elevation-2" alt="User Image">
+                        <img id="avatar5" src="../img/<%=ses.getAttribute("avatar")%>" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Usuario</a>
+                        <a href="#" class="d-block">
+                            <%=ses.getAttribute("nombre")%>
+                        </a>
                     </div>
                 </div>
-
                 <!-- SIDEBAR MENU -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                              with font-awesome or any other icon font library -->
                         <li class="nav-header">OPCIONES</li>
-
                         <!-- PROFILE -->
                         <li class="nav-item">
                             <a href="Perfil.jsp" class="nav-link">
@@ -88,7 +87,6 @@
                                 </p>
                             </a>
                         </li>
-
                         <!-- MIS CURSOS -->
                         <li class="nav-item">
                             <a href="MisCursos.jsp" class="nav-link">
@@ -98,9 +96,11 @@
                                 </p>
                             </a>
                         </li>
-
                         <!-- CORREO -->
-                        <li class="nav-item">
+                        <%
+                            if (tipo != 3) {
+                        %>
+                        <li id="gestionCursos" class="nav-item">
                             <a href="GestionCursos.jsp" class="nav-link">
                                 <i class="nav-icon fas fa-folder-open"></i>
                                 <p>
@@ -108,6 +108,9 @@
                                 </p>
                             </a>
                         </li>
+                        <%
+                            }
+                        %>
                         <li class="nav-item">
                             <a href="Usuario.jsp" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
@@ -127,7 +130,6 @@
                         </li>
                         <br>
                         <!-- CERRAR SESION-->
-                        
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

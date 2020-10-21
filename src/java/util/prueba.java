@@ -11,10 +11,10 @@ public class prueba {
     public static void main(String[] args) {
         controlador.UsuarioController uc = new UsuarioController();
         usuario u = null;
-        if (uc.userVerify("12345", null)) {
+        if (uc.userVerify("12345", "12345")) {
             u = uc.getUser("12345");
             System.out.println("Logueado");
-            System.out.print(u.getNombre_us());
+            System.out.print(u.getAvatar());
         }
         else {
             System.out.println("Deslogueado");

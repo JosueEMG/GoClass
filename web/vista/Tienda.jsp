@@ -1,12 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    HttpSession ses = request.getSession();
-    if (ses.getAttribute("tipo")!=null) {
-%>
 <%@include file = "layouts/Cabecera.jsp"%>
-<title>UnitClass | Lista Cursos</title>
 <%@include file = "layouts/Nav.jsp"%>
-
+<%
+    if (ses.getAttribute("tipo") != null) {
+%>
+<title>UnitClass | Lista Cursos</title>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

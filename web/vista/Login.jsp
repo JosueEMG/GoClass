@@ -6,7 +6,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     HttpSession ses = request.getSession();
-    if (ses.getAttribute("tipo") == null) {
+    if (ses.getAttribute("tipo") != null) {
+        response.sendRedirect("Tienda.jsp");
+    }
+    else {
 %>
 <!DOCTYPE html>
 <html>
@@ -57,10 +60,6 @@
 
 </body>
 </html>
-
 <%
-    }
-    else {
-        response.sendRedirect("Tienda.jsp");
     }
 %>

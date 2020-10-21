@@ -64,6 +64,7 @@ public class GestionLogin extends HttpServlet {
                 ses.setAttribute("nombre", u.getNombre_us());
                 ses.setAttribute("dni", u.getDni_us());
                 ses.setAttribute("tipo", u.getId_tipo_us());
+                ses.setAttribute("avatar", u.getAvatar());
                 pagina = "../GoClass/vista/Tienda.jsp";
                 
             }
@@ -73,7 +74,7 @@ public class GestionLogin extends HttpServlet {
         }
         response.sendRedirect(pagina);   
     }
-    
+
     protected void cerrarSesion(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

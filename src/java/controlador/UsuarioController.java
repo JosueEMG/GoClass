@@ -66,7 +66,7 @@ public class UsuarioController {
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select * from usuario where dni_us = ?;";     
+            String sql = "select id_usuario, nombre_us, apellidos_us, fecha_nacimiento, dni_us, correo_us, sexo_us, tipo_us, avatar from usuario where dni_us = ?;";     
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, dni);
             ResultSet rs = st.executeQuery();
@@ -80,7 +80,7 @@ public class UsuarioController {
                 a.setDni_us(rs.getString(5));
                 a.setCorreo_us(rs.getString(6));
                 a.setSexo_us(rs.getString(7));
-                a.setNombre_tipo_us(rs.getString(8));
+                a.setId_tipo_us(rs.getInt(8));
                 a.setAvatar(rs.getString(9));
             }
         } catch (Exception ex) {

@@ -13,7 +13,7 @@ update usuario set nombre_us = "josue1", apellidos_us = "medina1", fecha_nacimie
 
 select contrasena_us from usuario where dni_us = "123456789";
 
-select * from usuario where dni_us = "123456789";
+select * from usuario;
 
 --cambiar avatar
 update usuario set avatar = "ola.png" where id_usuario = 10;

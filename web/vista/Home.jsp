@@ -7,7 +7,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     HttpSession ses = request.getSession();
-    if (ses.getAttribute("tipo") == null) {
+    if (ses.getAttribute("tipo") != null) {
+        response.sendRedirect("Tienda.jsp");
+    }
+    else {
 %>
 <!DOCTYPE html>
 <html style="height: auto; min-height: 100%;">
@@ -74,7 +77,7 @@
 
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
-                <a href="home.jsp" class="brand-link">
+                <a href="Home.jsp" class="brand-link">
                     <img src="../img/unitclass_icon.png"
                          alt="UnitClass"
                          class="brand-image img-circle elevation-3"
@@ -797,8 +800,5 @@
 </html>
 
 <%
-    }
-    else {
-        response.sendRedirect("Tienda.jsp");
     }
 %>
