@@ -18,7 +18,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="Tienda.jsp" >Tienda</a></li>
-                        <li class="breadcrumb-item active">Mis Cursos</li>
+                        <li class="breadcrumb-item active">Mis cursos</li>
                     </ol>
                 </div>
             </div>

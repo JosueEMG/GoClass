@@ -81,8 +81,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="misCursos.jsp">Mis Cursos</a></li>
-                        <li class="breadcrumb-item active">Tienda de Cursos</li>
+                        <li class="breadcrumb-item">Tienda</li>
+                        <li class="breadcrumb-item active"><a href="MisCursos.jsp">Mis cursos</a></li>
                     </ol>
                 </div>
             </div>
