@@ -3,7 +3,11 @@
 <%@include file = "layouts/Nav.jsp"%>
 <%    
     if (ses.getAttribute("tipo") != null) {
+        String dni=(String)ses.getAttribute("dni");//castear
+        int idUsuario = (int)ses.getAttribute("idUsuario");
+        String nombre = (String)ses.getAttribute("nombre");
 %>
+<input type="hidden" id="dni" value="<%=dni%>">
 <title>UnitClass | Perfil</title>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
@@ -11,7 +15,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Usuario: Barny</h1>
+                    <h1>Usuario: <%=nombre%></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -28,18 +32,20 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card card-success card-outline"> <div class="card-header text-muted border-bottom-0"><h1 class="badge badge-warning">Administrador</h1>
+                        <div class="card card-success card-outline">
+                            <div class="card-header text-muted border-bottom-0">
+                                <span id="tipo">Administrador</span>
                                 <div class="card-body box-profile"> 
                                     <div class="text-center">
-                                        <img id="avatar2" src="../img/PUJmv-Rr_400x400.jpg" class="profile-user-img img-fluid img-circle">
+                                        <img id="avatar" src="../img/PUJmv-Rr_400x400.jpg" class="profile-user-img img-fluid img-circle">
                                     </div>
                                 </div>
                                 <div class="text-center mt-1">
                                     <button type="button" data-toggle="modal" data-target="#cambiophoto" class="btn btn-primary btn-sm">Cambiar avatar</button>
                                 </div>
-                                <input id="id_usuario" type="hidden" value="1">
-                                <h3 id="nombre_us" class="profile-username text-center text-success">Barny</h3>
-                                <p id="apellidos_us" class="text-muted text-center">Trujillo</p>
+                                <input id="idUsuario" type="hidden" value="<%=idUsuario%>">
+                                <h3 id="nombre" class="profile-username text-center text-success">Barny</h3>
+                                <p id="apellido1" class="text-muted text-center">Trujillo</p>
 
                             </div>
                         </div>
@@ -52,20 +58,19 @@
                                 <strong style="color:#0B7300">
                                     <i class="fas fa-calendar  mr-1"></i>Fecha de Nacimiento:
                                 </strong>
-                                <p id="telefono_us" class="text-muted">12-12-2012</p>
+                                <p id="fecha" class="text-muted">12-12-2012</p>
                                 <strong style="color:#0B7300">
                                     <i class="fas fa-user mr-1"></i>DNI:
                                 </strong>
-                                <p id="residencia_us" class="text-muted">72185135</p>
+                                <p id="dni" class="text-muted">72185135</p>
                                 <strong style="color:#0B7300">
                                     <i class="fas fa-at mr-1"></i>Correo:
                                 </strong>
-                                <p id="correo_us" class="text-muted">BarnyysusPutas@gaaa.com</p>
+                                <p id="correo" class="text-muted">BarnyysusPutas@gaaa.com</p>
                                 <strong style="color:#0B7300">
-
                                     <i class="fas fa-child mr-1"></i>Sexo:
                                 </strong>
-                                <p id="sexo_us" class="text-muted">Travesti</p>
+                                <p id="sexo" class="text-muted">Travesti</p>
                             </div>
                         </div>
                     </div>
@@ -142,3 +147,4 @@
         response.sendRedirect("Login.jsp");
     }
 %>
+<script src="../js/Perfil.js" type="text/javascript"></script>
