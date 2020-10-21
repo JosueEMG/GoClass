@@ -17,19 +17,7 @@ public class usuario {
     private String avatar;
 
     public usuario() {
-    }
-
-    public usuario(String nombre_us, String apellidos_us, String fecha_nacimiento, String dni_us, String contrasena_us, String correo_us, String sexo_us, int id_tipo_us, String avatar) {
-        this.nombre_us = nombre_us;
-        this.apellidos_us = apellidos_us;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.dni_us = dni_us;
-        this.contrasena_us = contrasena_us;
-        this.correo_us = correo_us;
-        this.sexo_us = sexo_us;
-        this.id_tipo_us = id_tipo_us;
-        this.avatar = avatar;
-    }    
+    }           
 
     public int getId_usuario() {
         return id_usuario;

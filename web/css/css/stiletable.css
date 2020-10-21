@@ -1,0 +1,10 @@
+table {
+  border-collapse: separate;
+}
+
+td {
+  border: black 2px solid;
+}
+td {
+  background: white;
+}

@@ -6,7 +6,7 @@ public class factura {
     private String fecha;
     private int id_usuario;
     private int id_curso;
-    private int id_metodo_pago;
+    private String metodo_pago;
     private String nombre_usuario;
     private String nombre_curso;
     private String nombre_metodo_pago;
@@ -15,12 +15,12 @@ public class factura {
     public factura() {
         
     }
-    
-    public factura(String fecha, int id_usuario, int id_curso, int id_metodo_pago, double precio) {
+
+    public factura(String fecha, int id_usuario, int id_curso, String metodo_pago, double precio) {
         this.fecha = fecha;
         this.id_usuario = id_usuario;
         this.id_curso = id_curso;
-        this.id_metodo_pago = id_metodo_pago;
+        this.metodo_pago = metodo_pago;
         this.precio = precio;
     }
 
@@ -80,20 +80,20 @@ public class factura {
         this.nombre_metodo_pago = nombre_metodo_pago;
     }
 
-    public int getId_metodo_pago() {
-        return id_metodo_pago;
-    }
-
-    public void setId_metodo_pago(int id_metodo_pago) {
-        this.id_metodo_pago = id_metodo_pago;
-    }
-
     public double getPrecio() {
         return precio;
     }
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public String getMetodo_pago() {
+        return metodo_pago;
+    }
+
+    public void setMetodo_pago(String metodo_pago) {
+        this.metodo_pago = metodo_pago;
     }
 
 

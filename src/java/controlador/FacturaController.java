@@ -99,17 +99,18 @@ public class FacturaController {
     }
     
     //ingresar factura
+    /*
     public void createFactura(factura f) {
         Connection conn = null;
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "insert into factura (fecha, id_usuario, id_curso, id_met_pago) values (?, ?, ?, ?);";
+            String sql = "insert into factura (fecha, id_usuario, id_curso, metodo_pago) values (?, ?, ?, ?);";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, f.getFecha());
             st.setInt(2, f.getId_usuario());
             st.setInt(3, f.getId_curso());
-            st.setInt(4, f.getId_metodo_pago());
+            st.setString(4, f.getMetodo_pago());
             st.executeUpdate();
             //llenar el arraylist con la clase entidad
         } catch (Exception ex) {
@@ -124,8 +125,9 @@ public class FacturaController {
             }
         }
     }
-    
+    */
     //Eliminar factura
+    /*
     public void deleteFactura(int idFactura) {
         Connection conn = null;
 
@@ -148,7 +150,7 @@ public class FacturaController {
             }
         }
     }
-    
+    */
     //Eliminar factura por idUusario
     public void deleteFacturabyUserId(int idUsuario) {
         Connection conn = null;
