@@ -32,7 +32,7 @@
                 </div>
                 <div class="card-body">
                     <div id="cursos" class="row d-flex aling-items-stretch">
-
+                        
                     </div>
                 </div>
             </div>
