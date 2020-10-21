@@ -297,6 +297,6 @@
         response.sendRedirect("Login.jsp");
     }
 %>
-<script src="../js/GestionTienda.js" type="text/javascript"></script>
+<script src="../js/Tienda.js" type="text/javascript"></script>
 
 

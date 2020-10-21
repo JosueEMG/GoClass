@@ -12,6 +12,10 @@
         <servlet-name>GestionLogin</servlet-name>
         <servlet-class>servlet.GestionLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionMisCursos</servlet-name>
+        <servlet-class>servlet.GestionMisCursos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>gestionUsuario</servlet-name>
         <url-pattern>/gestionUsuario</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>GestionLogin</servlet-name>
         <url-pattern>/GestionLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionMisCursos</servlet-name>
+        <url-pattern>/GestionMisCursos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

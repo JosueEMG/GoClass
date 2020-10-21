@@ -1,6 +1,6 @@
-use goclass1;
+use goclass;
 insert into usuario (nombre_us, apellidos_us, fecha_nacimiento, dni_us, contrasena_us, correo_us, sexo_us, tipo_us, avatar) values ("josue", "medina", "2001-03-04", "76546352", "12345", "josue@gmail.com", "Masculino", 3, "");
-select * from usuario;
+
 
 -- subir de alumno a docente
 update usuario set tipo_us = 2 where id_usuario = 10;
@@ -27,6 +27,9 @@ on u.tipo_us = t.id_tipo_us;
 
 
 --listar inscripciones por idUsuario
-
+use goclass;
+select i.id_curso, c.nombre, c.banner, c.detalle_curso
+from inscripcion i inner join curso c
+on i.id_curso = c.id_curso where i.id_usuario = 1;
 
 
