@@ -1,8 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@include file = "layouts/Cabecera.jsp"%>
-<title>UnitClass | Principal</title>
 <%@include file = "layouts/Nav.jsp"%>
+<%    
+    if (ses.getAttribute("tipo") != null) {
+%>
+<title>UnitClass | Principal</title>
 
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
@@ -16,14 +18,14 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="Cursos.jsp" >Mis Cursos</a></li>
-                        <li class="breadcrumb-item active"><a href="ListaCursos.jsp" >Pagina Principal</a></li>
+                        <li class="breadcrumb-item"><a href="Tienda.jsp" >Tienda</a></li>
+                        <li class="breadcrumb-item active">Mis Cursos</li>
                     </ol>
                 </div>
             </div>
         </div>
     </section>   
-    <section>
+    <section class="content">
         <div class="container-fluid">
             <div class="card card-success">
                 <div class="card-header">
@@ -55,5 +57,9 @@
 </div>
 
 <%@include file = "layouts/Footer.jsp"%>
-
+<%
+    } else {
+        response.sendRedirect("Login.jsp");
+    }
+%>
 

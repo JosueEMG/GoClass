@@ -9,8 +9,7 @@
     HttpSession ses = request.getSession();
     if (ses.getAttribute("tipo") != null) {
         response.sendRedirect("Tienda.jsp");
-    }
-    else {
+    } else {
 %>
 <!DOCTYPE html>
 <html style="height: auto; min-height: 100%;">
@@ -43,17 +42,21 @@
     </head>
     <body class="hold-transition sidebar-mini">
         <!-- Site wrapper -->
-        <div class="wrapper">
+        <div>
             <!-- Navbar -->
-            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav class="navbar navbar-expand navbar-white navbar-light mb-2">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                        <p>
+                            <img src="../img/unitclass_icon.png"
+                                 alt="UnitClass"
+                                 class="brand-image img-circle elevation-3"
+                                 style="opacity: .8" height="60" width="60">
+                            <span class="text-center mx-2">UnitClass</span>
+                        </p>
                     </li>
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="#" class="nav-link">Contact</a>
-                    </li>
+                    <a href="Contactanos.jsp" class="nav-link text-center mt-2">Contactanos</a>
                 </ul>
 
                 <!-- SEARCH FORM 
@@ -73,695 +76,189 @@
                     <a href="Login.jsp"><button type="button" class="btn btn-success">Iniciar sesión</button></a>
                 </ul>
             </nav>
-            <!-- ESTE ES EL SLIDEBAR -->
-
-            <aside class="main-sidebar sidebar-dark-primary elevation-4">
-                <!-- Brand Logo -->
-                <a href="Home.jsp" class="brand-link">
-                    <img src="../img/unitclass_icon.png"
-                         alt="UnitClass"
-                         class="brand-image img-circle elevation-3"
-                         style="opacity: .8">
-                    <span class="brand-text font-weight-light">UnitClass</span>
-                </a>
-            </aside>
-
+            <hr class="mt-2">
             <!--Este es el contenido de la pagina  -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <div class="container-fluid">
-                        <div class="row mb-2">
-                            <div class="col-sm-6">
-                                <h1>Tienda de Cursos</h1>
-                                <hr>
-                            </div>
-                            <div class="col-sm-6">
-                                <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item active">Pagina de Inicio</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-1">
+                        <div class="col-sm-6">
+                            <h1>Tienda de Cursos</h1>
 
-                <!-- CARROUSEL  -->
-                <section>
-                    <div class="container-lg my-3">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Carousel indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <hr>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+
                             </ol>
-                            <!-- Wrapper for carousel items -->
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="../img/imagenSlide/html_extend.png" alt="First Slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../img/imagenSlide/python_react_extend.png" alt="Second Slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../img/imagenSlide/nodejs_extend.jpeg" alt="Third Slide">
-                                </div>
-                            </div>
-                            <!-- Carousel controls -->
-                            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </a>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- LISTA DE CURSOS POR CATEGORIAS  -->
-                <!-- PROMOCIONES  -->
-                <section class="content">
+            <!-- CARROUSEL  -->
+            <section>
+                <div class="container-lg my-3">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Wrapper for carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../img/imagenSlide/html_extend.png" alt="First Slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/imagenSlide/python_react_extend.png" alt="Second Slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/imagenSlide/nodejs_extend.jpeg" alt="Third Slide">
+                            </div>
+                        </div>
+                        <!-- Carousel controls -->
+                        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-                    <!-- Default box -->
+            <!-- LISTA DE CURSOS POR CATEGORIAS  -->
+            <!-- PROMOCIONES  -->
+            <section class="content">
+                <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Cursos de Programación</h3>
+                            <h3 class="card-title">Programación</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                    <i class="fas fa-times"></i></button>
                             </div>
                         </div>
-                        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-                            <!--Slides-->
-                            <div class="carousel-inner" role="listbox">
-                                <br>
-                                <!-- PRIMER SLIDE-->
-                                <div class="carousel-item active">
+                        <div class="card-body" >
+                            <div id="programacion" class="row d-flex aling-items-stretch">
 
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/js_banner.jpeg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">JavaScript</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/java_ban.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Programación Java</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/mongodb_ban.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">MongoDB</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/mysql_ban.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">MySQL DataBase</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!--/.First slide-->
-
-                                <!-- SEGUNDO SLIDE-->
-                                <div class="carousel-item">
-
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/python_ban.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Programación Python</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/oracle_ban.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">OracleDataBase</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/react_ban.png" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">ReactJS</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3" style="float:left">
-                                        <div class="card mb-2">
-                                            <img class="card-img-top"
-                                                 src="../img/imagenCardSlide/html_ban.jpg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h4 class="card-title">HTML + CSS + JS</h4>
-                                                <br>
-                                                <hr>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.</p>
-                                                <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/.Second slide-->
                             </div>
-                            <!--/.Slides-->
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
                         </div> 
-                        <!-- /.card-footer-->
                     </div>
-                    <!-- /.card -->
-                </section>
-
-                <!-- MUSICA  -->
-                <section class="content">
-                    <!-- Default box -->
+                </div>
+            </section>  
+            <section class="content">
+                <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Musica</h3>
-
+                            <h3 class="card-title">Música</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                    <i class="fas fa-times"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="display: block;">
-                            <div class="row">
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/musica/guitarra_banner.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Curso Guitarra</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/musica/piano_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Curso Piano Online</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/musica/electrica_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Curso Guitarra Eléctrica</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/musica/bateria_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Curso Bateria Online</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card-body">
+                            <div id="musica" class="row d-flex aling-items-stretch">
+
                             </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
                         </div> 
-                        <!-- /.card-footer-->
                     </div>
-                    <!-- /.card -->
-
-                </section>
-                <!-- COCINA  -->
-                <section class="content">
-                    <!-- Default box -->
+                </div>
+            </section>
+            <section class="content">
+                <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Cocina</h3>
-
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                    <i class="fas fa-times"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="display: block;">
-                            <div class="row">
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/cocina/pasteleria_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Pastelería</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/cocina/peruana_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cocina Peruana</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/cocina/pescados_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Pescados y Mariscos</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/cocina/internacional_banner.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cocina Internacional</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card-body">
+                            <div id="cocina" class="row d-flex aling-items-stretch">
+
                             </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
-
                         </div> 
-
-                        <!-- /.card-footer-->
                     </div>
-                    <!-- /.card -->
 
-                </section>
-                <!-- EDICIÓN DE VIDEO  -->
-                <section class="content">
-                    <!-- Default box -->
+                </div>
+            </section>
+            <section class="content">
+                <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Edición de Video</h3>
-
+                            <h3 class="card-title">Edición de Vídeo</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                    <i class="fas fa-times"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="display: block;">
-                            <div class="row">
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/edicion video/ae_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">After Effect</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/edicion video/ap_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Adobe Premier</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/edicion video/au_banner.jpeg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Adobe Audition</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/edicion video/filmora_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Filmora Wondershare</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card-body">
+                            <div id="edicionVideo" class="row d-flex aling-items-stretch">
+
                             </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
                         </div> 
-                        <!-- /.card-footer-->
                     </div>
-                    <!-- /.card -->
 
-                </section>
-                <!-- HISTORIA  -->
-                <section class="content">
-                    <!-- Default box -->
+                </div>
+            </section>
+            <section class="content">
+                <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Historia</h3>
-
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                    <i class="fas fa-times"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="display: block;">
-                            <div class="row">
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/historia/historia_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Programación Java</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/historia/contabilidad_banner.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Programación Java</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/historia/ingles_banner.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Programación Java</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCardSlide/mysql_ban.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div id="historia" class="row d-flex aling-items-stretch">
 
-                                        <div class="card-body">
-                                            <h4 class="card-title">MySQL DataBase</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
-
                         </div> 
-
-                        <!-- /.card-footer-->
                     </div>
-                    <!-- /.card -->
 
-                </section>
-                <!-- ARTE  -->
-                <section class="content">
-                    <!-- Default box -->
+                </div>
+            </section>
+            <section class="content">
+                <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Arte</h3>
-
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                    <i class="fas fa-times"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="display: block;">
-                            <div class="row">
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/arte/fotografia_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Curso Pintura</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/arte/photoshop_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Photoshop</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/arte/digital_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Dibujo Digital</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="float:left">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top"
-                                             src="../img/imagenCursos/arte/fotografia_banner.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Fotografía</h4>
-                                            <br>
-                                            <hr>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                                card's content.</p>
-                                            <a href="sesion.jsp"><button class="btn btn-dark">Comprar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card-body">
+                            <div id="arte" class="row d-flex aling-items-stretch">
+
                             </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
-
                         </div> 
-
-                        <!-- /.card-footer-->
                     </div>
-                    <!-- /.card -->
 
-                </section>
-
-                <!-- TABLA UNITCLASS  -->
-                <section class="content-header">
-                    <h1>Temas recomendados para ti</h1>
-                    <hr>
-                </section>
-                <section>
-                    <div class="row mb-4 mx-5 mt-4">
-                        <div class="col-md-4 mb-4">
-                            <div class="shadow-box-example z-depth-1 flex-center">
-                                <p class="white-text"> PHP + MySQL</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="shadow-box-example z-depth-1-half flex-center">
-                                <p class="white-text"> Android Studio </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="shadow-box-example z-depth-2 flex-center">
-                                <p class="white-text"> Python + Flexblox </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-5 mx-5">
-                        <div class="col-md-4 mb-4">
-                            <div class="shadow-box-example z-depth-3 flex-center">
-                                <p class="white-text"> Django </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="shadow-box-example z-depth-4 flex-center">
-                                <p class="white-text"> Linux </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="shadow-box-example z-depth-5 flex-center">
-                                <p class="white-text"> C++ </p>
-                            </div>
-                        </div>
-                    </div>
-                </section> 
-            </div>
-
+                </div>
+            </section>
             <!-- ENSEÑA EN UNITCLASS  -->
-            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <footer>
+                <nav class="navbar navbar-expand navbar-white navbar-light">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item d-none d-sm-inline-block">
@@ -771,16 +268,8 @@
                         </p>
                     </li>
                 </ul>
-                <!-- Right navbar links -->
-                <ul class="navbar-nav ml-auto">
-                    <button type="button" class="btn btn-dark">Enseña en UnitClass</button>
-                </ul>
             </nav>
-            <br>
-            <!-- /.content-wrapper -->
-            <!-- FOOTER -->
-            <footer class="main-footer">
-                <div class="float-right d-none d-sm-block">
+                <div class="d-none d-sm-block">
                     <b>Version</b> 3.0.5
                 </div>
                 <strong>Copyright &copy; 2020 <a href="http://UnitClass.com">UnitClass.com</a>.</strong> Todos los derechos reservados Los Packeros S.A.
@@ -793,12 +282,11 @@
         <!-- Bootstrap 4 -->
         <script src="../js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
-        <script src="../js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../js/demo.js"></script>
     </body>
 </html>
-
 <%
     }
 %>
+<script src="../js/GestionTienda.js" type="text/javascript"></script>

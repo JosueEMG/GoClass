@@ -1,256 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "layouts/Cabecera.jsp"%>
 <%@include file = "layouts/Nav.jsp"%>
-<%
+<%    
     if (ses.getAttribute("tipo") != null) {
 %>
 <title>UnitClass | Lista Cursos</title>
 <!--Este es el contenido de la pagina  -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Tienda de Cursos</h1>
-                    <hr>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="misCursos.jsp">Mis Cursos</a></li>
-                        <li class="breadcrumb-item active">Tienda de Cursos</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CARROUSEL  -->
-    <section>
-        <div class="container-lg my-3">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Carousel indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for carousel items -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../img/imagenSlide/html_extend.png" alt="First Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/imagenSlide/python_react_extend.png" alt="Second Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/imagenSlide/nodejs_extend.jpeg" alt="Third Slide">
-                    </div>
-                </div>
-                <!-- Carousel controls -->
-                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- LISTA DE CURSOS POR CATEGORIAS  -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Programación</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body" >
-                    <div id="programacion" class="row d-flex aling-items-stretch">
-                                 
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div> 
-            </div>
-        </div>
-    </section>  
-    <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Música</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div id="musica" class="row d-flex aling-items-stretch">
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div> 
-            </div>
-        </div>
-    </section>
-    <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Cocina</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div id="cocina" class="row d-flex aling-items-stretch">
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div> 
-            </div>
-
-        </div>
-    </section>
-    <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Edición de Vídeo</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div id="edicionVideo" class="row d-flex aling-items-stretch">
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div> 
-            </div>
-
-        </div>
-    </section>
-    <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Historia</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div id="historia" class="row d-flex aling-items-stretch">
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div> 
-            </div>
-
-        </div>
-    </section>
-    <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Arte</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div id="arte" class="row d-flex aling-items-stretch">
-                        
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div> 
-            </div>
-
-        </div>
-    </section>
-
-</section>
-
-<!-- TABLA UNITCLASS  -->
-<section class="content-header">
-    <h1>Temas recomendados para ti</h1>
-    <hr>
-</section>
-<section>
-    <div class="row mb-4 mx-5 mt-4">
-        <div class="col-md-4 mb-4">
-            <div class="shadow-box-example z-depth-1 flex-center">
-                <p class="white-text"> PHP + MySQL</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="shadow-box-example z-depth-1-half flex-center">
-                <p class="white-text"> Android Studio </p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="shadow-box-example z-depth-2 flex-center">
-                <p class="white-text"> Python + Flexblox </p>
-            </div>
-        </div>
-    </div>
-    <div class="row mb-5 mx-5">
-        <div class="col-md-4 mb-4">
-            <div class="shadow-box-example z-depth-3 flex-center">
-                <p class="white-text"> Django </p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="shadow-box-example z-depth-4 flex-center">
-                <p class="white-text"> Linux </p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="shadow-box-example z-depth-5 flex-center">
-                <p class="white-text"> C++ </p>
-            </div>
-        </div>
-    </div>
-</section> 
-</div>
-
-<!-- ENSEÑA EN UNITCLASS  -->
-<section>
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item d-none d-sm-inline-block">
-                <h2>Enseña en línea</h2>
-                <p>
-                    Crea un curso en vídeo en línea, llega a estudiantes de todo el mundo y gana dinero
-                </p>
-            </li>
-        </ul>
-        <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-            <button type="button" class="btn btn-dark">Enseña en UnitClass</button>
-        </ul>
-    </nav>
-</section>
-<br>
-<!-- /.content-wrapper -->
-
 <!-- MODAL -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -316,12 +71,230 @@
     </div>
 </div>
 
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Tienda de Cursos</h1>
+                    <hr>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="misCursos.jsp">Mis Cursos</a></li>
+                        <li class="breadcrumb-item active">Tienda de Cursos</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARROUSEL  -->
+    <section>
+        <div class="container-lg mb-4">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../img/imagenSlide/html_extend.png" alt="First Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/imagenSlide/python_react_extend.png" alt="Second Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/imagenSlide/nodejs_extend.jpeg" alt="Third Slide">
+                    </div>
+                </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTA DE CURSOS POR CATEGORIAS  -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Programación</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body" >
+                    <div id="programacion" class="row d-flex aling-items-stretch">
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div> 
+            </div>
+        </div>
+    </section>  
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Música</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="musica" class="row d-flex aling-items-stretch">
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div> 
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Cocina</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="cocina" class="row d-flex aling-items-stretch">
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div> 
+            </div>
+
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Edición de Vídeo</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="edicionVideo" class="row d-flex aling-items-stretch">
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div> 
+            </div>
+
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Historia</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="historia" class="row d-flex aling-items-stretch">
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div> 
+            </div>
+
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Arte</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="arte" class="row d-flex aling-items-stretch">
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div> 
+            </div>
+
+        </div>
+    </section>
+    <!-- TABLA UNITCLASS  -->
+    <section class="content-header">
+        <h1>Temas recomendados para ti</h1>
+        <hr>
+
+        <div class="row mb-4 mx-5 mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="shadow-box-example z-depth-1 flex-center">
+                    <p class="white-text"> PHP + MySQL</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="shadow-box-example z-depth-1-half flex-center">
+                    <p class="white-text"> Android Studio </p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="shadow-box-example z-depth-2 flex-center">
+                    <p class="white-text"> Python + Flexblox </p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5 mx-5">
+            <div class="col-md-4 mb-4">
+                <div class="shadow-box-example z-depth-3 flex-center">
+                    <p class="white-text"> Django </p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="shadow-box-example z-depth-4 flex-center">
+                    <p class="white-text"> Linux </p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="shadow-box-example z-depth-5 flex-center">
+                    <p class="white-text"> C++ </p>
+                </div>
+            </div>
+        </div>
+    </section> 
+</div>
 <!-- FOOTER -->
 <%@include file = "layouts/Footer.jsp"%>
 
 <%
-    }   
-    else{
+    } else {
         response.sendRedirect("Login.jsp");
     }
 %>

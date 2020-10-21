@@ -1,7 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "layouts/Cabecera.jsp"%>
-<title>UnitClass | Cursos</title>
 <%@include file = "layouts/Nav.jsp"%>
+<%    
+    if (ses.getAttribute("tipo") != null) {
+%>
+<title>UnitClass | Cursos</title>
+
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -164,5 +168,9 @@
     </section>
 </div>
 <%@include file = "layouts/Footer.jsp"%>
-
+<%
+    } else {
+        response.sendRedirect("Login.jsp");
+    }
+%>
 

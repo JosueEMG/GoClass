@@ -1,7 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "layouts/Cabecera.jsp"%>
-<title>UnitClass | Mis Cursos</title>
 <%@include file = "layouts/Nav.jsp"%>
+<%    
+    if (ses.getAttribute("tipo") != null) {
+%>
+<title>UnitClass | Mis Cursos</title>
 <!-- MODAL Añadir -->
 <div class="modal fade bd-example-modal-lg" id="añadir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -469,3 +472,8 @@
     </section>
 </div>
 <%@include file = "layouts/Footer.jsp"%>
+<%
+    } else {
+        response.sendRedirect("Login.jsp");
+    }
+%>

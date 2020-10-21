@@ -1,27 +1,29 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "layouts/Cabecera.jsp"%>
-<title>UnitClass | Perfil</title>
 <%@include file = "layouts/Nav.jsp"%>
-
+<%    
+    if (ses.getAttribute("tipo") != null) {
+%>
+<title>UnitClass | Perfil</title>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
-   <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Usuario: Barny</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="adm_catalogo.php">Catalogo</a></li>
-                            <li class="breadcrumb-item active">Datos Personales</li>
-                        </ol>
-                    </div>
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Usuario: Barny</h1>
                 </div>
-            </div><!-- /.container-fluid -->
-        </section>
-  
-    <section>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="Tienda.jsp">Tienda</a></li>
+                        <li class="breadcrumb-item active">Datos Personales</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
         <div class="contet">
             <div class="container-fluid">
                 <div class="row">
@@ -41,7 +43,7 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="card card-success">
                             <div class="card-header">
                                 <h3 class="card-title">Datos Personales</h3>
@@ -64,10 +66,7 @@
                                     <i class="fas fa-child mr-1"></i>Sexo:
                                 </strong>
                                 <p id="sexo_us" class="text-muted">Travesti</p>
-
-
                             </div>
-
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -119,17 +118,16 @@
                                             </select>
                                         </div>
                                     </div>
-
+                                    <div class="form-group row">
+                                        <div class="offset-sm-2 col-sm-10 float-right">
+                                            <button type="submit" class="btn btn-block btn-outline-success">Editar Datos</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="form-group row">
-                                <div class="offset-sm-2 col-sm-10 float-right">
-                                    <button type="submit" class="btn btn-block btn-outline-success">Editar Datos</button>
-                                </div>
+                            <div class="card-footer">
+                                <p class="text-muted">Por favor verificar los datos antes de guardas los cambios</p>
                             </div>
-                            </form>
-                        </div>
-                        <div class="card-footer">
-                            <p class="text-muted">Verifique bien sus Datos antes de Registrar</p>
                         </div>
                     </div>
                 </div>
@@ -138,10 +136,9 @@
     </section>
 </div>
 
-
-
-
-
-
-
 <%@include file = "layouts/Footer.jsp"%>
+<%
+    } else {
+        response.sendRedirect("Login.jsp");
+    }
+%>

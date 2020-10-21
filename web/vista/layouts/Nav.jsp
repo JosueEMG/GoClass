@@ -36,7 +36,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="Tienda.jsp" class="nav-link">Inicio</a>
+                    <a href="Tienda.jsp" class="nav-link">Tienda</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="Ayuda.jsp" class="nav-link">Contactanos</a>
@@ -67,7 +67,7 @@
                         <img id="avatar5" src="../img/<%=ses.getAttribute("avatar")%>" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">
+                        <a href="Perfil.jsp" class="d-block">
                             <%=ses.getAttribute("nombre")%>
                         </a>
                     </div>

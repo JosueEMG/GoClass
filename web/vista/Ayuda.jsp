@@ -1,9 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@include file ="layouts/Cabecera.jsp"%>
+<%@include file = "layouts/Nav.jsp"%>
+<%    
+    if (ses.getAttribute("tipo") != null) {
+%>
 <title>UnitClass | Ayuda</title>
 
-<%@include file = "layouts/Nav.jsp"%>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -11,15 +13,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Mesa de Ayuda</h1>
-
+                    <h1>Mesa de ayuda</h1>
                     <hr>
-
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="Cursos.jsp">Mis Cursos</a></li>
-                        <li class="breadcrumb-item active">Pagina Principal</li>
+                        <li class="breadcrumb-item"><a href="Tienda.jsp">Tienda</a></li>
+                        <li class="breadcrumb-item active">Mesa de ayuda</li>
                     </ol>
                 </div>
             </div>
@@ -77,3 +77,8 @@
 </div>
 
 <%@include file = "layouts/Footer.jsp"%>
+<%
+    } else {
+        response.sendRedirect("Login.jsp");
+    }
+%>
