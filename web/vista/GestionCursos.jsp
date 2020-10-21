@@ -420,16 +420,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Gestión Cursos &nbsp&nbsp&nbsp<button type="button" class="btn btn-warning " data-toggle="modal" data-target="#añadir">Añadir Curso</button>
-
-
-
-                        <hr>
+                    <h1>Gestión cursos<button type="button" class="btn btn-warning ml-2" data-toggle="modal" data-target="#añadir">Añadir Curso</button></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="ListaCursos.jsp">Tienda de Cursos</a></li>
-                                <li class="breadcrumb-item active">Mis Cursos</li>
+                                <li class="breadcrumb-item"><a href="Tienda.jsp">Tienda</a></li>
+                                <li class="breadcrumb-item active">Gestión cursos</li>
                             </ol>
 
                         </div>
@@ -460,9 +456,9 @@
                                     card's content.</p>
                             </div>
                             <div class="card-footer">
-                                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modificar">Modificar</button>
-                                <a href="Cursos.jsp" class="btn btn-dark">Ver</a>
-                                <button type="button" class="btn btn-danger">Eliminar</button>
+                                <button type="button" class="btn btn-dark mx-1 my-1" data-toggle="modal" data-target="#modificar">Modificar</button>
+                                <a href="Cursos.jsp" class="btn btn-dark mx-1 my-1">Ver</a>
+                                <button type="button" class="btn btn-danger mx-1 my-1">Eliminar</button>
                             </div>
                         </div>
                     </div>

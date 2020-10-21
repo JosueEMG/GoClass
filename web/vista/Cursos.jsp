@@ -13,13 +13,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>"Poner Nombre del Curso Pajeros"</h1>
-                    <hr>
+                    <h1>Poner Nombre del Curso Pajeros</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="ListaCursos.jsp">Tienda de Cursos</a></li>
-                        <li class="breadcrumb-item active">Cursos</li>
+                        <li class="breadcrumb-item"><a href="Tienda.jsp">Tienda</a></li>
+                        <li class="breadcrumb-item active">Curso</li>
                     </ol>
                 </div>
             </div>
@@ -142,35 +141,13 @@
                 </div> 
                 <!-- /.card-footer-->
             </div>
-            <!-- EVALUACION FINAL -->
-
-            <!-- Default box -->
-             <div class="card card-success">
-                <div class="card-header">
-                    <h3 class="card-title">Evaluación Final</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-
-                    </div>
-                </div>
-                <div class="card-body" style="display: block;">
-
-                    <!-- /.card-body -->
-                </div>
-                <div class="card-footer">
-                    
-                </div> 
-                <!-- /.card-footer-->
-            </div>
         </div>
     </section>
 </div>
 <%@include file = "layouts/Footer.jsp"%>
+
 <%
     } else {
         response.sendRedirect("Login.jsp");
     }
 %>
-
