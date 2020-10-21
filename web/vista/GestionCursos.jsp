@@ -432,7 +432,7 @@
                 </div>
             </div>
     </section>  
-    <section>      
+    <section class="content">      
         <div class="container-fluid">
             <div class="card card-success">
                 <div class="card-header">
