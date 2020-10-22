@@ -5,19 +5,19 @@
         <li class="nav-item d-none d-sm-inline-block">
             <h2>Enseña en línea</h2>
             <p>
-                Crea un curso en vídeo en línea, llega a estudiantes de todo el mundo y gana dinero
+                Crea un curso en vídeo en línea, llega a estudiantes de todo el mundo y gana mucho dinero.
             </p>
         </li>
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <button type="button" class="btn btn-dark">Enseña en UnitClass</button>
+        <button type="button" class="btn btn-dark">Enseña en GoClass</button>
     </ul>
     <hr>
     <div class="float-right d-none d-sm-block">
-        <b>Version</b> 3.0.5
+        <b>Version</b> 0.1.8
     </div>
-    <strong>Copyright &copy; 2020 <a href="http://UnitClass.com">UnitClass.com</a>.</strong> Todos los derechos reservados Los Packeros S.A.
+    <strong>Copyright &copy; 2020 <a href="http://GoClass.com">GoClass.com</a>.</strong> Todos los derechos reservados Los Packeros S.A.
 </footer>
 </div>
 <!-- ./wrapper -->
