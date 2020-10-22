@@ -52,7 +52,7 @@
 
 <%
     } else {
-        response.sendRedirect("Login.jsp");
+        response.sendRedirect("Home.jsp");
     }
 %>
 <script src="../js/Curso.js" type="text/javascript"></script>

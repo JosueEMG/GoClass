@@ -294,7 +294,7 @@
 
 <%
     } else {
-        response.sendRedirect("Login.jsp");
+        response.sendRedirect("Home.jsp");
     }
 %>
 <script src="../js/Tienda.js" type="text/javascript"></script>

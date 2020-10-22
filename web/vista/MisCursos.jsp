@@ -43,7 +43,7 @@
 <%@include file = "layouts/Footer.jsp"%>
 <%
     } else {
-        response.sendRedirect("Login.jsp");
+        response.sendRedirect("Home.jsp");
     }
 %>
 <script src="../js/MisCursos.js" type="text/javascript"></script>

@@ -138,7 +138,7 @@
 <%@include file = "layouts/Footer.jsp"%>
 <%
     } else {
-        response.sendRedirect("Login.jsp");
+        response.sendRedirect("Home.jsp");
     }
 %>
 <script src="../js/Perfil.js" type="text/javascript"></script>

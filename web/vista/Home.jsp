@@ -9,7 +9,8 @@
     HttpSession ses = request.getSession();
     if (ses.getAttribute("tipo") != null) {
         response.sendRedirect("Tienda.jsp");
-    } else {
+    } 
+    else {
 %>
 <!DOCTYPE html>
 <html style="height: auto; min-height: 100%;">
@@ -232,7 +233,6 @@
                         <div class="card-footer">
                         </div> 
                     </div>
-
                 </div>
             </section>
             <section class="content">
