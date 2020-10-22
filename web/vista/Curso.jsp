@@ -20,8 +20,18 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="MisCursos.jsp">Mis Cursos</a></li>
-                        <li class="breadcrumb-item active">Curso</li>
+                        <%
+                            if ((int)ses.getAttribute("tipo") == 3) {
+                        %>
+                        <li class="breadcrumb-item"><a href="MisCursos.jsp">Mis cursos</a></li>
+                        <%  }
+                            else {
+                        %>
+                        <li class="breadcrumb-item"><a href="GestionCursos.jsp">Gestion cursos</a></li>
+                        <%
+                            }
+                        %>
+                        <li class="breadcrumb-item active"><%=nombreCurso%></li>
                     </ol>
                 </div>
             </div>

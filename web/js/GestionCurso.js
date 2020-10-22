@@ -16,11 +16,11 @@ $(document).ready(function () {
                                 <h4 class="card-title">${g.nombre}</h4>
                                 <br>
                                 <hr>
-                                <p class="card-text">${g.detalle_curso}</p>
+                                <p class="card-text">${g.detalle}</p>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer" nombreCurso="${g.nombre}">
                                 <button type="button" class="btn btn-dark mx-1 my-1" data-toggle="modal" data-target="#modificar">Modificar</button>
-                                <a href="Cursos.jsp" class="btn btn-dark mx-1 my-1">Ver</a>
+                                <button type="button" class="ver btn btn-dark mx-1 my-1">Ver contenido</button>
                                 <button type="button" class="btn btn-danger mx-1 my-1">Eliminar</button>
                                 <button class="alumnos btn btn-dark mx-1 my-1">Ver Alumnos</button>
                             </div>
@@ -41,6 +41,20 @@ $(document).ready(function () {
             window.location="VerAlumnos.jsp";
         })          
     })
+    
+    $(document).on("click", ".ver", (e) => {
+        const elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement;
+        const elemento1 = $(this)[0].activeElement.parentElement;
+        const idCurso = $(elemento).attr("idCurso");
+        const nombreCurso = $(elemento1).attr("nombreCurso");
+        funcion = "ver";
+      
+        $.post("../GestionCurso", {idCurso, nombreCurso, funcion}, (response) => {
+            window.location="Curso.jsp";
+        })
+              
+    })
+    
     
 })   
 

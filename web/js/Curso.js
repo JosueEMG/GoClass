@@ -7,7 +7,6 @@ $(document).ready(function () {
         $.post("../GestionContenido", {funcion, idCurso}, (response) => {
             const contenidos = JSON.parse(response);
             var contador = 1;
-            console.log(contenidos);
             let template = "";
             contenidos.forEach(contenido => {
                 template += `

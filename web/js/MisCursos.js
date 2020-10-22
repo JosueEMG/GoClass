@@ -21,7 +21,7 @@ $(document).ready(function () {
                                 <p class="card-text text-justify">${miCurso.detalle_curso}</p> 
                             </div>
                             <div class="card-footer" nombreCurso="${miCurso.nombre}">
-                                <button class="ver btn btn-dark">Ver</button>
+                                <button class="ver btn btn-dark">Ver contenido</button>
                                 <button class="profe btn btn-dark">Ver Profesor</button>
                             </div>
                         </div>
