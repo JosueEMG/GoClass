@@ -13,7 +13,7 @@ $(document).ready(function () {
             let fecha="";
             let dni="";
             let correo="";
-            let sexo="";           
+            let sexo="";    
             const usuario =  JSON.parse(response);
 
             if (usuario.id_tipo_us == 1) {
