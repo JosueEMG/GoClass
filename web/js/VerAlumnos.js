@@ -14,7 +14,7 @@ $(document).ready(function(){
         template += `
             <div usuarioid=${u.id_usuario} class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                                   <div class="card bg-light">
-                                  <div class="card-header text-muted border-bottom-0"><h1 class="badge badge-danger">Docente</h1>
+                                  <div class="card-header text-muted border-bottom-0"><h1 class="badge badge-primary">Estudiante</h1>
                                             </div>
                                             <div class="card-body pt-0">
                                                 <div class="row">
