@@ -22,6 +22,7 @@ $(document).ready(function () {
                             </div>
                             <div class="card-footer" nombreCurso="${miCurso.nombre}">
                                 <button class="ver btn btn-dark">Ver</button>
+                                <button class="profe btn btn-dark">Ver Profesor</button>
                             </div>
                         </div>
                     </div>`;
@@ -43,5 +44,16 @@ $(document).ready(function () {
         })
         
     })
+    
+    $(document).on("click", ".profe", (e) => {
+        const id = $(this)[0].activeElement.parentElement.parentElement.parentElement;
+        const idCurso = $(id).attr("idCurso");
+        funcion = "idCurso";
+        
+        $.post("../GestionCurso", {idCurso, funcion}, (response) => {
+            window.location="VerDocentes.jsp"; 
+        })          
+    })
+    
 })
 

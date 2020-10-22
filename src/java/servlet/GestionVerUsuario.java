@@ -5,10 +5,6 @@
  */
 package servlet;
 
-import com.google.gson.Gson;
-import controlador.CursoController;
-import controlador.InscripcionController;
-import controlador.UsuarioController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Josue Emmanuel Medina Garcia
+ * @author Lenovo
  */
-public class GestionMisCursos extends HttpServlet {
+public class GestionVerUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,32 +30,18 @@ public class GestionMisCursos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        if (request.getParameter("funcion").equals("listarMisCursos")) {
-            listarMisCursos(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet GestionVerUsuario</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet GestionVerUsuario at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        if (request.getParameter("funcion").equals("lisGestionCurso")) {
-            lisGestionCurso(request, response);
-        }
-    }
-    
-    protected void listarMisCursos(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        int id = Integer.parseInt(request.getParameter("idUsuario"));
-        PrintWriter out = response.getWriter();
-        InscripcionController inscripcionController = new InscripcionController();
-        Gson gson = new Gson();
-        out.print(gson.toJson(inscripcionController.listaInscripciones(id)));
-    }
-    
-    protected void lisGestionCurso(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        int idprofe = Integer.parseInt(request.getParameter("idProfesor"));
-        PrintWriter out = response.getWriter();
-        CursoController cc = new CursoController();
-        Gson gson = new Gson();
-        out.print(gson.toJson(cc.lisGestionCurso(idprofe)));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

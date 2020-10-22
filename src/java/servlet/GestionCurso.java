@@ -33,7 +33,10 @@ public class GestionCurso extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         if(request.getParameter("funcion").equals("ver")) {
             verContenido(request, response);
-        }     
+        }
+        if(request.getParameter("funcion").equals("idCurso")) {
+            idCurso(request, response);
+        }
     }
     protected void verContenido(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -43,6 +46,13 @@ public class GestionCurso extends HttpServlet {
         String nombreCurso = request.getParameter("nombreCurso");
         ses.setAttribute("idCurso", idCurso);
         ses.setAttribute("nombreCurso", nombreCurso);
+    }
+    protected void idCurso(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession ses = request.getSession();
+        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+        ses.setAttribute("idCurso", idCurso);
     }
 
 

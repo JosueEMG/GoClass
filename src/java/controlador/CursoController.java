@@ -81,14 +81,13 @@ public class CursoController {
         return lis;
     }
        
-    public List<curso> lisMisCursos(int id) {
+    public List<curso> lisGestionCurso(int id) {
         List<curso> lis = new ArrayList<>();
         Connection conn = null;
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select nombre, banner, e.nombre_especialidad, prod_present, detalle_curso from curso c inner join especialidad e "
-                    + " on c.id_especialidad=e.id_especialidad where id_usuario=?";
+            String sql = "select id_curso, c.nombre, c.banner, c.detalle_curso from usuario u inner join curso c on u.id_usuario = c.id_usuario where u.id_usuario = ?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
@@ -98,9 +97,7 @@ public class CursoController {
                 c.setId_curso(rs.getInt(1));
                 c.setNombre(rs.getString(2));
                 c.setBanner(rs.getString(3));
-                c.setNombre_especialidad(rs.getString(4));
-                c.setProd_present(rs.getInt(5));
-                c.setDetalle(rs.getString(6));
+                c.setDetalle(rs.getString(4));
                 lis.add(c);
             }
         } catch (Exception ex) {

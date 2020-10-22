@@ -25,8 +25,17 @@
         <servlet-class>servlet.GestionContenido</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>GestionPerfil</servlet-name>
         <servlet-class>servlet.GestionPerfil</servlet-class>
+=======
+        <servlet-name>GestionUsuario</servlet-name>
+        <servlet-class>servlet.GestionUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GestionVerUsuario</servlet-name>
+        <servlet-class>servlet.GestionVerUsuario</servlet-class>
+>>>>>>> e0214fa893412ef0a692b3c0f4b34af69a20d899
     </servlet>
     <servlet-mapping>
         <servlet-name>gestionUsuario</servlet-name>
@@ -53,8 +62,17 @@
         <url-pattern>/GestionContenido</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
         <servlet-name>GestionPerfil</servlet-name>
         <url-pattern>/GestionPerfil</url-pattern>
+=======
+        <servlet-name>GestionUsuario</servlet-name>
+        <url-pattern>/GestionUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionVerUsuario</servlet-name>
+        <url-pattern>/GestionVerUsuario</url-pattern>
+>>>>>>> e0214fa893412ef0a692b3c0f4b34af69a20d899
     </servlet-mapping>
     <session-config>
         <session-timeout>
