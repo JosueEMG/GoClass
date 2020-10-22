@@ -45,6 +45,7 @@ public class GestionUsuario extends HttpServlet {
     
     protected void listaUsuario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         UsuarioController uc = new UsuarioController();
         Gson g = new Gson();
@@ -53,6 +54,7 @@ public class GestionUsuario extends HttpServlet {
     
     protected void listaProfesor(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         HttpSession ses = request.getSession();
         int id = (int) ses.getAttribute("idCurso");
@@ -63,6 +65,7 @@ public class GestionUsuario extends HttpServlet {
     
     protected void listaAlumnos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         HttpSession ses = request.getSession();
         int id = (int) ses.getAttribute("idCurso");

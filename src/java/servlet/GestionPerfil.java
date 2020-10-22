@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import controlador.UsuarioController;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author Josue Emmanuel Medina Garcia
@@ -34,6 +35,9 @@ public class GestionPerfil extends HttpServlet {
         if (request.getParameter("funcion").equals("obtenerUsuario")) {
             obtenerUsuario(request, response);
         }
+        if (request.getParameter("funcion").equals("editarUsuario")) {
+            editarUsuario(request, response);
+        }
     }
     
     protected void obtenerUsuario(HttpServletRequest request, HttpServletResponse response)
@@ -44,6 +48,22 @@ public class GestionPerfil extends HttpServlet {
         PrintWriter out = response.getWriter();
         Gson gson = new Gson();
         out.print(gson.toJson(uc.getUser(dni)));
+    }
+    
+    protected void editarUsuario(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String fecha = request.getParameter("fecha");
+        String correo = request.getParameter("correo");
+        String sexo = request.getParameter("sexo");
+        UsuarioController uc = new UsuarioController();
+        PrintWriter out = response.getWriter();
+        HttpSession ses = request.getSession();
+        ses.setAttribute("nombre", nombre);
+        out.print(uc.changePersonalInformation(nombre, apellido, fecha, correo, sexo, idUsuario));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

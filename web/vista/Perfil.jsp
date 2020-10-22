@@ -1,13 +1,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "layouts/Cabecera.jsp"%>
 <%@include file = "layouts/Nav.jsp"%>
-<%    
-    if (ses.getAttribute("tipo") != null) {
-        String dni=(String)ses.getAttribute("dni");//castear
-        int idUsuario = (int)ses.getAttribute("idUsuario");
-        String nombre = (String)ses.getAttribute("nombre");
+<%    if (ses.getAttribute("tipo") != null) {
+        String dni = (String) ses.getAttribute("dni");//castear
+        int idUsuario = (int) ses.getAttribute("idUsuario");
+        String nombre = (String) ses.getAttribute("nombre");
 %>
 <input type="hidden" id="dni" value="<%=dni%>">
+<input type="hidden" id="idUsuario" value="<%=idUsuario%>">
 <title>UnitClass | Perfil</title>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Usuario: <%=nombre%></h1>
+                    <h1>Perfil de usuario</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -24,9 +24,8 @@
                     </ol>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
-
     <section class="content">
         <div class="contet">
             <div class="container-fluid">
@@ -40,16 +39,13 @@
                                         <img id="avatar" src="../img/PUJmv-Rr_400x400.jpg" class="profile-user-img img-fluid img-circle">
                                     </div>
                                 </div>
-                                <div class="text-center mt-1">
-                                    <button type="button" data-toggle="modal" data-target="#cambiophoto" class="btn btn-primary btn-sm">Cambiar avatar</button>
+                                <div class="text-center">
+                                    <button type="button" data-toggle="modal" data-target="#cambiophoto" class="btn btn-warning btn-sm mb-3">Cambiar avatar</button>
                                 </div>
-                                <input id="idUsuario" type="hidden" value="<%=idUsuario%>">
                                 <h3 id="nombre" class="profile-username text-center text-success">Barny</h3>
                                 <p id="apellido1" class="text-muted text-center">Trujillo</p>
-
                             </div>
                         </div>
-
                         <div class="card card-success">
                             <div class="card-header">
                                 <h3 class="card-title">Datos Personales</h3>
@@ -75,52 +71,47 @@
                                     <i class="fas fa-child mr-1"></i>Sexo:
                                 </strong>
                                 <p id="sexo" class="text-muted">Travesti</p>
+                                <div class="text-center mt-1">
+                                    <button id="activarEditar" class="btn btn-success">Editar datos</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9" id="editar">
                         <div class="card card-success">
                             <div class="card-header">
                                 <h3 class="card-title">Editar Datos Personales</h3>
                             </div>
                             <div class="card-body">
-                                <div class="alert alert-success text-center" id="editado" style="display:none;">
-                                    <span><i class="fas fa-check m-1"></i>Editado</span>
-                                </div>
-                                <div class="alert alert-danger text-center" id="noeditado" style="display:none;">
-                                    <span><i class="fas fa-times m-1"></i>Edicion deshabilitada</span>
-                                </div>
-                                <form id="form-usuario" class="form-horizontal">
+                                <form id="editarUsuario" class="form-horizontal">
                                     <div class="form-group row">
-                                        <label for="residencia" class="col-sm-2 col-form-label">Nombre:</label>
+                                        <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" id="Nombre" class="form-control">
+                                            <input type="text" id="Nombre" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="residencia" class="col-sm-2 col-form-label">Apellido:</label>
+                                        <label for="apellido" class="col-sm-2 col-form-label">Apellido:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" id="Apellido" class="form-control">
+                                            <input type="text" id="Apellido" class="form-control" required>
                                         </div>
                                     </div>                                     
-
                                     <div class="form-group row">
-                                        <label for="telefono" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
-
+                                        <label for="fecha" class="col-sm-2 col-form-label">Nacimiento:</label>
                                         <div class="col-sm-10">
-                                            <input  type="date" id="calendario" class="form-control">
+                                            <input  type="date" id="Fecha" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="correo" class="col-sm-2 col-form-label">Correo:</label>
                                         <div class="col-sm-10">
-                                            <input type="txt" id="correo" class="form-control">
+                                            <input type="txt" id="Correo" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
                                         <div class="col-sm-10">
-                                            <select name="sexo" id="sexo" class="form-control select2" style="width:100%">
+                                            <select name="sexo" id="Sexo" class="form-control select2" style="width:100%">
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                                 <option value="Otro">Otro</option>
@@ -129,7 +120,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="offset-sm-2 col-sm-10 float-right">
-                                            <button type="submit" class="btn btn-block btn-outline-success">Editar Datos</button>
+                                            <button type="submit" class="btn btn-block btn-outline-success">Guardar Datos</button>
                                         </div>
                                     </div>
                                 </form>
@@ -144,7 +135,6 @@
         </div>
     </section>
 </div>
-
 <%@include file = "layouts/Footer.jsp"%>
 <%
     } else {
@@ -152,3 +142,4 @@
     }
 %>
 <script src="../js/Perfil.js" type="text/javascript"></script>
+<script src="../js/toastr.min.js" type="text/javascript"></script>

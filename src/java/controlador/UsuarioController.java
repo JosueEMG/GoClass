@@ -301,7 +301,8 @@ public class UsuarioController {
         }
     }
     //Editar datos perssonales
-    public void changePersonalInformation(String nombre, String apellidos, String fechaNacimiento, String correo, String sexo, int idUsuario) {
+    public String changePersonalInformation(String nombre, String apellidos, String fechaNacimiento, String correo, String sexo, int idUsuario) {
+        String estado = "";
         Connection conn = null;
 
         try {
@@ -315,6 +316,7 @@ public class UsuarioController {
             st.setString(5, sexo);
             st.setInt(6, idUsuario);
             st.executeUpdate();
+            estado = "editado";
             //llenar el arraylist con la clase entidad
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -327,6 +329,7 @@ public class UsuarioController {
             } catch (Exception e2) {
             }
         }
+        return estado;
     }
     
     //ingresar usuario
