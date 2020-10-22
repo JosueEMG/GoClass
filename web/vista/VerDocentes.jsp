@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div id="usuarios" class="row d-flex aling-items-stretch">
+                                <div id="usuariosProfesor" class="row d-flex aling-items-stretch">
                                     
                                 </div>
                             </div>
@@ -50,4 +50,4 @@
         response.sendRedirect("Login.jsp");
     }
 %>
-<script src="../js/Usuario.js" type="text/javascript"></script>
+<script src="../js/VerDocentes.js" type="text/javascript"></script>

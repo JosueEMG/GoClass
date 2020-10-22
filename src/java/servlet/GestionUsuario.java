@@ -6,8 +6,6 @@
 package servlet;
 
 import com.google.gson.Gson;
-import controlador.CursoController;
-import controlador.InscripcionController;
 import controlador.UsuarioController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,12 +13,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Josue Emmanuel Medina Garcia
+ * @author Lenovo
  */
-public class GestionMisCursos extends HttpServlet {
+public class GestionUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,33 +32,43 @@ public class GestionMisCursos extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        if (request.getParameter("funcion").equals("listarMisCursos")) {
-            listarMisCursos(request, response);
-        }
-        if (request.getParameter("funcion").equals("lisGestionCurso")) {
-            lisGestionCurso(request, response);
-        }
+            if(request.getParameter("funcion").equals("listadoUsuarios")){
+                listaUsuario(request, response);
+            }
+            if(request.getParameter("funcion").equals("listadoProfesores")){
+                listaProfesor(request, response);
+            }
+            if(request.getParameter("funcion").equals("listadoAlumnos")){
+                listaAlumnos(request, response);
+            }
     }
     
-    protected void listarMisCursos(HttpServletRequest request, HttpServletResponse response)
+    protected void listaUsuario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        int id = Integer.parseInt(request.getParameter("idUsuario"));
         PrintWriter out = response.getWriter();
-        InscripcionController inscripcionController = new InscripcionController();
-        Gson gson = new Gson();
-        out.print(gson.toJson(inscripcionController.listaInscripciones(id)));
+        UsuarioController uc = new UsuarioController();
+        Gson g = new Gson();
+        out.print(g.toJson(uc.listaUsuarios()));
     }
     
-    protected void lisGestionCurso(HttpServletRequest request, HttpServletResponse response)
+    protected void listaProfesor(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        int idprofe = Integer.parseInt(request.getParameter("idProfesor"));
         PrintWriter out = response.getWriter();
-        CursoController cc = new CursoController();
-        Gson gson = new Gson();
-        out.print(gson.toJson(cc.lisGestionCurso(idprofe)));
+        HttpSession ses = request.getSession();
+        int id = (int) ses.getAttribute("idCurso");
+        UsuarioController uc = new UsuarioController();
+        Gson g = new Gson();
+        out.print(g.toJson(uc.listaUsuariosxCurso(id)));
+    }
+    
+    protected void listaAlumnos(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        HttpSession ses = request.getSession();
+        int id = (int) ses.getAttribute("idCurso");
+        UsuarioController uc = new UsuarioController();
+        Gson g = new Gson();
+        out.print(g.toJson(uc.listaAlumnoxCurso(id)));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

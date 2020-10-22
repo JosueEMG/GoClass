@@ -24,6 +24,14 @@
         <servlet-name>GestionContenido</servlet-name>
         <servlet-class>servlet.GestionContenido</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionUsuario</servlet-name>
+        <servlet-class>servlet.GestionUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GestionVerUsuario</servlet-name>
+        <servlet-class>servlet.GestionVerUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>gestionUsuario</servlet-name>
         <url-pattern>/gestionUsuario</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>GestionContenido</servlet-name>
         <url-pattern>/GestionContenido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionUsuario</servlet-name>
+        <url-pattern>/GestionUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionVerUsuario</servlet-name>
+        <url-pattern>/GestionVerUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

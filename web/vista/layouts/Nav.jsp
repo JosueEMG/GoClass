@@ -88,6 +88,9 @@
                             </a>
                         </li>
                         <!-- MIS CURSOS -->
+                        <% 
+                            if(tipo !=2){                            
+                        %>
                         <li class="nav-item">
                             <a href="MisCursos.jsp" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
@@ -98,6 +101,7 @@
                         </li>
                         <!-- CORREO -->
                         <%
+                            }
                             if (tipo != 3) {
                         %>
                         <li id="gestionCursos" class="nav-item">
@@ -110,6 +114,7 @@
                         </li>
                         <%
                             }
+                            if(tipo==1){
                         %>
                         <li class="nav-item">
                             <a href="Usuario.jsp" class="nav-link">
@@ -119,6 +124,9 @@
                                 </p>
                             </a>
                         </li>
+                        <%
+                            }
+                        %>
                         <!-- AYUDA -->
                         <li class="nav-item">
                             <a href="Ayuda.jsp" class="nav-link">

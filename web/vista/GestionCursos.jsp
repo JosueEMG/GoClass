@@ -432,7 +432,8 @@
                 </div>
             </div>
     </section>  
-    <section class="content">      
+    <section class="content"> 
+        <input type="hidden" id="idprofesor" value="<%=ses.getAttribute("idUsuario")%>">
         <div class="container-fluid">
             <div class="card card-success">
                 <div class="card-header">
@@ -445,22 +446,8 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="col-md-3" style="float:left">
-                        <div class="card mb-2">
-                            <img class="card-img-top" src="../img/imagenCardSlide/java_ban.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title">Programación Java</h4>
-                                <br>
-                                <hr>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.</p>
-                            </div>
-                            <div class="card-footer">
-                                <button type="button" class="btn btn-dark mx-1 my-1" data-toggle="modal" data-target="#modificar">Modificar</button>
-                                <a href="Cursos.jsp" class="btn btn-dark mx-1 my-1">Ver</a>
-                                <button type="button" class="btn btn-danger mx-1 my-1">Eliminar</button>
-                            </div>
-                        </div>
+                    <div id="gestioncurso" class="row d-flex aling-items-stretch">
+                   
                     </div>
                 </div>
             </div>
@@ -473,3 +460,4 @@
         response.sendRedirect("Login.jsp");
     }
 %>
+<script src="../js/GestionCurso.js" type="text/javascript"></script>
