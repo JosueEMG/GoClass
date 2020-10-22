@@ -14,6 +14,9 @@ $(document).ready(function () {
             let dni="";
             let correo="";
             let sexo="";    
+            let nacimiento = "";
+            let actual = new Date();
+           
             const usuario =  JSON.parse(response);
 
             if (usuario.id_tipo_us == 1) {
@@ -32,7 +35,10 @@ $(document).ready(function () {
             dni = usuario.dni_us;
             correo = usuario.correo_us;
             sexo = usuario.sexo_us;
-            
+            nacimiento = Date.parse(usuario.fecha_nacimiento);
+            let resta = actual.getTime() - nacimiento;
+            let edad = Math.round(resta/(1000*60*60*24)/365);
+            $("#edad").html(edad);
             $("#tipo").html(tipo);
             $("#avatar").attr("src", "../img/"+avatar);
             $("#nombre").html(nombre);

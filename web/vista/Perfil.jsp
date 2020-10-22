@@ -56,6 +56,10 @@
                             </div>
                             <div class="card-body">
                                 <strong style="color:#0B7300">
+                                    <i class="fas fa-birthday-cake  mr-1"></i>Edad:
+                                </strong>
+                                <p id="edad" class="text-muted">20</p>
+                                <strong style="color:#0B7300">
                                     <i class="fas fa-calendar  mr-1"></i>Fecha de Nacimiento:
                                 </strong>
                                 <p id="fecha" class="text-muted">12-12-2012</p>

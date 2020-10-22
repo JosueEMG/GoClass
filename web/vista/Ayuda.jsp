@@ -30,7 +30,6 @@
             <div class="card card-success">
                 <div class="card-header">
                     <h3 class="card-title">Soporte Tecnico</h3>
-
                 </div>
                 <div class="card-body">
                     <div id="usuarios" class="row d-flex aling-items-stretch">
@@ -51,8 +50,7 @@
                                             </ul>
                                         </div>
                                         <div class="col-5 text-center">
-
-                                            <img src="../img/unnamed.jpg" alt="" class="img-circle img-fluid">
+                                            <img src="../img/default.png" alt="" class="img-circle img-fluid">
                                         </div>
                                     </div>
                                 </div>
