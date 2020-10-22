@@ -24,6 +24,10 @@
         <servlet-name>GestionContenido</servlet-name>
         <servlet-class>servlet.GestionContenido</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionPerfil</servlet-name>
+        <servlet-class>servlet.GestionPerfil</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>gestionUsuario</servlet-name>
         <url-pattern>/gestionUsuario</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>GestionContenido</servlet-name>
         <url-pattern>/GestionContenido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionPerfil</servlet-name>
+        <url-pattern>/GestionPerfil</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
