@@ -8,7 +8,6 @@
 %>
 <title>UnitClass | Cursos</title>
 <input type="hidden" id="idCurso" value="<%=idCurso%>">
-<input type="hidden" id="nombreCurso" value="<%=nombreCurso%>">
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
