@@ -83,11 +83,11 @@ $(document).ready(function () {
             let sexo = $("#Sexo").val();
             $.post("../GestionPerfil", {idUsuario, nombre, apellido, fecha, correo, sexo, funcion}, (response) => {
                 if (response === "editado") {
-                    $("#Nombre").attr("readonly");
-                    $("#Apellido").attr("readonly");
-                    $("#Fecha").attr("readonly");
-                    $("#Correo").attr("readonly");
-                    $("#Sexo").attr("readonly");
+                    $("#Nombre").attr("readonly", true);
+                    $("#Apellido").attr("readonly", true);
+                    $("#Fecha").attr("readonly", true);
+                    $("#Correo").attr("readonly", true);
+                    $("#Sexo").attr("readonly", true);
                     successMessage();
                     $("#editarUsuario").trigger("reset");
                     obtenerUsuario();
@@ -114,7 +114,7 @@ $(document).ready(function () {
         $(document).Toasts('create', {
             class: 'bg-danger',
             title: 'Mensaje',
-            body: 'La edición está deshabilitada, precione boton editar'
+            body: 'Hubo un error al guardar los datos'
         })
     }
 });
