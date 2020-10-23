@@ -51,7 +51,7 @@
 
 <%
     } else {
-        response.sendRedirect("Home.jsp");
+        response.sendRedirect("index.jsp");
     }
 %>
 <script src="../js/Curso.js" type="text/javascript"></script>

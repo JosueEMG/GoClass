@@ -293,7 +293,7 @@
 
 <%
     } else {
-        response.sendRedirect("Home.jsp");
+        response.sendRedirect("index.jsp");
     }
 %>
 <script src="../js/Tienda.js" type="text/javascript"></script>

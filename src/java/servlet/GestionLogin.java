@@ -80,7 +80,7 @@ public class GestionLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession ses = request.getSession();
         ses.invalidate();
-        response.sendRedirect("../GoClass/vista/Home.jsp");
+        response.sendRedirect("../GoClass/vista/index.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

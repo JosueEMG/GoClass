@@ -1,65 +1,96 @@
 <%-- 
-    Document   : sesion
-    Created on : 15/10/2020, 09:19:44 AM
-    Author     : JuanCML
+    Document   : login
+    Created on : 23-oct-2020, 16:22:30
+    Author     : Josue Emmanuel Medina Garcia
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     HttpSession ses = request.getSession();
     if (ses.getAttribute("tipo") != null) {
-        response.sendRedirect("Tienda.jsp");
+        response.sendRedirect("Tienda");
     }
     else {
 %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>UnitClass | Sesión</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AdminLTE 3 | Log in</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--JQUERY-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-        <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-        <!-- Los iconos tipo Solid de Fontawesome-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-        <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
-        <!-- STYLESESION-->
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../css/css/all.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- icheck bootstrap -->
+        <link rel="stylesheet" href="../css/css/icheck-bootstrap.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../css/adminlte.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
         <link href="../css/cssSlider/styleSesion.css" rel="stylesheet" type="text/css"/>
-
-
     </head>
-    <body>
-        <div class="modal-dialog text-center">
-            <center>
-                <div class="col-sm-8 main-section">
-                <div class="modal-content">
-                    <div class="col-12 user-img">
-                        <img src="../img/unitclass_icon.png" th:src="@{imagenSesion/user_icon.png}"/>
-                    </div>
-                    <form action="../GestionLogin?opc=1" class="col-12" method="post">
-                        <h3 style="color: white">Login</h3>
-                        <div class="form-group" id="user-group">
-                            <input type="text" name="dni" class="form-control" placeholder="DNI"/>
-                        </div>
-                        <div class="form-group" id="contrasena-group">
-                            <input type="password" name="contrasena" class="form-control" placeholder="Contrasena"/>
-                        </div>
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
-                        <a href="Registro.jsp"><button type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i> Registrar </button></a>   
-                    </form>
-                </div>
+    <body class="hold-transition login-page body-img-chica-bonita">
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="index.jsp">
+                    <img class="img-circle"src="../img/unitclass_icon.png" alt=""/>
+                    <b>Unit</b>Class
+                </a>
             </div>
-            </center>
-            
+            <!-- /.login-logo -->
+            <div class="card">
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Ingrese sus datos para iniciar la sesion</p>
+                    <form action="../GestionLogin?opc=1" method="post">
+                        <div class="input-group mb-3">
+                            <input type="text" name="dni" class="form-control" placeholder="DNI">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" name="contrasena" class="form-control" placeholder="Contraseña">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <center>
+                            <div class="col-8">
+                                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                            </div>
+                        </center>
+                        <!-- /.col -->
+                    </form>
+                    <div class="social-auth-links text-center mb-3">
+                        <p>- O también -</p>
+                    </div>
+                    <p>
+                        <a href="Registro.jsp" class="text-center">Crear una cuenta</a>
+                    </p>
+                </div>
+                <!-- /.login-card-body -->
+            </div>
         </div>
+        <!-- /.login-box -->
 
-</body>
+        <!-- jQuery -->
+        <script src="../js/jquery-3.5.1.min.js" type="text/javascript"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <!-- AdminLTE App -->
+        <script src="../js/adminlte.min.js" type="text/javascript"></script>
+
+    </body>
 </html>
 <%
     }
 %>
+
