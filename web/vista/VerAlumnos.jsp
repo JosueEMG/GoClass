@@ -26,7 +26,7 @@
 
                 <section class="content">
                     <div class="container-fluid">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Busqueda de usuario:</h3>
                                 <div class="input-group">

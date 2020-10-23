@@ -10,7 +10,7 @@ $(document).ready(function () {
             let template = "";
             contenidos.forEach(contenido => {
                 template += `
-            <div class="card card-secondary">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Capitulo `+
                     (contador++)+

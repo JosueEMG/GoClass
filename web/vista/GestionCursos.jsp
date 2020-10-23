@@ -39,7 +39,7 @@
                         <textarea class="form-control" id="adicional" cols="0" rows="2"></textarea>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 1</h3>
 
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 2</h3>
 
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 3</h3>
 
@@ -134,7 +134,7 @@
                             <!-- /.card-footer-->
                         </div>
                     </div> <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 4</h3>
 
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 5</h3>
 
@@ -275,7 +275,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 2</h3>
 
@@ -307,7 +307,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 3</h3>
 
@@ -338,7 +338,7 @@
                             <!-- /.card-footer-->
                         </div>
                     </div> <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 4</h3>
 
@@ -370,7 +370,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 5</h3>
 
@@ -435,7 +435,7 @@
     <section class="content"> 
         <input type="hidden" id="idprofesor" value="<%=ses.getAttribute("idUsuario")%>">
         <div class="container-fluid">
-            <div class="card card-success">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Cursos Creados por Mí</h3>
                     <div class="card-tools">

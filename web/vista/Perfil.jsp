@@ -31,7 +31,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card card-success card-outline">
+                        <div class="card card-primary card-outline">
                             <div class="card-header text-muted border-bottom-0">
                                 <span id="tipo">Administrador</span>
                                 <div class="card-body box-profile"> 
@@ -42,43 +42,43 @@
                                 <div class="text-center">
                                     <button type="button" data-toggle="modal" data-target="#cambiophoto" class="btn btn-warning btn-sm mb-3">Cambiar avatar</button>
                                 </div>
-                                <h3 id="nombre" class="profile-username text-center text-success">Barny</h3>
+                                <h3 id="nombre" class="profile-username text-center" style="color:#170944">Barny</h3>
                                 <p id="apellido1" class="text-muted text-center">Trujillo</p>
                             </div>
                         </div>
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Datos Personales</h3>
                             </div>
                             <div class="card-body">
-                                <strong style="color:#0B7300">
+                                <strong style="color:#170944 ">
                                     <i class="fas fa-birthday-cake  mr-1"></i>Edad:
                                 </strong>
                                 <p id="edad" class="text-muted">20</p>
-                                <strong style="color:#0B7300">
+                                <strong style="color:#170944 ">
                                     <i class="fas fa-calendar  mr-1"></i>Fecha de Nacimiento:
                                 </strong>
                                 <p id="fecha" class="text-muted">12-12-2012</p>
-                                <strong style="color:#0B7300">
+                                <strong style="color:#170944 ">
                                     <i class="fas fa-user mr-1"></i>DNI:
                                 </strong>
                                 <p id="dni" class="text-muted">72185135</p>
-                                <strong style="color:#0B7300">
+                                <strong style="color:#170944 ">
                                     <i class="fas fa-at mr-1"></i>Correo:
                                 </strong>
                                 <p id="correo" class="text-muted">BarnyysusPutas@gaaa.com</p>
-                                <strong style="color:#0B7300">
+                                <strong style="color:#170944 ">
                                     <i class="fas fa-child mr-1"></i>Sexo:
                                 </strong>
                                 <p id="sexo" class="text-muted">Travesti</p>
                                 <div class="text-center mt-1">
-                                    <button id="activarEditar" class="btn btn-success">Editar datos</button>
+                                    <button id="activarEditar" class="btn btn-danger">Editar datos</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9" id="editar">
-                        <div class="card card-success">
+                    <div class="col-md-9">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Editar Datos Personales</h3>
                             </div>
@@ -87,31 +87,31 @@
                                     <div class="form-group row">
                                         <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" id="Nombre" class="form-control" required>
+                                            <input type="text" id="Nombre" class="form-control" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="apellido" class="col-sm-2 col-form-label">Apellido:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" id="Apellido" class="form-control" required>
+                                            <input type="text" id="Apellido" class="form-control" readonly>
                                         </div>
                                     </div>                                     
                                     <div class="form-group row">
                                         <label for="fecha" class="col-sm-2 col-form-label">Nacimiento:</label>
                                         <div class="col-sm-10">
-                                            <input  type="date" id="Fecha" class="form-control" required>
+                                            <input  type="date" id="Fecha" class="form-control" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="correo" class="col-sm-2 col-form-label">Correo:</label>
                                         <div class="col-sm-10">
-                                            <input type="txt" id="Correo" class="form-control" required>
+                                            <input type="txt" id="Correo" class="form-control" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
                                         <div class="col-sm-10">
-                                            <select name="sexo" id="Sexo" class="form-control select2" style="width:100%">
+                                            <select name="sexo" id="Sexo" class="form-control select2" style="width:100%" readonly>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                                 <option value="Otro">Otro</option>

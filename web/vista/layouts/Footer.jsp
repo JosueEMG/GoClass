@@ -1,5 +1,4 @@
 <footer class="main-footer">
-
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item d-none d-sm-inline-block">
@@ -11,13 +10,13 @@
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <button type="button" class="btn btn-dark">Enseña en GoClass</button>
+        <button type="button" class="btn btn-dark">Enseña en UnitClass</button>
     </ul>
     <hr>
     <div class="float-right d-none d-sm-block">
-        <b>Version</b> 0.1.8
+        <b>Version</b> 0.1.9
     </div>
-    <strong>Copyright &copy; 2020 <a href="http://GoClass.com">GoClass.com</a>.</strong> Todos los derechos reservados Los Packeros S.A.
+    <strong>Copyright &copy; 2020 <a href="http://UnitClass.com">UnitClass.com</a>.</strong> Todos los derechos reservados Los Packeros S.A.
 </footer>
 </div>
 <!-- ./wrapper -->

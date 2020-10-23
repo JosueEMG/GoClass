@@ -125,7 +125,7 @@
     <!-- LISTA DE CURSOS POR CATEGORIAS  -->
     <section class="content">
         <div class="container-fluid">
-            <div class="card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Programación</h3>
 
@@ -136,7 +136,7 @@
                 </div>
                 <div class="card-body" >
                     <div id="programacion" class="row d-flex aling-items-stretch">
-
+                         
                     </div>
                 </div>
                 <div class="card-footer">
@@ -146,7 +146,7 @@
     </section>  
     <section class="content">
         <div class="container-fluid">
-            <div class="card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Música</h3>
                     <div class="card-tools">
@@ -166,7 +166,7 @@
     </section>
     <section class="content">
         <div class="container-fluid">
-            <div class="card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Cocina</h3>
                     <div class="card-tools">
@@ -187,7 +187,7 @@
     </section>
     <section class="content">
         <div class="container-fluid">
-            <div class="card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Edición de Vídeo</h3>
                     <div class="card-tools">
@@ -208,7 +208,7 @@
     </section>
     <section class="content">
         <div class="container-fluid">
-            <div class="card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Historia</h3>
                     <div class="card-tools">
@@ -229,7 +229,7 @@
     </section>
     <section class="content">
         <div class="container-fluid">
-            <div class="card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Arte</h3>
                     <div class="card-tools">
@@ -245,7 +245,6 @@
                 <div class="card-footer">
                 </div> 
             </div>
-
         </div>
     </section>
     <!-- TABLA UNITCLASS  -->

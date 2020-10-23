@@ -85,8 +85,6 @@
                     <div class="row mb-1">
                         <div class="col-sm-6">
                             <h1>Tienda de Cursos</h1>
-
-                            <hr>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -134,7 +132,7 @@
             <!-- PROMOCIONES  -->
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Programación</h3>
 
@@ -155,7 +153,7 @@
             </section>  
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Música</h3>
                             <div class="card-tools">
@@ -175,7 +173,7 @@
             </section>
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Cocina</h3>
                             <div class="card-tools">
@@ -196,7 +194,7 @@
             </section>
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Edición de Vídeo</h3>
                             <div class="card-tools">
@@ -217,7 +215,7 @@
             </section>
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Historia</h3>
                             <div class="card-tools">
@@ -237,7 +235,7 @@
             </section>
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Arte</h3>
                             <div class="card-tools">

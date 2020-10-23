@@ -39,7 +39,7 @@
                 <div class="col-sm-8 main-section">
                 <div class="modal-content">
                     <div class="col-12 user-img">
-                        <img src="../img/imagenSesion/user_icon.png" th:src="@{imagenSesion/user_icon.png}"/>
+                        <img src="../img/unitclass_icon.png" th:src="@{imagenSesion/user_icon.png}"/>
                     </div>
                     <form action="../GestionLogin?opc=1" class="col-12" method="post">
                         <h3 style="color: white">Login</h3>

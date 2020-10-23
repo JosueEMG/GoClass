@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $("#editar").hide();
     var funcion = "";
+    var editar = false;
     var idUsuario = $("#idUsuario").val();
     var dni = $("#dni").val();
     obtenerUsuario();
@@ -54,46 +54,69 @@ $(document).ready(function () {
     }
 
     $("#activarEditar").on("click", e => {
-        $("#editar").show();
+        funcion = "obtenerUsuario";
+        $.post("../GestionPerfil", {funcion, dni}, (response) => {
+            const usuario = JSON.parse(response);
+            $("#Nombre").removeAttr("readonly");
+            $("#Apellido").removeAttr("readonly");
+            $("#Fecha").removeAttr("readonly");
+            $("#Correo").removeAttr("readonly");
+            $("#Sexo").removeAttr("readonly");
+
+            $("#Nombre").val(usuario.nombre_us);
+            $("#Apellido").val(usuario.apellidos_us);
+            $("#Fecha").val(usuario.fecha_nacimiento);
+            $("#Correo").val(usuario.correo_us);
+            $("#Sexo").val(usuario.sexo_us);
+        })
+        editar = true;
         e.preventDefault();
     });
 
     $("#editarUsuario").submit(e => {
-        funcion = "editarUsuario";
-        let nombre = $("#Nombre").val();
-        let apellido = $("#Apellido").val();
-        let fecha = $("#Fecha").val();
-        let correo = $("#Correo").val();
-        let sexo = $("#Sexo").val();
-        $.post("../GestionPerfil", {idUsuario ,nombre, apellido, fecha, correo, sexo, funcion}, (response) => {
-            if (response === "editado"){
-                $("#editar").hide();
-                successMessage();
-                obtenerUsuario();
-            }
-            else {
-                errorMessage();
-                $("#editarUsuario").trigger("reset");
-            }
-        })
-        
+        if (editar) {
+            funcion = "editarUsuario";
+            let nombre = $("#Nombre").val();
+            let apellido = $("#Apellido").val();
+            let fecha = $("#Fecha").val();
+            let correo = $("#Correo").val();
+            let sexo = $("#Sexo").val();
+            $.post("../GestionPerfil", {idUsuario, nombre, apellido, fecha, correo, sexo, funcion}, (response) => {
+                if (response === "editado") {
+                    $("#Nombre").attr("readonly");
+                    $("#Apellido").attr("readonly");
+                    $("#Fecha").attr("readonly");
+                    $("#Correo").attr("readonly");
+                    $("#Sexo").attr("readonly");
+                    successMessage();
+                    $("#editarUsuario").trigger("reset");
+                    obtenerUsuario();
+                    editar = false;
+                } else {
+                    errorMessage();
+                }
+            })
+        } else {
+            errorMessage();
+        }
+
         e.preventDefault();
     })
 
-    function successMessage(){
-       $(document).Toasts('create', {
-        class: 'bg-success', 
-        title: 'Mensaje',
-        body: 'Los datos fueron guardados con éxito'
-      }) 
-    } 
-    function errorMessage(){
-       $(document).Toasts('create', {
-        class: 'bg-danger', 
-        title: 'Mensaje',
-        body: 'Los datos no se guardaron'
-      }) 
-    } 
+    function successMessage() {
+        $(document).Toasts('create', {
+            class: 'bg-success',
+            title: 'Mensaje',
+            body: 'Los datos fueron guardados con éxito'
+        })
+    }
+    function errorMessage() {
+        $(document).Toasts('create', {
+            class: 'bg-danger',
+            title: 'Mensaje',
+            body: 'La edición está deshabilitada, precione boton editar'
+        })
+    }
 });
 
 

@@ -30,7 +30,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
                                 </div>
                             </div>
                         </div>`;
@@ -50,7 +50,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
                                 </div>
                             </div>
                         </div>`;
@@ -70,7 +70,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
                                 </div>
                             </div>
                         </div>`;
@@ -90,7 +90,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
                                 </div>
                             </div>
                         </div>`;
@@ -110,7 +110,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
                                 </div>
                             </div>
                         </div>`;
@@ -130,7 +130,7 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
                                 </div>
                             </div>
                         </div>`;

@@ -45,13 +45,11 @@
                     </div>
                 </div>
             </section>
-
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card card-success">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Soporte Tecnico</h3>
-
                         </div>
                         <div class="card-body">
                             <div id="usuarios" class="row d-flex aling-items-stretch">
@@ -91,9 +89,7 @@
                             </div>
                         </div>
                     </div>
-
             </section>
-
         </div>
     </body>
 </html>
