@@ -57,7 +57,7 @@
                      alt="UnitClass"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
-                <span class="brand-text font-weight-light">UnitoClass</span>
+                <span class="brand-text font-weight-light">UnitClass</span>
             </a>
             <!-- SIDEBAR -->
             <div class="sidebar">
