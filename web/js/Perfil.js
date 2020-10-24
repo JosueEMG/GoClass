@@ -102,19 +102,24 @@ $(document).ready(function () {
 
         e.preventDefault();
     })
-
+    
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    
     function successMessage() {
-        $(document).Toasts('create', {
-            class: 'bg-success',
-            title: 'Mensaje',
-            body: 'Los datos fueron guardados con éxito'
+        Toast.fire({
+            icon: 'success',
+            title: 'Cambios guardados con éxito'
         })
     }
     function errorMessage() {
-        $(document).Toasts('create', {
-            class: 'bg-danger',
-            title: 'Mensaje',
-            body: 'Hubo un error al guardar los datos'
+        Toast.fire({
+            icon: 'error',
+            title: 'Edición deshabilitada'
         })
     }
 });
