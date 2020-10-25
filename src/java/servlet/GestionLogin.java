@@ -39,6 +39,12 @@ public class GestionLogin extends HttpServlet {
         if (request.getParameter("opc").equals("2")) {
             cerrarSesion(request, response);
         }
+        if (request.getParameter("opc").equals("3")) {
+            checkUser(request, response);
+        }
+        if (request.getParameter("opc").equals("4")) {
+            register(request, response);
+        }
     }
     
     protected void login(HttpServletRequest request, HttpServletResponse response)
@@ -81,6 +87,41 @@ public class GestionLogin extends HttpServlet {
         HttpSession ses = request.getSession();
         ses.invalidate();
         response.sendRedirect("../GoClass/vista/index.jsp");
+    }
+    
+    protected void checkUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        UsuarioController uc = new UsuarioController();
+        usuario u = uc.getUser(request.getParameter("dni"));
+        
+        if (u != null) {
+            out.print("existe");
+        }
+        else {
+            out.print("noexiste");
+        }
+    }
+    protected void register(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        UsuarioController uc = new UsuarioController();
+        usuario u = new usuario();
+        u.setNombre_us(request.getParameter("nombre"));
+        u.setApellidos_us(request.getParameter("apellido"));
+        u.setFecha_nacimiento(request.getParameter("fecha"));
+        u.setDni_us(request.getParameter("dni"));
+        u.setContrasena_us(request.getParameter("contrasena"));
+        u.setCorreo_us(request.getParameter("correo"));
+        u.setSexo_us(request.getParameter("sexo"));
+        u.setAvatar("default.png");
+        u.setId_tipo_us(3);
+        uc.createUser(u);
+        
+            
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

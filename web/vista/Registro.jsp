@@ -44,9 +44,9 @@
             <div class="card">
                 <div class="card-body register-card-body">
                     <p class="login-box-msg">Ingrese valores a todos los campos</p>
-                    <form action="#" method="post">
+                    <form id="formulario">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Nombres" name="Nombres"/>
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombres" required/>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Apellidos" name="Nombres"/>
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellidos" required/>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="date" class="form-control" placeholder="nacimiento" name="nacimiento"/>
+                            <input type="date" id="fecha" class="form-control" placeholder="nacimiento" required/>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-calendar"></span>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Correo" name="Correo"/>
+                            <input type="text" id="correo" class="form-control" placeholder="Correo" required/>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="DNI" name="DNI"/>
+                            <input type="text" id="dni" class="form-control" placeholder="DNI" required/>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-credit-card"></span>
@@ -86,7 +86,11 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Contrasena" name="password"/>
+                            <select id="sexo" class="form-control"required>
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                                <option>Otro</option>
+                            </select>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
@@ -94,7 +98,15 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Confirmar contraseña" name="password"/>
+                            <input type="password" id="contrasena" class="form-control" placeholder="Contrasena" required/>
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" id="confirmar" class="form-control" placeholder="Confirmar contrasena" required/>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
@@ -109,9 +121,6 @@
                         </center>
                         <!-- /.col -->
                     </form>
-                    <div class="social-auth-links text-center mb-3">
-                        <p>- O también -</p>
-                    </div>
                     <p>
                         <a href="Login.jsp" class="text-center">Tengo una cuenta</a>
                     </p>
@@ -132,3 +141,38 @@
 <%
     }
 %>
+<script>
+    $(document).ready(function () {
+        
+        $("#formulario").submit((e)=>{
+            var nombre = $("#nombre").val();
+            var apellido = $("#apellido").val();
+            var fecha = $("#fecha").val();
+            var correo = $("#correo").val();
+            var dni = $("#dni").val();
+            var sexo = $("#sexo").val();
+            var contrasena = $("#contrasena").val();
+            var confirmarContrasena = $("#confirmar").val();
+            var opc = "3";
+            
+            if (contrasena === confirmarContrasena) {
+                $.post("../GestionLogin", {opc, dni}, (response) => {
+                    console.log(response);
+                    if (response == "noexiste") {
+                        opc = "4";
+                        $.post("../GestionLogin", {opc, nombre, apellido, fecha, correo, dni, sexo, contrasena}, (response) => {
+                            window.location = "Login.jsp"; 
+                        })
+                    }
+                    else {
+                        alert("El DNI ingresado ya se encuentra registrado")
+                    }
+                })
+            }
+            else {
+                alert("Las contraseñas no coinciden");
+            }
+            e.preventDefault();
+        })
+    })
+</script>

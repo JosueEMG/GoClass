@@ -71,41 +71,41 @@ public class UsuarioController {
                 st.setString(1, "%"+nombre+"%");
                 ResultSet rs = st.executeQuery();
                 //llenar el arraylist con la clase entidad
-            while (rs.next()) {
-                usuario a = new usuario();
-                a.setId_usuario(rs.getInt(1));
-                a.setNombre_us(rs.getString(2));
-                a.setApellidos_us(rs.getString(3));
-                a.setFecha_nacimiento(rs.getString(4));
-                a.setDni_us(rs.getString(5));
-                a.setCorreo_us(rs.getString(6));
-                a.setSexo_us(rs.getString(7));
-                a.setNombre_tipo_us(rs.getString(8));
-                a.setAvatar(rs.getString(9));
-                lis.add(a);
-            }
+                while (rs.next()) {
+                    usuario a = new usuario();
+                    a.setId_usuario(rs.getInt(1));
+                    a.setNombre_us(rs.getString(2));
+                    a.setApellidos_us(rs.getString(3));
+                    a.setFecha_nacimiento(rs.getString(4));
+                    a.setDni_us(rs.getString(5));
+                    a.setCorreo_us(rs.getString(6));
+                    a.setSexo_us(rs.getString(7));
+                    a.setNombre_tipo_us(rs.getString(8));
+                    a.setAvatar(rs.getString(9));
+                    lis.add(a);
+                }
             }
             else {
                 conn = MySQLConexion.getConexion();
-            String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
-            "from usuario u inner join tipo_us t\n" +
-            "on u.tipo_us = t.id_tipo_us";
-            PreparedStatement st = conn.prepareStatement(sql);
-            ResultSet rs = st.executeQuery();
-            //llenar el arraylist con la clase entidad
-            while (rs.next()) {
-                usuario a = new usuario();
-                a.setId_usuario(rs.getInt(1));
-                a.setNombre_us(rs.getString(2));
-                a.setApellidos_us(rs.getString(3));
-                a.setFecha_nacimiento(rs.getString(4));
-                a.setDni_us(rs.getString(5));
-                a.setCorreo_us(rs.getString(6));
-                a.setSexo_us(rs.getString(7));
-                a.setNombre_tipo_us(rs.getString(8));
-                a.setAvatar(rs.getString(9));
-                lis.add(a);
-            }
+                String sql = "select id_usuario ,nombre_us, apellidos_us, fecha_nacimiento, dni_us, correo_us, sexo_us, t.nombre_tipo, avatar\n" +
+                "from usuario u inner join tipo_us t\n" +
+                "on u.tipo_us = t.id_tipo_us";
+                PreparedStatement st = conn.prepareStatement(sql);
+                ResultSet rs = st.executeQuery();
+                //llenar el arraylist con la clase entidad
+                while (rs.next()) {
+                    usuario a = new usuario();
+                    a.setId_usuario(rs.getInt(1));
+                    a.setNombre_us(rs.getString(2));
+                    a.setApellidos_us(rs.getString(3));
+                    a.setFecha_nacimiento(rs.getString(4));
+                    a.setDni_us(rs.getString(5));
+                    a.setCorreo_us(rs.getString(6));
+                    a.setSexo_us(rs.getString(7));
+                    a.setNombre_tipo_us(rs.getString(8));
+                    a.setAvatar(rs.getString(9));
+                    lis.add(a);
+                }
             }
            
         } catch (Exception ex) {

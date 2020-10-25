@@ -42,7 +42,7 @@
                                 <div class="text-center">
                                     <button type="button" data-toggle="modal" data-target="#cambiophoto" class="btn btn-warning btn-sm mb-3">Cambiar avatar</button>
                                 </div>
-                                <h3 id="nombre" class="profile-username text-center" style="color:#170944">Barny</h3>
+                                <h3 id="nombre" class="profile-username text-center" style="color:#000000">Barny</h3>
                                 <p id="apellido1" class="text-muted text-center">Trujillo</p>
                             </div>
                         </div>
@@ -51,23 +51,23 @@
                                 <h3 class="card-title">Datos Personales</h3>
                             </div>
                             <div class="card-body">
-                                <strong style="color:#170944 ">
+                                <strong style="color:#000000">
                                     <i class="fas fa-birthday-cake  mr-1"></i>Edad:
                                 </strong>
                                 <p id="edad" class="text-muted">20</p>
-                                <strong style="color:#170944 ">
+                                <strong style="color:#000000">
                                     <i class="fas fa-calendar  mr-1"></i>Fecha de Nacimiento:
                                 </strong>
                                 <p id="fecha" class="text-muted">12-12-2012</p>
-                                <strong style="color:#170944 ">
+                                <strong style="color:#000000">
                                     <i class="fas fa-user mr-1"></i>DNI:
                                 </strong>
                                 <p id="dni" class="text-muted">72185135</p>
-                                <strong style="color:#170944 ">
+                                <strong style="color:#000000">
                                     <i class="fas fa-at mr-1"></i>Correo:
                                 </strong>
                                 <p id="correo" class="text-muted">BarnyysusPutas@gaaa.com</p>
-                                <strong style="color:#170944 ">
+                                <strong style="color:#000000">
                                     <i class="fas fa-child mr-1"></i>Sexo:
                                 </strong>
                                 <p id="sexo" class="text-muted">Travesti</p>
