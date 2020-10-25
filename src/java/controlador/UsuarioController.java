@@ -18,7 +18,7 @@ import util.MySQLConexion;
  */
 public class UsuarioController {
 
-    //listar usuarios
+    //listar usuarios normal
     public List<usuario> listaUsuarios() {
         List<usuario> lis = new ArrayList<>();
         Connection conn = null;
@@ -59,7 +59,7 @@ public class UsuarioController {
 
         return lis;
     }
-    
+       
     public usuario getUser(String dni) {
         usuario a = null;
         Connection conn = null;

@@ -41,15 +41,29 @@ public class GestionUsuario extends HttpServlet {
             if(request.getParameter("funcion").equals("listadoAlumnos")){
                 listaAlumnos(request, response);
             }
+            if(request.getParameter("funcion").equals("ascender")){
+                ascender(request, response);
+            }
+            if(request.getParameter("funcion").equals("descender")){
+                descender(request, response);
+            }
+            if(request.getParameter("funcion").equals("borrarUsuario")){
+                borrarUsuario(request, response);
+            }
     }
     
     protected void listaUsuario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String consulta = request.getParameter("consulta");
         PrintWriter out = response.getWriter();
         UsuarioController uc = new UsuarioController();
         Gson g = new Gson();
-        out.print(g.toJson(uc.listaUsuarios()));
+        if(consulta == null){
+            out.print(g.toJson(uc.listaUsuarios()));
+        }else{
+            out.print(g.toJson(uc.listaUsuarios(consulta)));
+        }
     }
     
     protected void listaProfesor(HttpServletRequest request, HttpServletResponse response)
@@ -73,6 +87,33 @@ public class GestionUsuario extends HttpServlet {
         Gson g = new Gson();
         out.print(g.toJson(uc.listaAlumnoxCurso(id)));
     }
+    
+    protected void ascender(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+        UsuarioController uc = new UsuarioController();
+        uc.updateUsuario(idUsuario);
+    }
+    
+    protected void descender(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+        UsuarioController uc = new UsuarioController();
+        uc.downgradeUsuario(idUsuario);
+    }
+    
+    protected void borrarUsuario(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+        UsuarioController uc = new UsuarioController();
+        uc.deleteUser(idUsuario);
+    }
+    
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
