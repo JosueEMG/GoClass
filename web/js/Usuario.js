@@ -73,7 +73,7 @@ $(document).ready(function(){
             $("#usuarios").html(template);
         })
     }
-     
+    console.log($("#valor").val());
     $(document).on("click", ".ascender", (e) => {
         const id = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
         const idUsuario = $(id).attr("usuarioid");

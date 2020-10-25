@@ -3,7 +3,9 @@
 <%@include file = "layouts/Nav.jsp"%>
 <%    
     if (ses.getAttribute("tipo") != null) {
+        if ((int)ses.getAttribute("tipo") == 1) {
 %>
+<input type="hidden" value="<%=(int)ses.getAttribute("tipo")%>" id="valor">
         <title>UnitClass | Usuario</title>
             <!--Este es el contenido de la pagina  -->
             <div class="content-wrapper">
@@ -46,6 +48,9 @@
 
 <%@include file = "layouts/Footer.jsp"%>
 <%
+        }else {
+            response.sendRedirect("index.jsp");
+        }
     } else {
         response.sendRedirect("index.jsp");
     }
