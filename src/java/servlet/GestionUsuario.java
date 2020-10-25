@@ -60,7 +60,7 @@ public class GestionUsuario extends HttpServlet {
         UsuarioController uc = new UsuarioController();
         Gson g = new Gson();
         if(consulta == null){
-            out.print(g.toJson(uc.listaUsuarios()));
+            out.print(g.toJson(uc.listaUsuarios(consulta)));
         }else{
             out.print(g.toJson(uc.listaUsuarios(consulta)));
         }

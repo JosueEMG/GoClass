@@ -21,11 +21,7 @@ public class prueba {
             System.out.println(p.getNombre());
         });*/
         
-        controlador.UsuarioController uc= new UsuarioController();
-        uc.listaUsuarios().forEach((p)->{
-            System.out.print(p.getNombre_us());
-        });
-        
+
     }
     
 }

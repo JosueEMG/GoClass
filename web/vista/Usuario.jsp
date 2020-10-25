@@ -51,3 +51,4 @@
     }
 %>
 <script src="../js/Usuario.js" type="text/javascript"></script>
+<script src="../js/sweetalert2.min.js" type="text/javascript"></script>

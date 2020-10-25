@@ -80,7 +80,9 @@ $(document).ready(function(){
         funcion = "ascender";
         
         $.post("../GestionUsuario", {idUsuario, funcion}, (response) => {
-            window.location="Usuario.jsp";
+            listadousuarios();
+            ascendidoMessage()
+            e.preventDefault();
         })
     })
     
@@ -90,7 +92,9 @@ $(document).ready(function(){
         funcion = "descender";
         
         $.post("../GestionUsuario", {idUsuario, funcion}, (response) => {
-            window.location="Usuario.jsp";
+            listadousuarios();
+            descendidoMessage();
+            e.preventDefault();
         })
     })
     
@@ -100,7 +104,9 @@ $(document).ready(function(){
         funcion = "borrarUsuario";
         
         $.post("../GestionUsuario", {idUsuario, funcion}, (response) => {
-            window.location="Usuario.jsp";
+            listadousuarios();
+            eliminadoMessage();
+            e.preventDefault();
         })
     })
     
@@ -114,5 +120,32 @@ $(document).ready(function(){
         }
         
     });
+    
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    
+    function ascendidoMessage() {
+        Toast.fire({
+            icon: 'success',
+            title: 'Usuario ascendido exitosamente'
+        })
+    }
+    function descendidoMessage() {
+        Toast.fire({
+            icon: 'success',
+            title: 'Usuario descendido exitosamente'
+        })
+    }
+    function eliminadoMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'Usuario eliminado exitosamente'
+        })
+    }
+
     
 })
