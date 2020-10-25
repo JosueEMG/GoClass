@@ -14,7 +14,6 @@ DROP PROCEDURE IF EXISTS AdicionContenido @@
 CREATE PROCEDURE AdicionContenido(archivo varchar(255), linkpag varchar(255))
 BEGIN
 declare nros int;
-declare fac char(8);
 select ifnull(max(id_contenido),0) + 1  from contenido_curso into nros;
 set idcon = nros;
 insert into contenido_curso values (idcon,idcur,archivo,linkpag);
