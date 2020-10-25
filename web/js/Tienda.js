@@ -16,7 +16,7 @@ $(document).ready(function () {
             cursos.forEach(curso=>{
                 switch (curso.id_especialidad) {
                     case 1: templateProgramacion += `
-                        <div idCurso=${curso.id_curso} class="col-md-3 mb-3" style="float:left">
+                        <div idCurso=${curso.id_curso} class="col-md-4 mb-2 d-flex" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="../img/imagenCardSlide/${curso.banner}" alt="Card image cap">
@@ -36,7 +36,7 @@ $(document).ready(function () {
                         </div>`;
                         break;
                     case 2: templateMusica += `
-                        <div idCurso=${curso.id_curso} class="col-md-3 mb-3" style="float:left">
+                        <div idCurso=${curso.id_curso} class="col-md-4 mb-2 d-flex" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="../img/imagenCardSlide/${curso.banner}" alt="Card image cap">
@@ -56,7 +56,7 @@ $(document).ready(function () {
                         </div>`;
                         break;
                     case 3: templateCocina += `
-                        <div idCurso=${curso.id_curso} class="col-md-3 mb-3" style="float:left">
+                        <div idCurso=${curso.id_curso} class="col-md-4 mb-2 d-flex" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="../img/imagenCardSlide/${curso.banner}" alt="Card image cap">
@@ -76,7 +76,7 @@ $(document).ready(function () {
                         </div>`;
                         break;
                     case 4: templateEdicion += `
-                        <div idCurso=${curso.id_curso} class="col-md-3 mb-3" style="float:left">
+                        <div idCurso=${curso.id_curso} class="col-md-4 mb-2 d-flex" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="../img/imagenCardSlide/${curso.banner}" alt="Card image cap">
@@ -96,7 +96,7 @@ $(document).ready(function () {
                         </div>`;
                         break;
                     case 5: templateHistoria += `
-                        <div idCurso=${curso.id_curso} class="col-md-3 mb-3" style="float:left">
+                        <div idCurso=${curso.id_curso} class="col-md-4 mb-2 d-flex" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="../img/imagenCardSlide/${curso.banner}" alt="Card image cap">
@@ -116,7 +116,7 @@ $(document).ready(function () {
                         </div>`;
                         break;
                     case 6: templateArte += `
-                        <div idCurso=${curso.id_curso} class="col-md-3 mb-3" style="float:left">
+                        <div idCurso=${curso.id_curso} class="col-md-4 mb-2 d-flex" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="../img/imagenCardSlide/${curso.banner}" alt="Card image cap">

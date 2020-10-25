@@ -31,7 +31,6 @@ $(document).ready(function () {
                         </center>
                     </section>
                 </div>
-                <!-- /.card-footer-->
             </div>`;
             })
             $("#contenido").html(template);
