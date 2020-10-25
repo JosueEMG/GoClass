@@ -142,4 +142,4 @@
     }
 %>
 <script src="../js/Perfil.js" type="text/javascript"></script>
-<script src="../js/toastr.min.js" type="text/javascript"></script>
+<script src="../js/sweetalert2.min.js" type="text/javascript"></script>

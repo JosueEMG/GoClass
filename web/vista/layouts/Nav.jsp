@@ -21,7 +21,8 @@
 
 <!-- STYLETABLE -->
 <link href="../css/css/stiletable.css" rel="stylesheet" type="text/css"/>
-
+<!-- SweetAlert2 -->
+<link href="../css/bootstrap-4.min.css" rel="stylesheet" type="text/css"/>
 <!-- STYLEBOX -->
 <link href="../css/cssSlider/styleBox.css" rel="stylesheet" type="text/css"/>
 
