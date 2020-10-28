@@ -28,5 +28,5 @@ jobs:
       with:
         app-name: 'goclass'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5562ecf7f0354f4092e5f1f7551734f5 }}
-        package: 'GoClass/.war'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_82ac028b50a048ca8be6cd47cdad8db5 }}
+        package: '${{ github.workspace }}/target/*.war'
