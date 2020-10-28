@@ -11,15 +11,10 @@ import util.MySQLConexion;
 public class prueba {
 
     public static void main(String[] args) {
-        /*controlador.ContenidoCursoController cc = new ContenidoCursoController();
-        cc.listarContenidoCurso(1).forEach((p)->{
-            System.out.println(p.getLink());
-            
-        });*/
-        /*controlador.InscripcionController ic = new InscripcionController();
-        ic.listaInscripciones(1).forEach((p)->{
-            System.out.println(p.getNombre());
-        });*/
+        controlador.UsuarioController uc = new  UsuarioController();
+        uc.listaUsuarios(null).forEach((u) -> {
+            System.out.println(u.getNombre_us());
+        });
         
 
     }
