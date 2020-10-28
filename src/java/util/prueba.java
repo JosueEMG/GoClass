@@ -15,9 +15,6 @@ public class prueba {
         uc.listaUsuarios(null).forEach((u) -> {
             System.out.println(u.getNombre_us());
         });
-        uc.listaUsuarios("Josue").forEach((user) -> {
-            System.out.println(user.getApellidos_us());
-        });
         
 
     }
