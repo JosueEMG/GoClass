@@ -62,7 +62,7 @@ public class GestionLogin extends HttpServlet {
         }
         else { 
             if (dni.equals("") || pass.equals("")){
-                pagina = "https://unitclass.azurewebsites.net/vista/Tienda.jsp";
+                pagina = "https://unitclass.azurewebsites.net/vista/Login.jsp";
             }
             else if (uc.userVerify(dni, pass)) {
                 u = uc.getUser(dni);
@@ -75,7 +75,7 @@ public class GestionLogin extends HttpServlet {
                 
             }
             else {
-                pagina = "https://unitclass.azurewebsites.net/vista/Tienda.jsp";
+                pagina = "https://unitclass.azurewebsites.net/vista/Login.jsp";
             }
         }
         response.sendRedirect(pagina);   
