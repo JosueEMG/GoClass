@@ -8,7 +8,7 @@
 <%
     HttpSession ses = request.getSession();
     if (ses.getAttribute("tipo") != null) {
-        response.sendRedirect("Tienda");
+        response.sendRedirect("https://unitclass.azurewebsites.net/vista/Tienda.jsp");
     }
     else {
 %>

@@ -293,7 +293,7 @@
 
 <%
     } else {
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
     }
 %>
 <script src="../js/Tienda.js" type="text/javascript"></script>

@@ -8,7 +8,7 @@
 <%
     HttpSession ses = request.getSession();
     if (ses.getAttribute("tipo") != null) {
-        response.sendRedirect("Tienda");
+        response.sendRedirect("https://goclass.azurewebsites.net/vista/Tienda.jsp");
     }
     else {
 %>
@@ -36,7 +36,7 @@
     <body class="hold-transition login-page body-img-chica-bonita">
         <div class="login-box">
             <div class="login-logo">
-                <a href="index.jsp">
+                <a href="https://unticlass.azurewebsites.net/vista/index.jsp">
                     <img class="img-circle"src="../img/unitclass_icon.png" alt=""/>
                     <b>Unit</b>Class
                 </a>
