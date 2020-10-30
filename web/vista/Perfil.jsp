@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="button" data-toggle="modal" data-target="#cambiophoto" class="btn btn-warning btn-sm mb-3">Cambiar avatar</button>
+                                    <button type="button" data-toggle="modal" data-target="#foto" class="btn btn-warning btn-sm mb-3">Cambiar avatar</button>
                                 </div>
                                 <h3 id="nombre" class="profile-username text-center" style="color:#000000">Barny</h3>
                                 <p id="apellido1" class="text-muted text-center">Trujillo</p>
@@ -135,6 +135,28 @@
         </div>
     </section>
 </div>
+
+<div class="modal fade" id="foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-toggle="modal"> 
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Seleccionar Imagen:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                      
+                    <input type="file" name="archivosubido">
+                   
+            </div>
+            <div class="modal-footer">
+             <input type="submit" value="Guardar Foto" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</div>
+
 <%@include file = "layouts/Footer.jsp"%>
 <%
     } else {
