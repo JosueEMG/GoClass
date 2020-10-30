@@ -9,6 +9,27 @@
 <input type="hidden" id="dni" value="<%=dni%>">
 <input type="hidden" id="idUsuario" value="<%=idUsuario%>">
 <title>UnitClass | Perfil</title>
+<!-- modal de cambio de avatar -->
+<div class="modal fade" id="foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-toggle="modal"> 
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Seleccionar Imagen:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <input type="file" name="archivosubido">                                     
+                </div>
+            </div>
+            <div class="modal-footer">
+             <input type="submit" value="Guardar Foto" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</div>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
     <section class="content-header">
@@ -135,28 +156,6 @@
         </div>
     </section>
 </div>
-
-<div class="modal fade" id="foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-toggle="modal"> 
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Seleccionar Imagen:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                      
-                    <input type="file" name="archivosubido">
-                   
-            </div>
-            <div class="modal-footer">
-             <input type="submit" value="Guardar Foto" class="btn btn-primary">
-            </div>
-        </div>
-    </div>
-</div>
-
 <%@include file = "layouts/Footer.jsp"%>
 <%
     } else {
