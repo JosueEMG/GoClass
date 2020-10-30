@@ -40,7 +40,8 @@ $(document).ready(function () {
         funcion = "idCurso";
         
         $.post("../GestionCurso", {idCurso, funcion}, (response) => {
-            window.location="VerAlumnos.jsp";
+            window.location="Usuario.jsp";
+            
         })          
     })
     

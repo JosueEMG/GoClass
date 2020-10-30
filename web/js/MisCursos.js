@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var funcion = "";
     var idUsuario = $("#idUsuario").val();
-    listarMisCursos()
+    listarMisCursos();
 
     function listarMisCursos() {
         funcion = "listarMisCursos";
@@ -51,7 +51,7 @@ $(document).ready(function () {
         funcion = "idCurso";
         
         $.post("../GestionCurso", {idCurso, funcion}, (response) => {
-            window.location="VerDocentes.jsp"; 
+            window.location="Usuario.jsp"; 
         })          
     })
     
