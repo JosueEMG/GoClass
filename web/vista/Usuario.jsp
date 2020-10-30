@@ -48,13 +48,8 @@
 
 <%@include file = "layouts/Footer.jsp"%>
 <%
-<<<<<<< HEAD
         }else {
             response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
-=======
-        }else{
-            response.sendRedirect("Tienda.jsp");
->>>>>>> bfb461090d098d1dd2168887d07556adde9c96a3
         }
     } else {
         response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
