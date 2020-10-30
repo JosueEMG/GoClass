@@ -35,12 +35,6 @@ public class GestionUsuario extends HttpServlet {
             if(request.getParameter("funcion").equals("listadoUsuarios")){
                 listaUsuario(request, response);
             }
-            if(request.getParameter("funcion").equals("listadoProfesores")){
-                listaProfesor(request, response);
-            }
-            if(request.getParameter("funcion").equals("listadoAlumnos")){
-                listaAlumnos(request, response);
-            }
             if(request.getParameter("funcion").equals("ascender")){
                 ascender(request, response);
             }
@@ -55,39 +49,41 @@ public class GestionUsuario extends HttpServlet {
     protected void listaUsuario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String consulta = request.getParameter("consulta");
         PrintWriter out = response.getWriter();
-        UsuarioController uc = new UsuarioController();
-        Gson g = new Gson();
-        if(consulta == null){
-            out.print(g.toJson(uc.listaUsuarios(consulta)));
-        }else{
-            out.print(g.toJson(uc.listaUsuarios(consulta)));
+        HttpSession ses = request.getSession();
+        int tipo = (int) ses.getAttribute("tipo");
+        String consulta = request.getParameter("consulta");
+        if(tipo==1){                     
+            UsuarioController uc = new UsuarioController();
+            Gson g = new Gson();
+            if(consulta == null){
+                out.print(g.toJson(uc.listaUsuarios(consulta)));
+            }else{
+                out.print(g.toJson(uc.listaUsuarios(consulta)));
+            }
+        }
+        if(tipo==2){
+            int id = (int) ses.getAttribute("idCurso");
+            UsuarioController uc = new UsuarioController();
+            Gson g = new Gson();           
+            if(consulta == null){
+                out.print(g.toJson(uc.listaUsuariosxCurso(id, consulta, tipo)));
+            }else{
+                out.print(g.toJson(uc.listaUsuariosxCurso(id, consulta, tipo)));
+            }        
+        }
+        if(tipo==3){
+            int id = (int) ses.getAttribute("idCurso");
+            UsuarioController uc = new UsuarioController();
+            Gson g = new Gson();
+            if(consulta == null){
+                out.print(g.toJson(uc.listaUsuariosxCurso(id, consulta, tipo)));
+            }else{
+                out.print(g.toJson(uc.listaUsuariosxCurso(id, consulta, tipo)));
+            }
         }
     }
-    
-    protected void listaProfesor(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        HttpSession ses = request.getSession();
-        int id = (int) ses.getAttribute("idCurso");
-        UsuarioController uc = new UsuarioController();
-        Gson g = new Gson();
-        out.print(g.toJson(uc.listaUsuariosxCurso(id)));
-    }
-    
-    protected void listaAlumnos(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        HttpSession ses = request.getSession();
-        int id = (int) ses.getAttribute("idCurso");
-        UsuarioController uc = new UsuarioController();
-        Gson g = new Gson();
-        out.print(g.toJson(uc.listaAlumnoxCurso(id)));
-    }
-    
+        
     protected void ascender(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

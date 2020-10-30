@@ -3,7 +3,7 @@
 <%@include file = "layouts/Nav.jsp"%>
 <%    
     if (ses.getAttribute("tipo") != null) {
-        if ((int)ses.getAttribute("tipo") == 1) {
+        if(ses.getAttribute("idCurso")!=null){
 %>
 <input type="hidden" value="<%=(int)ses.getAttribute("tipo")%>" id="valor">
         <title>UnitClass | Usuario</title>
@@ -48,8 +48,13 @@
 
 <%@include file = "layouts/Footer.jsp"%>
 <%
+<<<<<<< HEAD
         }else {
             response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
+=======
+        }else{
+            response.sendRedirect("Tienda.jsp");
+>>>>>>> bfb461090d098d1dd2168887d07556adde9c96a3
         }
     } else {
         response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");

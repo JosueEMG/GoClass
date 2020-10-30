@@ -12,7 +12,7 @@ public class prueba {
 
     public static void main(String[] args) {
         controlador.UsuarioController uc = new  UsuarioController();
-        uc.listaUsuarios(null).forEach((u) -> {
+        uc.listaUsuariosxCurso(1,null, 2).forEach((u) -> {
             System.out.println(u.getNombre_us());
         });
         

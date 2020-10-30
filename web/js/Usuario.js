@@ -1,6 +1,7 @@
 $(document).ready(function(){
     listadousuarios();
-
+    var tipo = $("#valor").val();
+    
     function listadousuarios(consulta){
         var funcion = "listadoUsuarios";     
         $.post("../GestionUsuario", {consulta, funcion}, (response) => {
@@ -22,6 +23,12 @@ $(document).ready(function(){
                             } 
                             if(u.nombre_tipo_us ===("Estudiante")){
                                 template += `<h1 class="badge badge-primary">${u.nombre_tipo_us}</h1>`;
+                            }
+                            if(tipo==2){
+                                template += `<h1 class="badge badge-primary">Estudiante</h1>`;
+                            }
+                            if(tipo==3){
+                                template += `<h1 class="badge badge-danger">Docente</h1>`;
                             }
                             template += `
                             </div>
@@ -45,23 +52,25 @@ $(document).ready(function(){
                             </div>
                             <div class="card-footer">
                                 <div class="text-right">`;
-                                if (u.nombre_tipo_us != "Root"){
-                                    template += `
-                                    <button class="borrar-usuario btn btn-danger m-1" type="button" data-toggle="modal" data-target="#confirmar">
-                                        <i class="fas fa-window-close mr-1"></i>Eliminar
-                                    </button>`;
-                                }
-                                if (u.nombre_tipo_us ===("Docente")){
-                                    template += `
-                                    <button class="descender btn btn-secondary m-1" type="button" data-toggle="modal" data-target="#confirmar">
-                                        <i class="fas fa-sort-amount-down mr-1"></i>Descender
-                                    </button>`;
-                                }
-                                if (u.nombre_tipo_us ===("Estudiante")){
-                                    template += `
-                                    <button class="ascender btn btn-primary m-1" type="button" data-toggle="modal" data-target="#confirmar">
-                                        <i class="fas fa-sort-amount-up mr-1"></i>Ascender
-                                    </button>`;
+                                if(tipo==1){
+                                    if (u.nombre_tipo_us != "Root"){
+                                        template += `
+                                        <button class="borrar-usuario btn btn-danger m-1" type="button" data-toggle="modal" data-target="#confirmar">
+                                            <i class="fas fa-window-close mr-1"></i>Eliminar
+                                        </button>`;
+                                    }
+                                    if (u.nombre_tipo_us ===("Docente")){
+                                        template += `
+                                        <button class="descender btn btn-secondary m-1" type="button" data-toggle="modal" data-target="#confirmar">
+                                            <i class="fas fa-sort-amount-down mr-1"></i>Descender
+                                        </button>`;
+                                    }
+                                    if (u.nombre_tipo_us ===("Estudiante")){
+                                        template += `
+                                        <button class="ascender btn btn-primary m-1" type="button" data-toggle="modal" data-target="#confirmar">
+                                            <i class="fas fa-sort-amount-up mr-1"></i>Ascender
+                                        </button>`;
+                                    }
                                 }
                                 template += `
                                 </div>
@@ -73,7 +82,7 @@ $(document).ready(function(){
             $("#usuarios").html(template);
         })
     }
-    console.log($("#valor").val());
+
     $(document).on("click", ".ascender", (e) => {
         const id = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
         const idUsuario = $(id).attr("usuarioid");
