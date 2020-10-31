@@ -91,7 +91,7 @@
                         </li>
                         <!-- MIS CURSOS -->
                         <%
-                            if(tipo!=2){
+                            if(tipo == 3){
                         %>
                         <li class="nav-item">
                             <a href="MisCursos.jsp" class="nav-link">
@@ -104,7 +104,7 @@
                         <!-- CORREO -->
                         <%
                             }
-                            if (tipo != 3) {
+                            if (tipo == 2) {
                         %>
                         <li id="gestionCursos" class="nav-item">
                             <a href="GestionCursos.jsp" class="nav-link">
@@ -116,7 +116,7 @@
                         </li>
                         <%
                             }
-                            if(tipo==1){
+                            if(tipo == 1){
                         %>
                         <li class="nav-item">
                             <a href="Usuario.jsp" class="nav-link">
