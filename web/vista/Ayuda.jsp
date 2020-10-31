@@ -195,6 +195,6 @@
 <%@include file = "layouts/Footer.jsp"%>
 <%
     } else {
-        response.sendRedirect("https://goclass.azurewebsites.net/vista/index.jsp");
+        response.sendRedirect("index.jsp");
     }
 %>

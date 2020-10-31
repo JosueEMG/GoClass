@@ -452,10 +452,10 @@
 <%@include file = "layouts/Footer.jsp"%>
 <%
         }else {
-            response.sendRedirect("https://unitclass.azurewebsites.net/vista/Tienda.jsp");
+            response.sendRedirect("Tienda.jsp");
         }
     } else {
-        response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
+        response.sendRedirect("index.jsp");
     }
 %>
 <script src="../js/GestionCurso.js" type="text/javascript"></script>

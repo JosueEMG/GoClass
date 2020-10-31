@@ -58,11 +58,11 @@ public class GestionLogin extends HttpServlet {
       
     
         if (ses.getAttribute("tipo") != null) {
-            pagina = "https://unitclass.azurewebsites.net/vista/Tienda.jsp";
+            pagina = "../GoClass/vista/Tienda.jsp";
         }
         else { 
             if (dni.equals("") || pass.equals("")){
-                pagina = "https://unitclass.azurewebsites.net/vista/Login.jsp";
+                pagina = "../GoClass/vista/Login.jsp";
             }
             else if (uc.userVerify(dni, pass)) {
                 u = uc.getUser(dni);
@@ -71,11 +71,11 @@ public class GestionLogin extends HttpServlet {
                 ses.setAttribute("dni", u.getDni_us());
                 ses.setAttribute("tipo", u.getId_tipo_us());
                 ses.setAttribute("avatar", u.getAvatar());
-                pagina = "https://unitclass.azurewebsites.net/vista/Tienda.jsp";
+                pagina = "../GoClass/vista/Tienda.jsp";
                 
             }
             else {
-                pagina = "https://unitclass.azurewebsites.net/vista/Login.jsp";
+                pagina = "../GoClass/vista/Login.jsp";
             }
         }
         response.sendRedirect(pagina);   
@@ -86,7 +86,7 @@ public class GestionLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession ses = request.getSession();
         ses.invalidate();
-        response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
+        response.sendRedirect("../GoClass/vista/index.jsp");
     }
     
     protected void checkUser(HttpServletRequest request, HttpServletResponse response)

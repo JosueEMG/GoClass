@@ -159,7 +159,7 @@
 <%@include file = "layouts/Footer.jsp"%>
 <%
     } else {
-        response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
+        response.sendRedirect("index.jsp");
     }
 %>
 <script src="../js/Perfil.js" type="text/javascript"></script>
