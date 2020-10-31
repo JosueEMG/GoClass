@@ -5,7 +5,7 @@
     if (ses.getAttribute("tipo") != null) {
         if ((int)ses.getAttribute("tipo") == 2) {
 %>
-<title>UnitClass | Mis Cursos</title>
+<title>UnitClass | Gestion Cursos</title>
 <!-- MODAL Añadir -->
 <div class="modal fade bd-example-modal-lg" id="añadir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">

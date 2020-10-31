@@ -5,7 +5,7 @@
     if (ses.getAttribute("tipo") != null) {
 %>
 <input type="hidden" value="<%=(int)ses.getAttribute("tipo")%>" id="valor">
-        <title>UnitClass | Usuario</title>
+        <title>UnitClass | Usuarios</title>
             <!--Este es el contenido de la pagina  -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->

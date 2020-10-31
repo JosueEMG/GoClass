@@ -4,7 +4,7 @@
 <%    
     if (ses.getAttribute("tipo") != null) {
 %>
-<title>UnitClass | Lista Cursos</title>
+<title>UnitClass | Tienda</title>
 <!--Este es el contenido de la pagina  -->
 <!-- MODAL -->
 <input type="hidden" id="tipo" value="<%=(int)ses.getAttribute("tipo")%>">
