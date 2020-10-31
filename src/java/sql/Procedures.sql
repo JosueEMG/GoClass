@@ -9,13 +9,16 @@ insert into curso values (idcur,nombrec,precio,banner,idesp,idusuario,detalle,in
 END@@
 
 DROP PROCEDURE IF EXISTS AdicionContenido @@
-CREATE PROCEDURE AdicionContenido(archivo varchar(255), linkpag varchar(255))
+CREATE PROCEDURE AdicionContenido(idcurso int,archivo varchar(255), linkpag varchar(255))
 BEGIN
 declare idcon int;
 set idcon = (select max(id_contenido) + 1  from contenido_curso);
-insert into contenido_curso values (idcon,idcur,archivo,linkpag);
+insert into contenido_curso values (idcon,idcurso,archivo,linkpag);
 END@@
 DELIMITER ;
 
 USE goclass;
 call AdicionCurso('Curso prueba',25, 'prueba.png', 1, 4, "Prueba de detalle", 30);
+
+use goclass;
+call AdicionContenido(1,'prueba.pdf','www.prueba.com');
