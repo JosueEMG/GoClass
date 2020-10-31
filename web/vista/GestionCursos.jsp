@@ -31,8 +31,8 @@
                     <div class="form-group">
                         <label id="especialidad">Especialidad:</label>
                         <select id="especialidadCurso" name="especialidadCurso" class="form-control select2" style="width: 100%">
-                            <option>Poner Espermas</option>
-                            <option>Pajeros</option>
+                            <option>Elegir</option>
+                            <option>Proximamente</option>
                         </select>        
                     </div>
                     <div class="form-group">

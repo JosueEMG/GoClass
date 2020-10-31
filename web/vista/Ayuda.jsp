@@ -38,15 +38,16 @@
                                 <div class="card-header text-muted border-bottom-0"><h1 class="badge badge-success">Soporte</h1>
                                 </div>
                                 <div class="card-body pt-0">
+                                    
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="lead"><b>Chupetin Trujillo</b></h2>
+                                            <h2 class="lead"><b>Gean Pieer Lopez</b></h2>
                                             <br>
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
 
                                                 <li class="small-box-footer"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Telefono: 987654321</li>
-                                                <li class="small-box-footer"><span class="fa-li"><i class="fas fa-lg fa-at"></i></span> Correo: Pajeros@gaa.com</li>
-                                                <li class="small-box-footer"><span class="fa-li"><i class="fas fa-lg fa-child"></i></span> Sexo: Indeterminado</li>
+                                                <li class="small-box-footer"><span class="fa-li"><i class="fas fa-lg fa-at"></i></span> Correo: JPLZ@gmail.com</li>
+                                                <li class="small-box-footer"><span class="fa-li"><i class="fas fa-lg fa-child"></i></span> Sexo: Masculino</li>
                                             </ul>
                                         </div>
                                         <div class="col-5 text-center">
@@ -60,11 +61,13 @@
                                             <i class="fas fa-microphone mr-1"></i>LLamar
                                         </button>
                                     </div>
+                                    
                                 </div>
 
                             </div>
 
                         </div>
+                        
                     </div>
                 </div>
             </div>
