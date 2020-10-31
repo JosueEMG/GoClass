@@ -9,19 +9,24 @@ import modelo.*;
  * @author JuanG
  */
 public class GestionDeCursos {
-        public void AgregarContenido(contenido_curso a) {
+        public void AgregarCursoYcontenido(String nomc,double precio,String banner,int idespec, int idusuario, String detalle, int inscripciones) {
+          String idcurso=""; 
           Connection conn = null;
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "{call sp_adicion(?,?,?,?)}";
-            //? =equivale a un parametro 
-            CallableStatement st = conn.prepareCall(sql);
-            //relacionar el ? con su variable 
-            st.setInt(1, a.getId_contenido());
-            st.setInt(2, a.getId_curso());
-            st.setString(3, a.getArchivo());
-            st.setString(4, a.getLink());
+            CallableStatement st = conn.prepareCall("{call adicioncurso(?,?,?,?,?,?,?)}");
+            st.setString(1, nomc);
+            st.setDouble(2, precio);
+            st.setString(3, banner);
+            st.setInt(4, idespec);
+            st.setInt(5, idusuario);
+            st.setString(6, detalle);
+            st.setInt(7, inscripciones);
             st.executeUpdate();
+            //grabar el material
+            CallableStatement st2=conn.prepareCall("{call adicioncontenido(?,?,?,?)}");
+            
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
