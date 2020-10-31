@@ -7,6 +7,7 @@
 <title>UnitClass | Lista Cursos</title>
 <!--Este es el contenido de la pagina  -->
 <!-- MODAL -->
+<input type="hidden" id="tipo" value="<%=(int)ses.getAttribute("tipo")%>">
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

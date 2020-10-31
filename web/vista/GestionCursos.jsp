@@ -3,7 +3,7 @@
 <%@include file = "layouts/Nav.jsp"%>
 <%    
     if (ses.getAttribute("tipo") != null) {
-        if ((int)ses.getAttribute("tipo") == 1 || (int)ses.getAttribute("tipo") == 2) {
+        if ((int)ses.getAttribute("tipo") == 2) {
 %>
 <title>UnitClass | Mis Cursos</title>
 <!-- MODAL Añadir -->
@@ -452,7 +452,7 @@
 <%@include file = "layouts/Footer.jsp"%>
 <%
         }else {
-            response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");
+            response.sendRedirect("https://unitclass.azurewebsites.net/vista/Tienda.jsp");
         }
     } else {
         response.sendRedirect("https://unitclass.azurewebsites.net/vista/index.jsp");

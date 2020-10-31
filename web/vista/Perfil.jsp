@@ -57,14 +57,14 @@
                                 <span id="tipo">Administrador</span>
                                 <div class="card-body box-profile"> 
                                     <div class="text-center">
-                                        <img id="avatar" src="../img/PUJmv-Rr_400x400.jpg" class="profile-user-img img-fluid img-circle">
+                                        <img id="avatar" src="../img/default.png" class="profile-user-img img-fluid img-circle">
                                     </div>
                                 </div>
                                 <div class="text-center">
                                     <button type="button" data-toggle="modal" data-target="#foto" class="btn btn-warning btn-sm mb-3">Cambiar avatar</button>
                                 </div>
-                                <h3 id="nombre" class="profile-username text-center" style="color:#000000">Barny</h3>
-                                <p id="apellido1" class="text-muted text-center">Trujillo</p>
+                                <h3 id="nombre" class="profile-username text-center" style="color:#000000">Usuario</h3>
+                                <p id="apellido1" class="text-muted text-center">Usuario</p>
                             </div>
                         </div>
                         <div class="card card-primary">
@@ -87,11 +87,11 @@
                                 <strong style="color:#000000">
                                     <i class="fas fa-at mr-1"></i>Correo:
                                 </strong>
-                                <p id="correo" class="text-muted">BarnyysusPutas@gaaa.com</p>
+                                <p id="correo" class="text-muted">user@gmail.com</p>
                                 <strong style="color:#000000">
                                     <i class="fas fa-child mr-1"></i>Sexo:
                                 </strong>
-                                <p id="sexo" class="text-muted">Travesti</p>
+                                <p id="sexo" class="text-muted">Masculino</p>
                                 <div class="text-center mt-1">
                                     <button id="activarEditar" class="btn btn-danger">Editar datos</button>
                                 </div>

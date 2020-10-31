@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var funcion = "";
+    var tipo = $("#tipo").val();
     listarCursos();
     
     function listarCursos() {
@@ -30,7 +31,12 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    `
+                                    if (tipo == 3 || tipo == "nulo") {
+                                        templateProgramacion += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                    }
+                                    templateProgramacion += 
+                                    `
                                 </div>
                             </div>
                         </div>`;
@@ -50,7 +56,12 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    `
+                                    if (tipo == 3 || tipo == "nulo") {
+                                        templateMusica += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                    }
+                                    templateMusica += 
+                                    `
                                 </div>
                             </div>
                         </div>`;
@@ -70,7 +81,12 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    `
+                                    if (tipo == 3 || tipo == "nulo") {
+                                        templateCocina += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                    }
+                                    templateCocina += 
+                                    `
                                 </div>
                             </div>
                         </div>`;
@@ -90,7 +106,12 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    `
+                                    if (tipo == 3 || tipo == "nulo") {
+                                        templateEdicion += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                    }
+                                    templateEdicion += 
+                                    `
                                 </div>
                             </div>
                         </div>`;
@@ -110,7 +131,12 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    `
+                                    if (tipo == 3 || tipo =="nulo") {
+                                        templateHistoria += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                    }
+                                    templateHistoria += 
+                                    `
                                 </div>
                             </div>
                         </div>`;
@@ -130,7 +156,12 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                                    `
+                                    if (tipo == 3 || tipo == "nulo") {
+                                        templateArte += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                    }
+                                    templateArte += 
+                                    `
                                 </div>
                             </div>
                         </div>`;

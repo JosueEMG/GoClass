@@ -12,6 +12,7 @@
     } else {
 %>
 <!DOCTYPE html>
+<input type="hidden" id="tipo" value="nulo">
 <html lang="en">
     <head>
         <meta charset="utf-8">
