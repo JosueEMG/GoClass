@@ -15,7 +15,7 @@
             </div>
             <div class="modal-body">
                 <div class="text-center m-3">
-                    <h3 id="nombre_logo">Programación Java</h3>
+                    <h3 id="nombre_logo">Ingresar curso</h3>
                 </div>
                 <form id="form-editar-curso" class="form-horizontal">  
                     <div class="form-row">
@@ -31,8 +31,7 @@
                     <div class="form-group">
                         <label id="especialidad">Especialidad:</label>
                         <select id="especialidadCurso" name="especialidadCurso" class="form-control select2" style="width: 100%">
-                            <option>Elegir</option>
-                            <option>Proximamente</option>
+                            
                         </select>        
                     </div>
                     <div class="form-group">
@@ -43,31 +42,19 @@
                         <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 1</h3>
-
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
                                         <i class="fas fa-times"></i></button>
-
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 1" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 1" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ingrese primer video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
@@ -75,31 +62,19 @@
                         <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 2</h3>
-
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
                                         <i class="fas fa-times"></i></button>
-
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 2" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 2" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ingrese segundo video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
@@ -117,21 +92,11 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 3" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 3" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ingrese tercer video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div> <div class="form-group">
@@ -148,21 +113,11 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 4" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 4" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ingrese cuarto video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
@@ -180,21 +135,11 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 5" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 5" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Ingrese quinto video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
@@ -219,59 +164,46 @@
             </div>
             <div class="modal-body">
                 <div class="text-center m-3">
-                    <h3 id="nombre_logo">Programación Java</h3>
+                    <h3 id="nombre_curso">Programación Java</h3>
                 </div>
                 <form id="form-editar-curso" class="form-horizontal">  
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label id="nombre">Nombre:</label>
-                            <input type="text" id="nombreCurso" class="form-control" placeholder="Ingrese Nombre del Curso">
+                            <label>Nombre:</label>
+                            <input type="text" id="nombreCurso1" class="form-control" placeholder="Ingrese Nombre del Curso">
                         </div>
                         <div class="form-group col-md-6">
-                            <label id="precio">Precio:</label>
-                            <input type="text" id="precioCurso" class="form-control" placeholder="Ingrese el Precio">
+                            <label>Precio:</label>
+                            <input type="text" id="precioCurso1" class="form-control" placeholder="Ingrese el Precio">
                         </div>
                     </div>                                     
                     <div class="form-group">
                         <label id="especialidad">Especialidad:</label>
-                        <select id="especialidadCurso" name="especialidadCurso" class="form-control select2" style="width: 100%">
-                            <option>Poner Espermas</option>
-                            <option>Pajeros</option>
+                        <select id="especialidadCurso1" name="especialidadCurso1" class="form-control select2" style="width: 100%">
+                            
                         </select>        
                     </div>
                     <div class="form-group">
-                        <label id="detalle">Descripción:</label>
-                        <textarea class="form-control" id="adicional" cols="0" rows="2"></textarea>
+                        <label>Descripción:</label>
+                        <textarea class="form-control" id="adicional1" cols="0" rows="2"></textarea>
                     </div>
                     <div class="form-group">
-                        <div class="card card-success">
+                        <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 1</h3>
-
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
                                         <i class="fas fa-times"></i></button>
-
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 1" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 1" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" id="cap1" class="form-control" placeholder="Ingrese primer video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
@@ -279,31 +211,19 @@
                         <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">Capitulo 2</h3>
-
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
                                         <i class="fas fa-times"></i></button>
-
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 2" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 2" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" id="cap2" class="form-control" placeholder="Ingrese segundo video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
@@ -321,21 +241,11 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 3" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 3" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" id="cap3" class="form-control" placeholder="Ingrese tercer video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div> <div class="form-group">
@@ -352,21 +262,11 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 4" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 4" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" id="cap4" class="form-control" placeholder="Ingrese cuarto video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
@@ -384,25 +284,14 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: block;">
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir Video 5" />
-                                </form>
-                                <br>
-                                <br>
-                                <form enctype="multipart/form-data" method="POST">
-                                    <input name="uploadedfile" type="file" />
-                                    <input type="submit" value="Subir PDF 5" />
-                                </form>
+                                <div class="form-group">
+                                    <input type="text" id="cap5" class="form-control" placeholder="Ingrese quinto video">
+                                </div>
                                 <!-- /.card-body -->
                             </div>
-                            <div class="card-footer">
-
-                            </div> 
                             <!-- /.card-footer-->
                         </div>
                     </div>
-
                 </form>  
             </div>
             <!-- CONTENIDO -->

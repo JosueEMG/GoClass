@@ -7,6 +7,7 @@ package servlet;
 
 import com.google.gson.Gson;
 import controlador.CursoController;
+import controlador.EspecialidadController;
 import controlador.InscripcionController;
 import controlador.UsuarioController;
 import java.io.IOException;
@@ -40,6 +41,9 @@ public class GestionMisCursos extends HttpServlet {
         if (request.getParameter("funcion").equals("lisGestionCurso")) {
             lisGestionCurso(request, response);
         }
+        if (request.getParameter("funcion").equals("listarEspecialidad")) {
+            listarEspecialidad(request, response);
+        }
     }
     
     protected void listarMisCursos(HttpServletRequest request, HttpServletResponse response)
@@ -50,6 +54,15 @@ public class GestionMisCursos extends HttpServlet {
         InscripcionController inscripcionController = new InscripcionController();
         Gson gson = new Gson();
         out.print(gson.toJson(inscripcionController.listaInscripciones(id)));
+    }
+    
+    protected void listarEspecialidad(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        EspecialidadController e = new EspecialidadController();
+        Gson gson = new Gson();
+        out.print(gson.toJson(e.lisEspe())); // response
     }
     
     protected void lisGestionCurso(HttpServletRequest request, HttpServletResponse response)

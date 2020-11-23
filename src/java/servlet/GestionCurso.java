@@ -5,6 +5,9 @@
  */
 package servlet;
 
+import com.google.gson.Gson;
+import controlador.ContenidoCursoController;
+import controlador.CursoController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import modelo.curso;
 
 /**
  *
@@ -37,6 +41,12 @@ public class GestionCurso extends HttpServlet {
         if(request.getParameter("funcion").equals("idCurso")) {
             idCurso(request, response);
         }
+        if(request.getParameter("funcion").equals("obtenerCurso")) {
+            obtenerCurso(request, response);
+        }
+        if(request.getParameter("funcion").equals("obtenerContenido")) {
+            obtenerContenido(request, response);
+        }
     }
     protected void verContenido(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,12 +57,33 @@ public class GestionCurso extends HttpServlet {
         ses.setAttribute("idCurso", idCurso);
         ses.setAttribute("nombreCurso", nombreCurso);
     }
+    
     protected void idCurso(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession ses = request.getSession();
         int idCurso = Integer.parseInt(request.getParameter("idCurso"));
         ses.setAttribute("idCurso", idCurso);
+    }
+    
+    protected void obtenerCurso(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+        CursoController c = new CursoController();
+        curso cur = c.getCurso(idCurso);
+        Gson gson = new Gson();
+        out.print(gson.toJson(cur));
+    }
+    protected void obtenerContenido(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+        ContenidoCursoController c = new ContenidoCursoController();
+        Gson gson = new Gson();
+        out.print(gson.toJson(c.listarContenidoCurso(idCurso)));
     }
 
 

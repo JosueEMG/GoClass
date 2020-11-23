@@ -1,6 +1,7 @@
 package util;
 import controlador.ContenidoCursoController;
 import controlador.CursoController;
+import controlador.EspecialidadController;
 import controlador.FacturaController;
 import controlador.InscripcionController;
 import controlador.UsuarioController;
@@ -11,10 +12,13 @@ import util.MySQLConexion;
 public class prueba {
 
     public static void main(String[] args) {
-        controlador.UsuarioController uc = new  UsuarioController();
-        uc.listaUsuariosxCurso(1,null, 2).forEach((u) -> {
-            System.out.println(u.getNombre_us());
+        controlador.ContenidoCursoController c = new ContenidoCursoController();
+        
+        c.listarContenidoCurso(1).forEach((p)->{
+            System.out.println(p.getLink());
         });
+        
+        
         
 
     }

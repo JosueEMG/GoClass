@@ -191,4 +191,39 @@ public class CursoController {
             }
         }
     }
+    
+    public curso getCurso(int id) {
+        curso c = null;
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select id_curso, nombre, precio, id_especialidad, id_usuario, detalle_curso \n" +
+            "from curso where id_curso = ?;";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+            //llenar el arraylist con la clase entidad
+            if (rs.next()) {
+                c = new curso();
+                c.setId_curso(rs.getInt(1));
+                c.setNombre(rs.getString(2));
+                c.setPrecio(rs.getDouble(3));
+                c.setId_especialidad(rs.getInt(4));
+                c.setId_usuario(rs.getInt(5));
+                c.setDetalle(rs.getString(6));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return c;
+    }
 }

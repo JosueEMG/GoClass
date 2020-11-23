@@ -1,9 +1,26 @@
 $(document).ready(function () {
-    var idProfesor = $("#idprofesor").val();
-    listarGestionCurso()
+    let idProfesor = $("#idprofesor").val();
+    listarGestionCurso();
+    listarEspecialidad();
+    
+    function listarEspecialidad() {
+        let funcion = "listarEspecialidad";
+        $.post("../GestionMisCursos", {funcion}, (response)=> {
+            const especialidades = JSON.parse(response);
+            let template = "";
+            template = `<option value="0" selected>Elegir</option>`;
+            especialidades.forEach(especialidad =>{
+                template += `
+                    <option value="${especialidad.id_especialidad}">${especialidad.nombre}</option>
+                `
+            })
+            $("#especialidadCurso").html(template);
+            $("#especialidadCurso1").html(template);
+        })
+    }
 
     function listarGestionCurso() {
-        var funcion = "lisGestionCurso";
+        let funcion = "lisGestionCurso";
         $.post("../GestionMisCursos", {funcion, idProfesor}, (response) => {
             const gestion = JSON.parse(response);
             let template = "";
@@ -19,12 +36,12 @@ $(document).ready(function () {
                                 <p class="card-text text-justify">${g.detalle}</p>
                             </div>
                             <div class="card-footer" nombreCurso="${g.nombre}">
-                            <div class="col text-center">
-                                <button type="button" class="btn btn-dark mx-1 my-1" data-toggle="modal" data-target="#modificar">Modificar</button>
-                                <button type="button" class="ver btn btn-dark mx-1 my-1">Ver contenido</button>
-                                <button type="button" class="btn btn-danger mx-1 my-1">Eliminar</button>
-                                <button class="alumnos btn btn-dark mx-1 my-1">Ver Alumnos</button>
-                            </div>
+                                <div class="col text-center">
+                                    <button type="button" class="modificar btn btn-dark mx-1 my-1" data-toggle="modal" data-target="#modificar">Modificar</button>
+                                    <button type="button" class="ver btn btn-dark mx-1 my-1">Ver contenido</button>
+                                    <button type="button" class="btn btn-danger mx-1 my-1">Eliminar</button>
+                                    <button class="alumnos btn btn-dark mx-1 my-1">Ver Alumnos</button>
+                                </div>
                             </div>
                         </div>
                     </div>`;
@@ -41,7 +58,6 @@ $(document).ready(function () {
         
         $.post("../GestionCurso", {idCurso, funcion}, (response) => {
             window.location="Usuario.jsp";
-            
         })          
     })
     
@@ -56,6 +72,33 @@ $(document).ready(function () {
             window.location="Curso.jsp";
         })
               
+    })
+    
+    $(document).on("click", ".modificar", (e)=>{
+        const elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
+        const idCurso = $(elemento).attr("idCurso");
+        funcion = "obtenerCurso";
+        
+        $.post("../GestionCurso", {funcion, idCurso}, (response)=>{
+            const curso = JSON.parse(response);
+            $("#nombre_curso").html(curso.nombre);
+            $("#nombreCurso1").val(curso.nombre);
+            $("#precioCurso1").val(curso.precio);
+            $("#especialidadCurso1").val(curso.id_especialidad);
+            $("#adicional1").val(curso.detalle);
+        })
+        
+        funcion = "obtenerContenido"
+        $.post("../GestionCurso", {funcion, idCurso}, (response)=>{
+            const contenido = JSON.parse(response);
+            let i = 0;
+            contenido.forEach(c=>{
+                i++;
+                $("#cap"+i).val(c.link);
+            })
+            
+        })
+        
     })
     
     
