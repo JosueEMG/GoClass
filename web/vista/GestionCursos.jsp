@@ -1,8 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "layouts/Cabecera.jsp"%>
 <%@include file = "layouts/Nav.jsp"%>
+<%@page import="modelo.*"%>
+<%@page import="controlador.Cb_especialidad"%>
 <%    
     if (ses.getAttribute("tipo") != null) {
+        Cb_especialidad obj = new Cb_especialidad();
+        int cod = 0;
         if ((int)ses.getAttribute("tipo") == 2) {
 %>
 <title>UnitClass | Gestion Cursos</title>
