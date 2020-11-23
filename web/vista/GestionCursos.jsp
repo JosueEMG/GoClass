@@ -1,8 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "layouts/Cabecera.jsp"%>
 <%@include file = "layouts/Nav.jsp"%>
+<%@page import="modelo.*"%>
+<%@page import="controlador.Cb_especialidad"%>
 <%    
     if (ses.getAttribute("tipo") != null) {
+        Cb_especialidad obj = new Cb_especialidad();
+        int cod = 0;
         if ((int)ses.getAttribute("tipo") == 2) {
 %>
 <title>UnitClass | Gestion Cursos</title>
@@ -15,7 +19,7 @@
             </div>
             <div class="modal-body">
                 <div class="text-center m-3">
-                    <h3 id="nombre_logo">Programación Java</h3>
+                    <h3 id="nombre_logo">Añadir Curso</h3>
                 </div>
                 <form id="form-editar-curso" class="form-horizontal">  
                     <div class="form-row">
@@ -31,9 +35,18 @@
                     <div class="form-group">
                         <label id="especialidad">Especialidad:</label>
                         <select id="especialidadCurso" name="especialidadCurso" class="form-control select2" style="width: 100%">
-                            <option>Elegir</option>
-                            <option>Proximamente</option>
-                        </select>        
+                            <option value="">Elegir</option>
+                            <%
+                                for (especialidad e: obj.listaEspecialidades()) {
+                                    if(e.getId_especialidad()==cod) {
+                                        out.print("<option value="+e.getId_especialidad()+" selected>"+e.getNombre()+"</option>");
+                                    }
+                                    else {
+                                        out.print("<option value="+e.getId_especialidad()+">"+e.getNombre()+"</option>");
+                                    }
+                                } 
+                            %>
+                        </select>       
                     </div>
                     <div class="form-group">
                         <label id="detalle">Descripción:</label>
