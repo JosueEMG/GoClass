@@ -21,7 +21,7 @@
                 <div class="text-center m-3">
                     <h3 id="nombre_logo">Ingresar curso</h3>
                 </div>
-                <form action="../GestionAgreModiCurso?opc=2" method="post">  
+                <form name="fr" action="../GestionAgreModiCurso" method="post" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label id="nombre">Nombre:</label>
@@ -155,29 +155,17 @@
                 </form>  
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                <button type="submit" class="btn btn-success" data-dismiss="modal" onclick="valida()">Aceptar</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
-<script>
-	$(document).ready(function() {
-		$('#submit').click(function(event) {
-			var nombreVar = $('#nombre').val();
-			var apellidoVar = $('#apellido').val();
-			var edadVar = $('#edad').val();
-			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
-			$.post('ActionServlet', {
-				nombre : nombreVar,
-				apellido: apellidoVar,
-				edad: edadVar
-			}, function(responseText) {
-				$('#tabla').html(responseText);
-			});
-		});
-	});
-</script>
+            <script>
+                function valida(){
+                        fr.submit();    
+                }
+            </script>
 <!-- MODAL Modificar -->
 <div class="modal fade bd-example-modal-lg" id="modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
