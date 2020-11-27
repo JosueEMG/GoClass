@@ -21,27 +21,32 @@
                 <div class="text-center m-3">
                     <h3 id="nombre_logo">Ingresar curso</h3>
                 </div>
-                <form id="form-editar-curso" class="form-horizontal">  
+                <form action="../GestionAgreModiCurso?opc=2" method="post">  
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label id="nombre">Nombre:</label>
-                            <input type="text" id="nombreCurso" class="form-control" placeholder="Ingrese Nombre del Curso">
+                            <input type="text" id="nombreCurso" class="form-control" placeholder="Ingrese Nombre del Curso" name="nomc">
                         </div>
                         <div class="form-group col-md-6">
                             <label id="precio">Precio:</label>
-                            <input type="text" id="precioCurso" class="form-control" placeholder="Ingrese el Precio">
+                            <input type="text" id="precioCurso" class="form-control" placeholder="Ingrese el Precio" name="prec">
                         </div>
-                    </div>                                     
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label id="banner">Banner:</label>
+                            <input type="text" id="bannern" class="form-control" placeholder="Ingrese Nombre del banner" name="baner">
+                    </div>
                     <div class="form-group">
                         <label id="especialidad">Especialidad:</label>
-                        <select id="especialidadCurso" name="especialidadCurso" class="form-control select2" style="width: 100%">
+                        <select id="especialidadCurso" name="especialidadCurso" class="form-control select2" style="width: 100%" name="cbesp">
                             
                         </select>        
                     </div>
                     <div class="form-group">
                         <label id="detalle">Descripción:</label>
-                        <textarea class="form-control" id="adicional" cols="0" rows="2"></textarea>
+                        <textarea class="form-control" id="adicional" cols="0" rows="2" name="descri"></textarea>
                     </div>
+                    
                     <div class="form-group">
                         <div class="card card-primary">
                             <div class="card-header">
@@ -55,7 +60,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese primer video">
+                                    <input type="text" class="form-control" placeholder="Ingrese primer video" name="video1">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -75,7 +80,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese segundo video">
+                                    <input type="text" class="form-control" placeholder="Ingrese segundo video" name="video2">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -97,7 +102,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese tercer video">
+                                    <input type="text" class="form-control" placeholder="Ingrese tercer video" name="video3">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -118,7 +123,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese cuarto video">
+                                    <input type="text" class="form-control" placeholder="Ingrese cuarto video" name="video4">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -140,7 +145,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese quinto video">
+                                    <input type="text" class="form-control" placeholder="Ingrese quinto video" name="video5">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -150,12 +155,29 @@
                 </form>  
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                <button type="submit" class="btn btn-success" data-dismiss="modal">Aceptar</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+	$(document).ready(function() {
+		$('#submit').click(function(event) {
+			var nombreVar = $('#nombre').val();
+			var apellidoVar = $('#apellido').val();
+			var edadVar = $('#edad').val();
+			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+			$.post('ActionServlet', {
+				nombre : nombreVar,
+				apellido: apellidoVar,
+				edad: edadVar
+			}, function(responseText) {
+				$('#tabla').html(responseText);
+			});
+		});
+	});
+</script>
 <!-- MODAL Modificar -->
 <div class="modal fade bd-example-modal-lg" id="modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
