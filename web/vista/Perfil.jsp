@@ -6,6 +6,11 @@
         int idUsuario = (int) ses.getAttribute("idUsuario");
         String nombre = (String) ses.getAttribute("nombre");
 %>
+        <%
+            String mensaje="";
+            if(request.getAttribute("dato")!=null)
+            mensaje=(String)request.getAttribute("dato");
+        %>
 <input type="hidden" id="dni" value="<%=dni%>">
 <input type="hidden" id="idUsuario" value="<%=idUsuario%>">
 <title>UnitClass | Perfil</title>
@@ -19,17 +24,32 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form name="fr" action="../GestionSube" method="post" enctype="multipart/form-data">
             <div class="modal-body">
                 <div class="text-center">
-                    <input type="file" name="archivosubido">                                     
+                    <input type="file" name="file">
                 </div>
             </div>
             <div class="modal-footer">
-             <input type="submit" value="Guardar Foto" class="btn btn-primary">
+                <input type="button" value="GuardarFoto" class="btn btn-primary" onclick="subir()">
             </div>
+            </form>
         </div>
     </div>
 </div>
+            <script>
+                function subir(){
+                    archivo=fr.file.value;
+                   // alert(archivo);
+                   n=archivo.length;
+                   tipo=archivo.substring(n-3,n);
+                   if(tipo=="jpg" || tipo=="gif")
+                       fr.submit();
+                   else
+                       alert("solo jpg o gif");
+                }
+
+            </script>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
     <section class="content-header">
