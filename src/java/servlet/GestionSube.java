@@ -33,7 +33,7 @@ public class GestionSube extends HttpServlet {
               File file=new File(arch,item.getName());
               item.write(file);
           }
-           request.setAttribute("dato", "Archivo subido ok!!!");
+           request.setAttribute("dato", "Imagen subida con exito");
         }catch(Exception ex){
             request.setAttribute("dato", ex.getMessage());
         }
