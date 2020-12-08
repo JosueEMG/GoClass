@@ -43,46 +43,19 @@ public class SubirImagen extends HttpServlet {
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(1024);
         factory.setRepository(new File(arch));
+        String ruta = "";
         ServletFileUpload upload = new ServletFileUpload(factory);
         try {
             List<FileItem> partes = upload.parseRequest(request);
             for (FileItem item : partes) {
                 File file = new File(arch, item.getName());
                 item.write(file);
+                out.print(arch);
             }
-
-            request.setAttribute("dato", "Imagen subida con exito");
         } catch (Exception ex) {
             request.setAttribute("dato", ex.getMessage());
         }
-        String pagina = "../GoClass/vista/Perfil.jsp";
-        response.sendRedirect(pagina); 
         
-    }
-
-    protected void subir(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        String arch = "C:\\Users\\Josue\\Desktop\\UTP\\Ciclo 6\\Desarrollo web integrado\\GoClass\\web\\Archivos";
-        String directorio = "";
-        DiskFileItemFactory factory = new DiskFileItemFactory();
-        factory.setSizeThreshold(1024);
-        factory.setRepository(new File(arch));
-        ServletFileUpload upload = new ServletFileUpload(factory);
-        try {
-            List<FileItem> partes = upload.parseRequest(request);
-            for (FileItem item : partes) {
-                File file = new File(arch, item.getName());
-                item.write(file);
-                directorio += file.getPath();
-            }
-
-            request.setAttribute("dato", "Imagen subida con exito");
-        } catch (Exception ex) {
-            request.setAttribute("dato", ex.getMessage());
-        }
-        out.print(directorio);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

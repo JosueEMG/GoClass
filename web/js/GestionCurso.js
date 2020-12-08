@@ -101,6 +101,41 @@ $(document).ready(function () {
         
     })
     
+    $("#form-agregar-curso").submit(e => {
+        let nombreCurso = $("#nombreCurso").val();
+        let precioCurso = $("#precioCurso").val();
+        let especialidadCurso = $("#especialidadCurso").val();
+        let descripcionCurso = $("#descripcionCurso").val();
+        let video1 = $("#video1").val();
+        let video2 = $("#video2").val();
+        let video3 = $("#video3").val();
+        let video4 = $("#video4").val();
+        let video5 = $("#video5").val();
+        
+        
+        e.preventDefault();
+    })
+    
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
+    
+    function errorMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'Solo se permite archivos con formato jpg o gif'
+        })
+    }
+    
+    function successMessage() {
+        Toast.fire({
+            icon: 'success',
+            title: 'La imagen se subió con éxito'
+        })
+    }
     
 })   
 

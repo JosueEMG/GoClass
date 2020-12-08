@@ -4,20 +4,36 @@ $(document).ready(function () {
     var idUsuario = $("#idUsuario").val();
     var dni = $("#dni").val();
     obtenerUsuario();
-
-    $("#cambiar-foto").on("click", (e) => {
+    
+    $(document).on("click", "#cambiar-foto", (e) => {
         let archivo = $("#file").val();
         let n =  archivo.length;
         let tipo = archivo.substring(n - 3, n);
-        funcion = "subir";
+        //funcion = "subir";
+        console.log(archivo);
+        var data = new FormData();
+        $.each($('#file')[0].files, function(i, file) {
+            data.append('file-'+i, file);
+        });
         if (tipo == "jpg" || tipo == "gif"){
-            fr.submit();
-            successUpload();
+            $.ajax({
+                url: '../SubirImagen',
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
+                type: 'POST', // For jQuery < 1.9
+                success: function(data){
+                    alert(data);
+                }
+            });
         }
         else {
             errorUploadMessage();
         }
     })
+
     
     function obtenerUsuario() {
         funcion = "obtenerUsuario";

@@ -21,7 +21,7 @@
                 <div class="text-center m-3">
                     <h3 id="nombre_logo">Ingresar curso</h3>
                 </div>
-                <form name="fr" action="../GestionAgreModiCurso" method="post" enctype="multipart/form-data">
+                <form id="form-agregar-curso">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label id="nombre">Nombre:</label>
@@ -32,10 +32,10 @@
                             <input type="text" id="precioCurso" class="form-control" placeholder="Ingrese el Precio" name="prec">
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <!--<div class="form-group col-md-6">
                             <label id="banner">Banner:</label>
-                            <input type="text" id="bannern" class="form-control" placeholder="Ingrese Nombre del banner" name="baner">
-                    </div>
+                            <input type="file" id="bannerCurso" class="form-control" placeholder="Ingrese Nombre del banner" name="baner">
+                    </div>-->
                     <div class="form-group">
                         <label id="especialidad">Especialidad:</label>
                         <select id="especialidadCurso" name="especialidadCurso" class="form-control select2" style="width: 100%" name="cbesp">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label id="detalle">Descripción:</label>
-                        <textarea class="form-control" id="adicional" cols="0" rows="2" name="descri"></textarea>
+                        <textarea class="form-control" id="descripcionCurso" cols="0" rows="2" name="descri"></textarea>
                     </div>
                     
                     <div class="form-group">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese primer video" name="video1">
+                                    <input type="text" id="video1" class="form-control" placeholder="Ingrese primer video" name="video1">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese segundo video" name="video2">
+                                    <input type="text" id="video2" class="form-control" placeholder="Ingrese segundo video" name="video2">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese tercer video" name="video3">
+                                    <input type="text" id="video3" class="form-control" placeholder="Ingrese tercer video" name="video3">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese cuarto video" name="video4">
+                                    <input type="text" id="video4" class="form-control" placeholder="Ingrese cuarto video" name="video4">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -145,27 +145,23 @@
                             </div>
                             <div class="card-body" style="display: block;">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Ingrese quinto video" name="video5">
+                                    <input type="text" id="video5" class="form-control" placeholder="Ingrese quinto video" name="video5">
                                 </div>
                                 <!-- /.card-body -->
                             </div>
                             <!-- /.card-footer-->
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="añadir-curso btn btn-success">Aceptar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </form>  
             </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-success" data-dismiss="modal" onclick="valida()">Aceptar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-            </div>
+            
         </div>
     </div>
 </div>
-            <script>
-                function valida(){
-                        fr.submit();    
-                }
-            </script>
 <!-- MODAL Modificar -->
 <div class="modal fade bd-example-modal-lg" id="modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -309,7 +305,6 @@
                 </form>  
             </div>
             <!-- CONTENIDO -->
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
@@ -362,3 +357,4 @@
     }
 %>
 <script src="../js/GestionCurso.js" type="text/javascript"></script>
+<script src="../js/sweetalert2.min.js" type="text/javascript"></script>

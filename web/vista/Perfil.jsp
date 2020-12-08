@@ -24,14 +24,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="fr" id="form-editar-foto" action="../SubirImagen" method="post" enctype="multipart/form-data">
+            <form name="fr" id="form-editar-foto">
             <div class="modal-body">
                 <div class="text-center">
-                    <input type="file" id="file" name="file">
+                    <input type="file" id="file" name="file1">
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="button" id="cambiar-foto" value="GuardarFoto" class="btn btn-primary">
+                <input type="button" id="cambiar-foto" value="GuardarFoto" class="subir-imagen btn btn-primary">
             </div>
             </form>
         </div>
