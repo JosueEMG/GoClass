@@ -5,6 +5,20 @@ $(document).ready(function () {
     var dni = $("#dni").val();
     obtenerUsuario();
 
+    $("#cambiar-foto").on("click", (e) => {
+        let archivo = $("#file").val();
+        let n =  archivo.length;
+        let tipo = archivo.substring(n - 3, n);
+        funcion = "subir";
+        if (tipo == "jpg" || tipo == "gif"){
+            fr.submit();
+            successUpload();
+        }
+        else {
+            errorUploadMessage();
+        }
+    })
+    
     function obtenerUsuario() {
         funcion = "obtenerUsuario";
         $.post("../GestionPerfil", {funcion, dni}, (response) => {
@@ -62,7 +76,6 @@ $(document).ready(function () {
             $("#Fecha").removeAttr("readonly");
             $("#Correo").removeAttr("readonly");
             $("#Sexo").removeAttr("readonly");
-
             $("#Nombre").val(usuario.nombre_us);
             $("#Apellido").val(usuario.apellidos_us);
             $("#Fecha").val(usuario.fecha_nacimiento);
@@ -102,14 +115,14 @@ $(document).ready(function () {
 
         e.preventDefault();
     })
-    
+
     const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
     });
-    
+
     function successMessage() {
         Toast.fire({
             icon: 'success',
@@ -120,6 +133,20 @@ $(document).ready(function () {
         Toast.fire({
             icon: 'error',
             title: 'Edición deshabilitada'
+        })
+    }
+    
+    function errorUploadMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'Solo se permite archivos con formato jpg o gif'
+        })
+    }
+    
+    function successUpload() {
+        Toast.fire({
+            icon: 'success',
+            title: 'La imagen se subió con éxito'
         })
     }
 });

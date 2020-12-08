@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    let metodoPago = "Tarjeta de credito";
+    let idCurso = "";
     var funcion = "";
     var tipo = $("#tipo").val();
     listarCursos();
@@ -33,7 +35,7 @@ $(document).ready(function () {
                                 <div class="card-footer">
                                     `
                                     if (tipo == 3 || tipo == "nulo") {
-                                        templateProgramacion += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                        templateProgramacion += `<button type="button" class="comprarHijo btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
                                     }
                                     templateProgramacion += 
                                     `
@@ -58,7 +60,7 @@ $(document).ready(function () {
                                 <div class="card-footer">
                                     `
                                     if (tipo == 3 || tipo == "nulo") {
-                                        templateMusica += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                        templateMusica += `<button type="button" class="comprarHijo btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
                                     }
                                     templateMusica += 
                                     `
@@ -83,7 +85,7 @@ $(document).ready(function () {
                                 <div class="card-footer">
                                     `
                                     if (tipo == 3 || tipo == "nulo") {
-                                        templateCocina += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                        templateCocina += `<button type="button" class="comprarHijo btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
                                     }
                                     templateCocina += 
                                     `
@@ -108,7 +110,7 @@ $(document).ready(function () {
                                 <div class="card-footer">
                                     `
                                     if (tipo == 3 || tipo == "nulo") {
-                                        templateEdicion += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                        templateEdicion += `<button type="button" class="comprarHijo btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
                                     }
                                     templateEdicion += 
                                     `
@@ -133,7 +135,7 @@ $(document).ready(function () {
                                 <div class="card-footer">
                                     `
                                     if (tipo == 3 || tipo =="nulo") {
-                                        templateHistoria += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                        templateHistoria += `<button type="button" class="comprarHijo btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
                                     }
                                     templateHistoria += 
                                     `
@@ -158,7 +160,7 @@ $(document).ready(function () {
                                 <div class="card-footer">
                                     `
                                     if (tipo == 3 || tipo == "nulo") {
-                                        templateArte += `<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
+                                        templateArte += `<button type="button" class="comprarHijo btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>`
                                     }
                                     templateArte += 
                                     `
@@ -176,5 +178,25 @@ $(document).ready(function () {
             $("#arte").html(templateArte);
         });
     }
+    
+    $(".tarjeta-credito").on("click", (e)=>{
+        metodoPago = "Tarjeta de credito";
+    });
+    
+    $(".paypal").on("click", (e)=> {
+        metodoPago = "Paypal";
+    });
+    
+    $(document).on("click", ".comprarHijo", (e) => {
+        const elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement;
+        idCurso = $(elemento).attr("idCurso");
+    })
+    
+    $("#comprarModal").on("click", (e)=> {
+        let idUsuario = $("#idUsuario").val();
+        console.log(idCurso + " " + idUsuario + " " + metodoPago);
+    })
+    
+   
 });
 

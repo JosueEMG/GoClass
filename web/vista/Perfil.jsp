@@ -24,32 +24,19 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="fr" action="../GestionSube" method="post" enctype="multipart/form-data">
+            <form name="fr" id="form-editar-foto" action="../SubirImagen" method="post" enctype="multipart/form-data">
             <div class="modal-body">
                 <div class="text-center">
-                    <input type="file" name="file">
+                    <input type="file" id="file" name="file">
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="button" value="GuardarFoto" class="btn btn-primary" onclick="subir()">
+                <input type="button" id="cambiar-foto" value="GuardarFoto" class="btn btn-primary">
             </div>
             </form>
         </div>
     </div>
 </div>
-            <script>
-                function subir(){
-                    archivo=fr.file.value;
-                   // alert(archivo);
-                   n=archivo.length;
-                   tipo=archivo.substring(n-3,n);
-                   if(tipo=="jpg" || tipo=="gif")
-                       fr.submit();
-                   else
-                       alert("solo jpg o gif");
-                }
-
-            </script>
 <!--Este es el contenido de la pagina  -->
 <div class="content-wrapper">
     <section class="content-header">

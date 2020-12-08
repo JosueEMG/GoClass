@@ -8,6 +8,7 @@
 <!--Este es el contenido de la pagina  -->
 <!-- MODAL -->
 <input type="hidden" id="tipo" value="<%=(int)ses.getAttribute("tipo")%>">
+<input type="hidden" id="idUsuario" value="<%=(int)ses.getAttribute("idUsuario")%>">
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -20,8 +21,8 @@
 
             <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
                 <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                    <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
-                    <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+                    <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="tarjeta-credito nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                    <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="paypal nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
                 </ul>
             </div>
 
@@ -64,9 +65,9 @@
                 </div> <!-- End -->
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer" idCurso="" idUsuario="">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Comprar</button>
+                <button type="button" id="comprarModal" class="btn btn-primary">Comprar</button>
             </div>
         </div>
     </div>
