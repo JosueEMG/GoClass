@@ -194,9 +194,52 @@ $(document).ready(function () {
     
     $("#comprarModal").on("click", (e)=> {
         let idUsuario = $("#idUsuario").val();
-        console.log(idCurso + " " + idUsuario + " " + metodoPago);
+
+        funcion = "anadirFactura";
+        
+        $.post("../GestionTienda", {idUsuario,idCurso, metodoPago, funcion}, (response) => {
+            if (response === "comprado") {
+                successCursoMessage();
+                limpiarAnadirFactura();
+            }
+            else {
+                errorCursoMessage();
+            }
+            
+        })
+        e.preventDefault();
     })
     
-   
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
+    
+    
+    function limpiarAnadirFactura() {
+        $("#nomPro").val("");
+        $("#numTar").val("");
+        $("#cvc").val(0);
+    }
+    
+   function successCursoMessage() {
+        Toast.fire({
+            icon: 'success',
+            title: 'La factura ha sido añadido correctamente'
+        })
+    }
+    
+    function errorCursoMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'La factura no se ha añadido correctamente, intente de nuevo'
+        })
+    }
+    
+
+    
+    
 });
 

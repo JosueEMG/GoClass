@@ -6,6 +6,7 @@
 package servlet;
 
 import com.google.gson.Gson;
+import controlador.FacturaController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import controlador.CursoController;
+import javax.servlet.http.HttpSession;
+import modelo.factura;
 /**
  *
  * @author Josue Emmanuel Medina Garcia
@@ -34,6 +37,9 @@ public class GestionTienda extends HttpServlet {
         if (request.getParameter("funcion").equals("listarCursos")) {
             listarCursos(request, response);
         }
+        if(request.getParameter("funcion").equals("anadirFactura")) {
+            anadirFactura(request, response);
+        }
     }
     
     protected void listarCursos(HttpServletRequest request, HttpServletResponse response)
@@ -43,6 +49,31 @@ public class GestionTienda extends HttpServlet {
         CursoController cursoController = new CursoController();
         Gson gson = new Gson();
         out.print(gson.toJson(cursoController.listarCurso()));
+    }
+        protected void anadirFactura(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+       
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+        String metodoPago = request.getParameter("metodoPago");
+        
+        
+        FacturaController facturaController = new FacturaController();
+        try {
+            if (facturaController.createFactura(idUsuario, idCurso, metodoPago)!=0){
+                out.print("comprado");
+            }
+            else {
+                out.print("nocomprado");
+            }
+        } catch (Exception e) {
+            out.print("error");
+        }
+        
+
+        
     }
 
 

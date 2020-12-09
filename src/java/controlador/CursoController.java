@@ -145,7 +145,8 @@ public class CursoController {
             conn = MySQLConexion.getConexion();
             String sql = "{call anadirCurso(?,?,?,?,?,?,?,?,?,?,?)}";
             //? =equivale a un parametro 
-            PreparedStatement st = conn.prepareStatement(sql);
+            //PreparedStatement st = conn.prepareStatement(sql);
+            CallableStatement st = conn.prepareCall(sql);
             //relacionar el ? con su variable 
             st.setString(1, c.getNombre());
             st.setDouble(2, c.getPrecio());

@@ -6,6 +6,7 @@
 
 package controlador;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -96,22 +97,21 @@ public class FacturaController {
         }
 
         return lis;
-    }
+        }
     
     //ingresar factura
-    /*
-    public void createFactura(factura f) {
+    
+    public int createFactura(int id_us, int id_cur, String metodo_p) {
         Connection conn = null;
-
+        int num=0;
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "insert into factura (fecha, id_usuario, id_curso, metodo_pago) values (?, ?, ?, ?);";
-            PreparedStatement st = conn.prepareStatement(sql);
-            st.setString(1, f.getFecha());
-            st.setInt(2, f.getId_usuario());
-            st.setInt(3, f.getId_curso());
-            st.setString(4, f.getMetodo_pago());
-            st.executeUpdate();
+            String sql = "{call comprarCurso(?,?,?)}";
+            CallableStatement st = conn.prepareCall(sql);
+            st.setInt(1, id_us);
+            st.setInt(2, id_cur);
+            st.setString(3, metodo_p);
+            num = st.executeUpdate();
             //llenar el arraylist con la clase entidad
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -124,8 +124,9 @@ public class FacturaController {
             } catch (Exception e2) {
             }
         }
+        return num;
     }
-    */
+    
     //Eliminar factura
     /*
     public void deleteFactura(int idFactura) {
