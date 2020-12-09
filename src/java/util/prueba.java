@@ -14,11 +14,7 @@ public class prueba {
 
     public static void main(String[] args) {
         FacturaController fac=new FacturaController();
-        int idus=23;
-        int cod_c=3;
-        String meto="Paypal";
-
-        System.out.println(fac.createFactura(idus, cod_c, meto));
+        System.out.println(fac.verificacionInscripcion(9, 1));
 
     }
     

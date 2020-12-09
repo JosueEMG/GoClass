@@ -194,15 +194,16 @@ $(document).ready(function () {
     
     $("#comprarModal").on("click", (e)=> {
         let idUsuario = $("#idUsuario").val();
-
         funcion = "anadirFactura";
-        
         $.post("../GestionTienda", {idUsuario,idCurso, metodoPago, funcion}, (response) => {
             if (response === "comprado") {
                 successCursoMessage();
                 limpiarAnadirFactura();
             }
-            else {
+            else if (response === "yacomprado"){
+                verifyCursoMessage();
+            }
+            else{ 
                 errorCursoMessage();
             }
             
@@ -214,7 +215,7 @@ $(document).ready(function () {
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
-        timer: 3000
+        timer: 5000
     });
     
     
@@ -227,14 +228,21 @@ $(document).ready(function () {
    function successCursoMessage() {
         Toast.fire({
             icon: 'success',
-            title: 'La factura ha sido añadido correctamente'
+            title: 'Ha comprado el curso correctamente'
         })
     }
     
     function errorCursoMessage() {
         Toast.fire({
             icon: 'error',
-            title: 'La factura no se ha añadido correctamente, intente de nuevo'
+            title: 'Hubo un error al comprar el curso'
+        })
+    }
+    
+    function verifyCursoMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'Ya ha comprado este curso, ingrese al modulo "Mis Cursos" para visualizar su contenido'
         })
     }
     

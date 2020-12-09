@@ -99,6 +99,34 @@ public class FacturaController {
         return lis;
         }
     
+    public boolean verificacionInscripcion(int idCurso, int idUsuario) {
+        Connection conn = null;
+        boolean state = false;
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select id_curso from inscripcion where id_usuario = ? and id_curso = ?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setInt(1, idUsuario);
+            st.setInt(2, idCurso);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                state = true;
+            }
+            //llenar el arraylist con la clase entidad
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return state;
+    }
+    
     //ingresar factura
     
     public int createFactura(int id_us, int id_cur, String metodo_p) {
