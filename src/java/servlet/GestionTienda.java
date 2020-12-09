@@ -66,8 +66,8 @@ public class GestionTienda extends HttpServlet {
                 out.print("yacomprado");
             }
             else {
-                if (facturaController.createFactura(idUsuario, idCurso, metodoPago)!=0){
-                out.print("comprado");
+                if (facturaController.createFactura(idUsuario, idCurso, metodoPago) != 0){
+                    out.print("comprado");
                 }
                 else {
                     out.print("nocomprado");

@@ -120,8 +120,12 @@ public class GestionCurso extends HttpServlet {
         String video5 = request.getParameter("video5");
         CursoController cursoController = new CursoController();
         try {
-            cursoController.AdicionCurso(c, video1, video2, video3, video4, video5);
-            out.print("anadido");
+            if (cursoController.AdicionCurso(c, video1, video2, video3, video4, video5) != 0) {
+               out.print("anadido"); 
+            }
+            else {
+               out.print("noanadido"); 
+            }
         } catch (Exception e) {
             out.print("noanadido");
         }
@@ -162,7 +166,7 @@ public class GestionCurso extends HttpServlet {
         int id_contenido5 = lista.get(4).getId_contenido();
 
         CursoController cursoController = new CursoController();
-        if (cursoController.modificarCurso(c, video1, video2, video3, video4, video5, id_contenido1, id_contenido2, id_contenido3, id_contenido4, id_contenido5) == 6) {
+        if (cursoController.modificarCurso(c, video1, video2, video3, video4, video5, id_contenido1, id_contenido2, id_contenido3, id_contenido4, id_contenido5) != 0) {
             out.print("modificado");
         }
         else {

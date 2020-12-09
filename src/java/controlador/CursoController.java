@@ -138,7 +138,8 @@ public class CursoController {
         }
     }
     
-    public void AdicionCurso(curso c, String link1, String link2, String link3, String link4, String link5) {
+    public int AdicionCurso(curso c, String link1, String link2, String link3, String link4, String link5) {
+        int state = 0;
         Connection conn = null;
         
         try {
@@ -160,7 +161,7 @@ public class CursoController {
             st.setString(10, link4);
             st.setString(11, link5);
 
-            st.executeUpdate();
+            state = st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -172,6 +173,7 @@ public class CursoController {
             } catch (Exception e2) {
             }
         }
+        return state;
     }
     
     public int modificarCurso(curso c, String link1, String link2, String link3, String link4, String link5, int idContenido1, int idContenido2, int idContenido3, int idContenido4, int idContenido5) {
