@@ -17,7 +17,7 @@ public class ContenidoCursoController {
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select id_contenido, id_curso, archivo, enlace from contenido_curso where id_curso=?";
+            String sql = "select id_contenido, id_curso, enlace from contenido_curso where id_curso=?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1, idCurso);
             ResultSet rs = st.executeQuery();
@@ -26,8 +26,7 @@ public class ContenidoCursoController {
                 contenido_curso v = new contenido_curso();
                 v.setId_contenido(rs.getInt(1));
                 v.setId_curso(rs.getInt(2));
-                v.setArchivo(rs.getString(3));
-                v.setLink(rs.getString(4));
+                v.setLink(rs.getString(3));
                 lis.add(v);
             }
         } catch (Exception ex) {
