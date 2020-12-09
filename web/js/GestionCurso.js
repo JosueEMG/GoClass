@@ -1,5 +1,6 @@
 $(document).ready(function () {
     let idProfesor = $("#idprofesor").val();
+    let idCurso = "";
     listarGestionCurso();
     listarEspecialidad();
     
@@ -39,8 +40,9 @@ $(document).ready(function () {
                                 <div class="col text-center">
                                     <button type="button" class="modificar btn btn-dark mx-1 my-1" data-toggle="modal" data-target="#modificar">Modificar</button>
                                     <button type="button" class="ver btn btn-dark mx-1 my-1">Ver contenido</button>
-                                    <button type="button" class="btn btn-danger mx-1 my-1">Eliminar</button>
+                                    <button type="button" class="eliminar-curso btn btn-danger mx-1 my-1">Eliminar</button>
                                     <button class="alumnos btn btn-dark mx-1 my-1">Ver Alumnos</button>
+                                    <button type="button" class="modificar-banner btn btn-dark mx-1 my-1" data-toggle="modal" data-target="#modificar-banner">Modificar banner</button>
                                 </div>
                             </div>
                         </div>
@@ -50,6 +52,21 @@ $(document).ready(function () {
             
         })
     }
+    
+    $(document).on("click", ".eliminar-curso", (e) => {
+        const element = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
+        let idCurso = $(element).attr("idCurso");
+        funcion = "eliminarCurso";
+        $.post("../GestionCurso", {idCurso, funcion}, (response) => {
+            if (response === "eliminado") {
+                successDeleteMessage();
+            }
+            else {
+                errorDeleteMessage();
+            }
+            listarGestionCurso();
+        })   
+    })
     
     $(document).on("click", ".alumnos", (e) => {
         const id = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
@@ -76,7 +93,7 @@ $(document).ready(function () {
     
     $(document).on("click", ".modificar", (e)=>{
         const elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
-        const idCurso = $(elemento).attr("idCurso");
+        idCurso = $(elemento).attr("idCurso");
         funcion = "obtenerCurso";
         
         $.post("../GestionCurso", {funcion, idCurso}, (response)=>{
@@ -85,7 +102,7 @@ $(document).ready(function () {
             $("#nombreCurso1").val(curso.nombre);
             $("#precioCurso1").val(curso.precio);
             $("#especialidadCurso1").val(curso.id_especialidad);
-            $("#adicional1").val(curso.detalle);
+            $("#descripcionCurso1").val(curso.detalle);
         })
         
         funcion = "obtenerContenido"
@@ -100,7 +117,7 @@ $(document).ready(function () {
         })
         
     })
-    
+
     $("#form-agregar-curso").submit(e => {
         let nombreCurso = $("#nombreCurso").val();
         let precioCurso = $("#precioCurso").val();
@@ -111,10 +128,55 @@ $(document).ready(function () {
         let video3 = $("#video3").val();
         let video4 = $("#video4").val();
         let video5 = $("#video5").val();
-        
-        
+        funcion = "anadirCurso";
+        $.post("../GestionCurso", {nombreCurso, precioCurso, especialidadCurso, descripcionCurso, video1, video2, video3, video4, video5, funcion}, (response) => {
+            if (response === "anadido") {
+                successCursoMessage();
+                limpiarAnadirCurso();
+            }
+            else {
+                errorCursoMessage();
+            }
+            listarGestionCurso();
+        })
         e.preventDefault();
     })
+    
+    $("#form-modificar-curso").submit(e => {
+        let nombreCurso = $("#nombreCurso1").val();
+        let precioCurso = $("#precioCurso1").val();
+        let especialidadCurso = $("#especialidadCurso1").val();
+        let descripcionCurso = $("#descripcionCurso1").val();
+        let video1 = $("#cap1").val();
+        let video2 = $("#cap2").val();
+        let video3 = $("#cap3").val();
+        let video4 = $("#cap4").val();
+        let video5 = $("#cap5").val();
+        funcion = "modificarCurso";
+       
+        $.post("../GestionCurso", {idCurso, nombreCurso, precioCurso, especialidadCurso, descripcionCurso, video1, video2, video3, video4, video5, funcion}, (response) => {
+            if (response === "modificado") {
+                successModifyCursoMessage();
+            }
+            else {
+                errorModifyCursoMessage();
+            }
+            listarGestionCurso();
+        })
+        e.preventDefault();
+    })
+    
+    function limpiarAnadirCurso() {
+        $("#nombreCurso").val("");
+        $("#precioCurso").val("");
+        $("#especialidadCurso").val(0);
+        $("#descripcionCurso").val("");
+        $("#video1").val("");
+        $("#video2").val("");
+        $("#video3").val("");
+        $("#video4").val("");
+        $("#video5").val("");
+    }
     
     const Toast = Swal.mixin({
         toast: true,
@@ -123,19 +185,46 @@ $(document).ready(function () {
         timer: 3000
     });
     
-    function errorMessage() {
+    function errorDeleteMessage() {
         Toast.fire({
             icon: 'error',
-            title: 'Solo se permite archivos con formato jpg o gif'
+            title: 'El curso no se ha eliminado'
         })
     }
     
-    function successMessage() {
+    function successDeleteMessage() {
         Toast.fire({
             icon: 'success',
-            title: 'La imagen se subió con éxito'
+            title: 'El curso se ha eliminado existosamente'
         })
     }
     
+    function successCursoMessage() {
+        Toast.fire({
+            icon: 'success',
+            title: 'El curso ha sido añadido correctamente'
+        })
+    }
+    
+    function successModifyCursoMessage() {
+        Toast.fire({
+            icon: 'success',
+            title: 'El curso ha sido modificado correctamente'
+        })
+    }
+    
+    function errorModifyCursoMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'El curso no ha sido modificado'
+        })
+    }
+    
+    function errorCursoMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'El curso no se ha añadido correctamente, intente de nuevo'
+        })
+    }
 })   
 

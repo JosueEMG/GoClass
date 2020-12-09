@@ -10,11 +10,13 @@ import controlador.ContenidoCursoController;
 import controlador.CursoController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import modelo.contenido_curso;
 import modelo.curso;
 
 /**
@@ -46,6 +48,15 @@ public class GestionCurso extends HttpServlet {
         }
         if(request.getParameter("funcion").equals("obtenerContenido")) {
             obtenerContenido(request, response);
+        }
+        if(request.getParameter("funcion").equals("anadirCurso")) {
+            anadirCurso(request, response);
+        }
+        if(request.getParameter("funcion").equals("eliminarCurso")) {
+            eliminarCurso(request, response);
+        }
+        if(request.getParameter("funcion").equals("modificarCurso")) {
+            modificarCurso(request, response);
         }
     }
     protected void verContenido(HttpServletRequest request, HttpServletResponse response)
@@ -84,6 +95,96 @@ public class GestionCurso extends HttpServlet {
         ContenidoCursoController c = new ContenidoCursoController();
         Gson gson = new Gson();
         out.print(gson.toJson(c.listarContenidoCurso(idCurso)));
+    }
+    
+    protected void anadirCurso(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        HttpSession ses = request.getSession();
+        String nombreCurso = request.getParameter("nombreCurso");
+        double precioCurso = Double.parseDouble(request.getParameter("precioCurso"));
+        int idUsuario = (int)ses.getAttribute("idUsuario");
+        int especialidadCurso = Integer.parseInt(request.getParameter("especialidadCurso"));
+        String descripcionCurso = request.getParameter("descripcionCurso");
+        curso c = new curso();
+        c.setNombre(nombreCurso);
+        c.setPrecio(precioCurso);
+        c.setId_especialidad(especialidadCurso);
+        c.setDetalle(descripcionCurso);
+        c.setId_usuario(idUsuario);
+        String video1 = request.getParameter("video1");
+        String video2 = request.getParameter("video2");
+        String video3 = request.getParameter("video3");
+        String video4 = request.getParameter("video4");
+        String video5 = request.getParameter("video5");
+        CursoController cursoController = new CursoController();
+        try {
+            cursoController.AdicionCurso(c, video1, video2, video3, video4, video5);
+            out.print("anadido");
+        } catch (Exception e) {
+            out.print("noanadido");
+        }
+        
+    }
+    
+    protected void modificarCurso(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        HttpSession ses = request.getSession();
+        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+        String nombreCurso = request.getParameter("nombreCurso");
+        double precioCurso = Double.parseDouble(request.getParameter("precioCurso"));
+        int idUsuario = (int)ses.getAttribute("idUsuario");
+        int especialidadCurso = Integer.parseInt(request.getParameter("especialidadCurso"));
+        String descripcionCurso = request.getParameter("descripcionCurso");
+        curso c = new curso();
+        
+        c.setId_curso(idCurso);
+        c.setId_usuario(idUsuario);
+        c.setNombre(nombreCurso);
+        c.setPrecio(precioCurso);
+        c.setId_especialidad(especialidadCurso);
+        c.setDetalle(descripcionCurso);
+        
+        String video1 = request.getParameter("video1");
+        String video2 = request.getParameter("video2");
+        String video3 = request.getParameter("video3");
+        String video4 = request.getParameter("video4");
+        String video5 = request.getParameter("video5");
+        ContenidoCursoController contenidoCursoController = new ContenidoCursoController();
+        List<contenido_curso> lista = contenidoCursoController.listarIdContenidoCurso(idCurso);
+        int id_contenido1 = lista.get(0).getId_contenido();
+        int id_contenido2 = lista.get(1).getId_contenido();
+        int id_contenido3 = lista.get(2).getId_contenido();
+        int id_contenido4 = lista.get(3).getId_contenido();
+        int id_contenido5 = lista.get(4).getId_contenido();
+
+        CursoController cursoController = new CursoController();
+        if (cursoController.modificarCurso(c, video1, video2, video3, video4, video5, id_contenido1, id_contenido2, id_contenido3, id_contenido4, id_contenido5) == 6) {
+            out.print("modificado");
+        }
+        else {
+            out.print("nomodificado");
+        }
+        
+    }
+    
+    protected void eliminarCurso(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+        CursoController c = new CursoController();
+        try {
+            c.eliminarCurso(idCurso);
+            out.print("eliminado");
+        } catch (Exception e) {
+            out.print("noeliminado");
+        }
+        
+        
     }
 
 

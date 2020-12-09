@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import controlador.UsuarioController;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -39,18 +41,21 @@ public class SubirImagen extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String arch = "C:\\Users\\Josue\\Desktop\\UTP\\Ciclo 6\\Desarrollo web integrado\\GoClass\\web\\Archivos";
+        HttpSession ses = request.getSession();
+        String arch = "C:\\Users\\Josue\\Desktop\\UTP\\Ciclo 6\\Desarrollo web integrado\\GoClass\\web\\img";
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(1024);
         factory.setRepository(new File(arch));
-        String ruta = "";
         ServletFileUpload upload = new ServletFileUpload(factory);
         try {
             List<FileItem> partes = upload.parseRequest(request);
             for (FileItem item : partes) {
                 File file = new File(arch, item.getName());
                 item.write(file);
-                out.print(arch);
+                out.print(file.getName());
+                UsuarioController userController = new UsuarioController();
+                userController.changeAvatar(file.getName(), (int)ses.getAttribute("idUsuario"));
+                ses.setAttribute("avatar", file.getName());
             }
         } catch (Exception ex) {
             request.setAttribute("dato", ex.getMessage());

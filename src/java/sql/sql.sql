@@ -33,3 +33,6 @@ from inscripcion i inner join curso c
 on i.id_curso = c.id_curso where i.id_usuario = 1;
 
 
+
+
+

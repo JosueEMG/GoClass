@@ -10,7 +10,7 @@ $(document).ready(function () {
         let n =  archivo.length;
         let tipo = archivo.substring(n - 3, n);
         //funcion = "subir";
-        console.log(archivo);
+        let fileName = archivo.substring(12, n);
         var data = new FormData();
         $.each($('#file')[0].files, function(i, file) {
             data.append('file-'+i, file);
@@ -25,9 +25,11 @@ $(document).ready(function () {
                 method: 'POST',
                 type: 'POST', // For jQuery < 1.9
                 success: function(data){
-                    alert(data);
+                    successUpload();
+                    
                 }
             });
+            
         }
         else {
             errorUploadMessage();
@@ -136,7 +138,7 @@ $(document).ready(function () {
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
-        timer: 3000
+        timer: 5000
     });
 
     function successMessage() {
@@ -162,7 +164,7 @@ $(document).ready(function () {
     function successUpload() {
         Toast.fire({
             icon: 'success',
-            title: 'La imagen se subió con éxito'
+            title: 'La imagen se subió con éxito, por favor actualice la pagina para ver el resultado'
         })
     }
 });

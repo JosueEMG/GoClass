@@ -7,7 +7,6 @@ public class curso {
     private double precio;
     private String banner;
     private int id_especialidad;
-    private int prod_present;
     private String detalle;
     private String nombre_especialidad;
 
@@ -57,14 +56,6 @@ public class curso {
 
     public void setId_especialidad(int id_especialidad) {
         this.id_especialidad = id_especialidad;
-    }
-
-    public int getProd_present() {
-        return prod_present;
-    }
-
-    public void setProd_present(int prod_present) {
-        this.prod_present = prod_present;
     }
 
     public int getId_usuario() {

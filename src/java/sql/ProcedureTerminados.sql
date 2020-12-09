@@ -19,11 +19,11 @@ call anadirCurso("gg", 100.0, "ttt", 2, 3, "hhhh", "yyyy", "uuu", "aaaaa", "gaaa
 
 use goclass;
 delimiter@@
-create procedure modificarCurso (idcur int, nom varchar(25), pre decimal(8,1), ban varchar(25), idesp int, 
+create procedure modificarCurso (idcur int, nom varchar(25), pre decimal(8,1), idesp int, 
 idusu int, detalle varchar(255), link1 varchar(255), link2 varchar(255), link3 varchar(255), link4 varchar(255), 
 link5 varchar(255), id_contenido1 int, id_contenido2 int, id_contenido3 int, id_contenido4 int, id_contenido5 int)
 begin
-Update curso set nombre=nom, precio=pre, banner=ban, id_especialidad=idesp, id_usuario=idusu, detalle_curso=detalle where id_curso=idcur;
+Update curso set nombre=nom, precio=pre, id_especialidad=idesp, id_usuario=idusu, detalle_curso=detalle where id_curso=idcur;
 Update contenido_curso set enlace = link1 where id_contenido=id_contenido1;
 Update contenido_curso set enlace = link2 where id_contenido=id_contenido2;
 Update contenido_curso set enlace = link3 where id_contenido=id_contenido3;
@@ -33,7 +33,7 @@ end@@
 delimiter;
 
 use goclass;
-call modificarCurso(9, "aea", 50.0, "te estare kchando xd", 3, 3, "fuck me", "the same shit", "la sen chip", "sale su gta", "gaaaaa", "chupetin", 11,12,13,14,15);
+call modificarCurso(1, "aea", 50.0, 3, 3, "fuck me", "the same shit", "la sen chip", "sale su gta", "gaaaaa", "chupetin", 1,2,3,4,5);
 
 
 use goclass;
@@ -53,4 +53,12 @@ delimiter;
 use goclass;
 call comprarCurso(1, 5, "paypal");
 
+DELIMITER @@
+CREATE PROCEDURE goclass.eliminarCurso
+(idcur int)
+begin
+delete from curso where id_curso = idcur;
+delete from contenido_curso where id_curso = idcur;
+end @@ 
+DELIMITER ; 
 

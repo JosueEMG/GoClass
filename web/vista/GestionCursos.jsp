@@ -176,7 +176,7 @@
                 <div class="text-center m-3">
                     <h3 id="nombre_curso">Programación Java</h3>
                 </div>
-                <form id="form-editar-curso" class="form-horizontal">  
+                <form id="form-modificar-curso">  
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Nombre:</label>
@@ -195,7 +195,7 @@
                     </div>
                     <div class="form-group">
                         <label>Descripción:</label>
-                        <textarea class="form-control" id="adicional1" cols="0" rows="2"></textarea>
+                        <textarea class="form-control" id="descripcionCurso1" cols="0" rows="2"></textarea>
                     </div>
                     <div class="form-group">
                         <div class="card card-primary">
@@ -302,13 +302,34 @@
                             <!-- /.card-footer-->
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Aceptar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </form>  
             </div>
-            <!-- CONTENIDO -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modificar-banner" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-toggle="modal"> 
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Seleccionar Imagen:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <form name="fr" id="form-editar-banner">
+            <div class="modal-body">
+                <div class="text-center">
+                    <input type="file" id="file" name="file">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" id="cambiar-banner" value="Guardar banner" class="subir-banner btn btn-primary">
+            </div>
+            </form>
         </div>
     </div>
 </div>

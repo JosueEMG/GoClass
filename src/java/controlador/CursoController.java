@@ -1,5 +1,6 @@
 
 package controlador;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -137,23 +138,27 @@ public class CursoController {
         }
     }
     
-    public void AdicionCurso(curso c) {
+    public void AdicionCurso(curso c, String link1, String link2, String link3, String link4, String link5) {
         Connection conn = null;
         
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "insert into curso (nombre, precio, banner, id_especialidad, id_usuario, prod_present, detalle_curso) "
-                    + " values (?,?,?,?,?,?,?)";
+            String sql = "{call anadirCurso(?,?,?,?,?,?,?,?,?,?,?)}";
             //? =equivale a un parametro 
             PreparedStatement st = conn.prepareStatement(sql);
             //relacionar el ? con su variable 
             st.setString(1, c.getNombre());
             st.setDouble(2, c.getPrecio());
-            st.setString(3, c.getBanner());
+            st.setString(3, "default_banner.jpg");
             st.setInt(4, c.getId_especialidad());
             st.setInt(5, c.getId_usuario());
-            st.setInt(6, c.getProd_present());
-            st.setString(7, c.getDetalle());
+            st.setString(6, c.getDetalle());
+            st.setString(7, link1);
+            st.setString(8, link2);
+            st.setString(9, link3);
+            st.setString(10, link4);
+            st.setString(11, link5);
+
             st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -168,17 +173,35 @@ public class CursoController {
         }
     }
     
-    public void BorrarCurso(int id) {
+    public int modificarCurso(curso c, String link1, String link2, String link3, String link4, String link5, int idContenido1, int idContenido2, int idContenido3, int idContenido4, int idContenido5) {
+        int num = 0;
         Connection conn = null;
         
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "delete from curso where id_curso=?";
+            String sql = "{call modificarCurso(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             //? =equivale a un parametro 
-            PreparedStatement st = conn.prepareStatement(sql);
+            CallableStatement st = conn.prepareCall(sql);
             //relacionar el ? con su variable 
-            st.setInt(1, id);
-            st.executeUpdate();
+            st.setInt(1, c.getId_curso());
+            st.setString(2, c.getNombre());
+            st.setDouble(3, c.getPrecio());
+            st.setInt(4, c.getId_especialidad());
+            st.setInt(5, c.getId_usuario());
+            st.setString(6, c.getDetalle());
+            st.setString(7, link1);
+            st.setString(8, link2);
+            st.setString(9, link3);
+            st.setString(10, link4);
+            st.setString(11, link5);
+            st.setInt(12, idContenido1);
+            st.setInt(13, idContenido2);
+            st.setInt(14, idContenido3);
+            st.setInt(15, idContenido4);
+            st.setInt(16, idContenido5);
+
+            num = st.executeUpdate();
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -190,6 +213,7 @@ public class CursoController {
             } catch (Exception e2) {
             }
         }
+       return num;
     }
     
     public curso getCurso(int id) {
@@ -226,4 +250,28 @@ public class CursoController {
         }
         return c;
     }
+    
+    public void eliminarCurso(int idCurso) {
+        Connection conn = null;
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "{call eliminarCurso(?)}";
+            CallableStatement st = conn.prepareCall(sql);
+            st.setInt(1, idCurso);
+            st.executeUpdate();
+            //llenar el arraylist con la clase entidad
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+    }
+    
+    
 }

@@ -43,6 +43,36 @@ public class ContenidoCursoController {
         }
         return lis;
     }
+    
+    public List<contenido_curso> listarIdContenidoCurso(int idCurso) {
+        List<contenido_curso> lis = new ArrayList<>();
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select id_contenido from contenido_curso where id_curso=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setInt(1, idCurso);
+            ResultSet rs = st.executeQuery();
+            //llenar el arraylist con la clase entidad
+            while (rs.next()) {
+                contenido_curso v = new contenido_curso();
+                v.setId_contenido(rs.getInt(1));
+                lis.add(v);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return lis;
+    }
     /*
     public void AdicionVideo(int id, String url) {
         Connection conn = null;
