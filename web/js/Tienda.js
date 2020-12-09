@@ -242,7 +242,7 @@ $(document).ready(function () {
     function verifyCursoMessage() {
         Toast.fire({
             icon: 'error',
-            title: 'Ya ha comprado este curso, ingrese al modulo "Mis Cursos" para visualizar su contenido'
+            title: 'Ya ha comprado este curso, ingrese al módulo "Mis Cursos" para visualizar su contenido'
         })
     }
     
