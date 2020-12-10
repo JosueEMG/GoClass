@@ -2,31 +2,32 @@ package controlador;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.http.HttpSession;
+import modelo.curso;
 import util.MySQLConexion;
-import modelo.*;
+
 /**
  *
  * @author JuanG
  */
+
 public class GestionDeCursos {
-        public void AgregarCursoYcontenido(String nomc,double precio,String banner,int idespec, int idusuario, String detalle, int inscripciones) {
-          String idcurso=""; 
-          Connection conn = null;
+    //cambiar Banner
+    public int changeBanner(String ruta, int id_curso) {
+        int num=0;
+        Connection conn = null;
         try {
             conn = MySQLConexion.getConexion();
-            CallableStatement st = conn.prepareCall("{call adicioncurso(?,?,?,?,?,?,?)}");
-            st.setString(1, nomc);
-            st.setDouble(2, precio);
-            st.setString(3, banner);
-            st.setInt(4, idespec);
-            st.setInt(5, idusuario);
-            st.setString(6, detalle);
-            st.setInt(7, inscripciones);
-            st.executeUpdate();
-            //grabar el material
-            CallableStatement st2=conn.prepareCall("{call adicioncontenido(?,?,?,?)}");
-            
-            
+            String sql = "update curso set banner = ? where id_curso = ?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, ruta);//nombre archivo
+            st.setInt(2, id_curso);//id del curso
+            num = st.executeUpdate();
+            //llenar el arraylist con la clase entidad
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -38,7 +39,7 @@ public class GestionDeCursos {
             } catch (Exception e2) {
             }
         }
-
+        return num;
     }
-    
+   
 }

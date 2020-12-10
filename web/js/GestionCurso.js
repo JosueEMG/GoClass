@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    let idProfesor = $("#idprofesor").val();
+    var funcion = "";
     let idCurso = "";
+    let idProfesor = $("#idprofesor").val();
     listarGestionCurso();
     listarEspecialidad();
     
@@ -166,6 +167,63 @@ $(document).ready(function () {
         e.preventDefault();
     })
     
+   $(document).on("click", ".modificar-banner", (e) => {
+        const elementoc = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
+        idCurso = $(elementoc).attr("idCurso");
+        console.log(idCurso);
+    })
+    
+    $(document).on("click", "#cambiar-banner", (e) => {
+        let archivo = $("#file").val();
+        let n =  archivo.length;
+        let tipo = archivo.substring(n - 3, n);
+        let fileName = archivo.substring(12, n);
+        var data = new FormData();
+        $.each($('#file')[0].files, function(i, file) {
+            data.append('file-'+i, file);
+        });
+        if (tipo == "jpg" || tipo == "gif"){
+            $.ajax({
+                url: "../SubirBan",
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
+                type: 'POST', // For jQuery < 1.9
+                success: function(data){
+                    successBanner();   
+                }
+            });
+            
+        }
+        else {
+            errorBannerdMessage();
+        }
+    })
+    
+    /*    $("#cambiar-banner").on("click", (e)=> {
+        let archivo = $("#file").val();
+        let n =  archivo.length;
+        let tipo = archivo.substring(n - 3, n);
+        let fileName = archivo.substring(12, n);
+        var data = new FormData();
+        $.each($('#file')[0].files, function(i, file) {
+            data.append('file-'+i, file);
+        });
+        //funcion = "";
+        
+        $.post("../SubirBan", {archivo,idCurso}, (response) => {
+        if (tipo == "jpg" || tipo == "png"){
+                    successBanner()();
+        }
+        else {
+            errorBannerdMessage()();
+        } 
+        })
+        e.preventDefault();
+    })
+    */
     function limpiarAnadirCurso() {
         $("#nombreCurso").val("");
         $("#precioCurso").val("");
@@ -226,5 +284,19 @@ $(document).ready(function () {
             title: 'El curso no se ha añadido correctamente, intente de nuevo'
         })
     }
-})   
+    
+    function errorBannerdMessage() {
+        Toast.fire({
+            icon: 'error',
+            title: 'Solo se permite archivos con formato jpg o png'
+        })
+    }
+    
+    function successBanner() {
+        Toast.fire({
+            icon: 'success',
+            title: 'La imagen se subió con éxito, por favor actualice la pagina para ver el resultado'
+        })
+    }
+});   
 

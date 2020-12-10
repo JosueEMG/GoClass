@@ -311,6 +311,7 @@
         </div>
     </div>
 </div>
+<!--Modal cambiar banner-->
 <div class="modal fade" id="modificar-banner" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-toggle="modal"> 
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -323,7 +324,7 @@
             <form name="fr" id="form-editar-banner">
             <div class="modal-body">
                 <div class="text-center">
-                    <input type="file" id="file" name="file">
+                    <input type="file" id="file" name="file1">
                 </div>
             </div>
             <div class="modal-footer">
@@ -378,4 +379,5 @@
     }
 %>
 <script src="../js/GestionCurso.js" type="text/javascript"></script>
+<script src="../js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="../js/sweetalert2.min.js" type="text/javascript"></script>
