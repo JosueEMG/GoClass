@@ -42,7 +42,7 @@ public class SubirBan extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         HttpSession ses = request.getSession();
-        String arch = "C:\\Users\\JuanG\\Documents\\GitHub\\UnitClass\\web\\img\\imagenCardSlide";
+        String arch = "C:\\Users\\Josue\\Desktop\\UTP\\Ciclo 6\\Desarrollo web integrado\\GoClass\\web\\img\\imagenCardSlide";
 
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(1024);
