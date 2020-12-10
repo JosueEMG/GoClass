@@ -174,6 +174,10 @@ $(document).ready(function () {
     })
     
     $(document).on("click", "#cambiar-banner", (e) => {
+        funcion="obtener";
+        $.post("../GestionCurso",{funcion,idCurso},(response)=>{
+            
+        });
         let archivo = $("#file").val();
         let n =  archivo.length;
         let tipo = archivo.substring(n - 3, n);
@@ -185,9 +189,7 @@ $(document).ready(function () {
         if (tipo == "jpg" || tipo == "png"){
             $.ajax({
                 url: "../SubirBan",
-                data: {"data": data, "idCurso": idCurso }, // la coma que habia aqui no es necesaria
-
-               // data: "data="+data+"&idCurso="+idCurso,
+                data: data,
                 cache: false,
                 contentType: false,
                 processData: false,
@@ -204,28 +206,6 @@ $(document).ready(function () {
         }
     })
     
-    /*    $("#cambiar-banner").on("click", (e)=> {
-        let archivo = $("#file").val();
-        let n =  archivo.length;
-        let tipo = archivo.substring(n - 3, n);
-        let fileName = archivo.substring(12, n);
-        var data = new FormData();
-        $.each($('#file')[0].files, function(i, file) {
-            data.append('file-'+i, file);
-        });
-        //funcion = "";
-        
-        $.post("../SubirBan", {archivo,idCurso}, (response) => {
-        if (tipo == "jpg" || tipo == "png"){
-                    successBanner()();
-        }
-        else {
-            errorBannerdMessage()();
-        } 
-        })
-        e.preventDefault();
-    })
-    */
     function limpiarAnadirCurso() {
         $("#nombreCurso").val("");
         $("#precioCurso").val("");

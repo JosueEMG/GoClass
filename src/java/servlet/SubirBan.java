@@ -43,8 +43,7 @@ public class SubirBan extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession ses = request.getSession();
         String arch = "C:\\Users\\JuanG\\Documents\\GitHub\\UnitClass\\web\\img\\imagenCardSlide";
-        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
-        out.print(idCurso);
+
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(1024);
         factory.setRepository(new File(arch));
@@ -56,8 +55,8 @@ public class SubirBan extends HttpServlet {
                 item.write(file);
                 out.print(file.getName());
                 GestionDeCursos gestionDeCursos = new GestionDeCursos();
-                gestionDeCursos.changeBanner(file.getName(), idCurso);
-                ses.setAttribute("banner", file.getName());
+                gestionDeCursos.changeBanner(file.getName(), (int)ses.getAttribute("idCurso"));
+                //ses.setAttribute("banner", file.getName());
             }
         } catch (Exception ex) {
             request.setAttribute("dato", ex.getMessage());
