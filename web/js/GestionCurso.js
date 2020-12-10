@@ -182,10 +182,12 @@ $(document).ready(function () {
         $.each($('#file')[0].files, function(i, file) {
             data.append('file-'+i, file);
         });
-        if (tipo == "jpg" || tipo == "gif"){
+        if (tipo == "jpg" || tipo == "png"){
             $.ajax({
                 url: "../SubirBan",
-                data: data,
+                data: {"data": data, "idCurso": idCurso }, // la coma que habia aqui no es necesaria
+
+               // data: "data="+data+"&idCurso="+idCurso,
                 cache: false,
                 contentType: false,
                 processData: false,

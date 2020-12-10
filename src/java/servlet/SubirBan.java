@@ -44,6 +44,7 @@ public class SubirBan extends HttpServlet {
         HttpSession ses = request.getSession();
         String arch = "C:\\Users\\JuanG\\Documents\\GitHub\\UnitClass\\web\\img\\imagenCardSlide";
         int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+        out.print(idCurso);
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(1024);
         factory.setRepository(new File(arch));
