@@ -126,6 +126,19 @@
                                 </p>
                             </a>
                         </li>
+                         <!-- CORREO -->
+                        <%
+                            }
+                            if (tipo != 2) {
+                        %>
+                        <li id="gestionFacturas" class="nav-item">
+                            <a href="GestionFacturas.jsp" class="nav-link">
+                                <i class="nav-icon fas fa-folder-open"></i>
+                                <p>
+                                    Facturas
+                                </p>
+                            </a>
+                        </li>
                         <%
                             }
                         %>
@@ -139,6 +152,7 @@
                             </a>
                         </li>
                         <br>
+                        
                         <!-- CERRAR SESION-->
                     </ul>
                 </nav>

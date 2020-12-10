@@ -40,6 +40,9 @@ public class GestionTienda extends HttpServlet {
         if(request.getParameter("funcion").equals("anadirFactura")) {
             anadirFactura(request, response);
         }
+        if (request.getParameter("funcion").equals("listarFacturas")) {
+            listarFacturas(request, response);
+        }
     }
     
     protected void listarCursos(HttpServletRequest request, HttpServletResponse response)
@@ -78,8 +81,25 @@ public class GestionTienda extends HttpServlet {
             out.print("error");
         }
         
-
         
+
+    }
+        protected void listarFacturas(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        HttpSession ses = request.getSession();
+        int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+        String consulta = request.getParameter("consulta");
+        FacturaController facturaController = new FacturaController();
+        Gson gson = new Gson();
+        int tipo = (int)ses.getAttribute("tipo");
+        if (tipo == 1){
+            out.print(gson.toJson(facturaController.listaFacturas(consulta)));
+        }
+        if (tipo ==3){
+            out.print(gson.toJson(facturaController.listaFacturas(idUsuario,consulta)));
+        }
     }
 
 

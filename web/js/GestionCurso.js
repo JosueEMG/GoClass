@@ -196,6 +196,7 @@ $(document).ready(function () {
                 method: 'POST',
                 type: 'POST', // For jQuery < 1.9
                 success: function(data){
+                    listarGestionCurso();
                     successBanner();   
                 }
             });

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package controlador;
 
 import java.sql.CallableStatement;
@@ -16,35 +15,58 @@ import modelo.factura;
 import util.MySQLConexion;
 
 /**
- * 
+ *
  * @author Josue Emmanuel Medina Garcia
  */
 public class FacturaController {
 
     //listar facturas
-    public List<factura> listaFacturas() {
+    public List<factura> listaFacturas(String consulta) {
         List<factura> lis = new ArrayList<>();
         Connection conn = null;
 
         try {
-            conn = MySQLConexion.getConexion();
-            String sql = "select f.id_factura, f.fecha, u.nombre_us, c.nombre, m.nom_pago, c.precio\n" +
-            "from factura f, usuario u, curso c, metodo_pago m\n" +
-            "where f.id_usuario = u.id_usuario and f.id_curso = c.id_curso and f.id_met_pago = m.id_met_pago;";
-            //st.setString(1, cad);
-            PreparedStatement st = conn.prepareStatement(sql);
-            ResultSet rs = st.executeQuery();
-            //llenar el arraylist con la clase entidad
-            while (rs.next()) {
-                factura a = new factura();
-                a.setId_factura(rs.getInt(1));
-                a.setFecha(rs.getString(2));
-                a.setNombre_usuario(rs.getString(3));
-                a.setNombre_curso(rs.getString(4));
-                a.setNombre_metodo_pago(rs.getString(5));
-                a.setPrecio(rs.getDouble(6));
-                lis.add(a);
+            if (consulta != null) {
+                conn = MySQLConexion.getConexion();
+                String sql = "select f.id_factura, f.fecha, u.nombre_us, c.nombre, f.metodo_pago, c.precio\n"
+                        + "from factura f, usuario u, curso c \n"
+                        + "where f.id_usuario = u.id_usuario and f.id_curso = c.id_curso and c.nombre like ?";
+                //st.setString(1, cad);
+                PreparedStatement st = conn.prepareStatement(sql);
+                st.setString(1, "%" + consulta + "%");
+                ResultSet rs = st.executeQuery();
+                //llenar el arraylist con la clase entidad
+                while (rs.next()) {
+                    factura a = new factura();
+                    a.setId_factura(rs.getInt(1));
+                    a.setFecha(rs.getString(2));
+                    a.setNombre_usuario(rs.getString(3));
+                    a.setNombre_curso(rs.getString(4));
+                    a.setNombre_metodo_pago(rs.getString(5));
+                    a.setPrecio(rs.getDouble(6));
+                    lis.add(a);
+                }
+            } else {
+                conn = MySQLConexion.getConexion();
+                String sql = "select f.id_factura, f.fecha, u.nombre_us, c.nombre, f.metodo_pago, c.precio\n"
+                        + "from factura f, usuario u, curso c \n"
+                        + "where f.id_usuario = u.id_usuario and f.id_curso = c.id_curso";
+                //st.setString(1, cad);
+                PreparedStatement st = conn.prepareStatement(sql);
+                ResultSet rs = st.executeQuery();
+                //llenar el arraylist con la clase entidad
+                while (rs.next()) {
+                    factura a = new factura();
+                    a.setId_factura(rs.getInt(1));
+                    a.setFecha(rs.getString(2));
+                    a.setNombre_usuario(rs.getString(3));
+                    a.setNombre_curso(rs.getString(4));
+                    a.setNombre_metodo_pago(rs.getString(5));
+                    a.setPrecio(rs.getDouble(6));
+                    lis.add(a);
+                }
             }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -59,31 +81,54 @@ public class FacturaController {
 
         return lis;
     }
-    
+
     //listar facturas por idUsuario
-    public List<factura> listaFacturas(int idUsuario) {
+    public List<factura> listaFacturas(int idUsuario, String consulta) {
         List<factura> lis = new ArrayList<>();
         Connection conn = null;
 
         try {
-            conn = MySQLConexion.getConexion();
-            String sql = "select f.id_factura, f.fecha, u.nombre_us, c.nombre, m.nom_pago, c.precio\n" +
-            "from factura f, usuario u, curso c, metodo_pago m\n" +
-            "where f.id_usuario = u.id_usuario and f.id_curso = c.id_curso and f.id_met_pago = m.id_met_pago and u.id_usuario = ?;";
-            PreparedStatement st = conn.prepareStatement(sql);
-            st.setInt(1, idUsuario);
-            ResultSet rs = st.executeQuery();
-            //llenar el arraylist con la clase entidad
-            while (rs.next()) {
-                factura a = new factura();
-                a.setId_factura(rs.getInt(1));
-                a.setFecha(rs.getString(2));
-                a.setNombre_usuario(rs.getString(3));
-                a.setNombre_curso(rs.getString(4));
-                a.setNombre_metodo_pago(rs.getString(5));
-                a.setPrecio(rs.getDouble(6));
-                lis.add(a);
+            if (consulta != null) {
+                conn = MySQLConexion.getConexion();
+                String sql = "select f.id_factura, f.fecha, u.nombre_us, c.nombre, f.metodo_pago, c.precio\n"
+                        + "from factura f, usuario u, curso c \n"
+                        + "where f.id_usuario = u.id_usuario and f.id_curso = c.id_curso and u.id_usuario = ? and c.nombre like ?";
+                PreparedStatement st = conn.prepareStatement(sql);
+                st.setInt(1, idUsuario);
+                st.setString(2, "%" + consulta + "%");
+                ResultSet rs = st.executeQuery();
+                //llenar el arraylist con la clase entidad
+                while (rs.next()) {
+                    factura a = new factura();
+                    a.setId_factura(rs.getInt(1));
+                    a.setFecha(rs.getString(2));
+                    a.setNombre_usuario(rs.getString(3));
+                    a.setNombre_curso(rs.getString(4));
+                    a.setNombre_metodo_pago(rs.getString(5));
+                    a.setPrecio(rs.getDouble(6));
+                    lis.add(a);
+                }
+            } else {
+                conn = MySQLConexion.getConexion();
+                String sql = "select f.id_factura, f.fecha, u.nombre_us, c.nombre, f.metodo_pago, c.precio\n"
+                        + "from factura f, usuario u, curso c \n"
+                        + "where f.id_usuario = u.id_usuario and f.id_curso = c.id_curso and u.id_usuario = ?;";
+                PreparedStatement st = conn.prepareStatement(sql);
+                st.setInt(1, idUsuario);
+                ResultSet rs = st.executeQuery();
+                //llenar el arraylist con la clase entidad
+                while (rs.next()) {
+                    factura a = new factura();
+                    a.setId_factura(rs.getInt(1));
+                    a.setFecha(rs.getString(2));
+                    a.setNombre_usuario(rs.getString(3));
+                    a.setNombre_curso(rs.getString(4));
+                    a.setNombre_metodo_pago(rs.getString(5));
+                    a.setPrecio(rs.getDouble(6));
+                    lis.add(a);
+                }
             }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -97,8 +142,8 @@ public class FacturaController {
         }
 
         return lis;
-        }
-    
+    }
+
     public boolean verificacionInscripcion(int idCurso, int idUsuario) {
         Connection conn = null;
         boolean state = false;
@@ -126,12 +171,11 @@ public class FacturaController {
         }
         return state;
     }
-    
+
     //ingresar factura
-    
     public int createFactura(int id_us, int id_cur, String metodo_p) {
         Connection conn = null;
-        int num=0;
+        int num = 0;
         try {
             conn = MySQLConexion.getConexion();
             String sql = "{call comprarCurso(?,?,?)}";
@@ -154,7 +198,7 @@ public class FacturaController {
         }
         return num;
     }
-    
+
     //Eliminar factura
     /*
     public void deleteFactura(int idFactura) {
@@ -179,7 +223,7 @@ public class FacturaController {
             }
         }
     }
-    */
+     */
     //Eliminar factura por idUusario
     public void deleteFacturabyUserId(int idUsuario) {
         Connection conn = null;
