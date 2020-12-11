@@ -6,7 +6,7 @@ $(document).ready(function () {
     listarEspecialidad();
     
     function listarEspecialidad() {
-        let funcion = "listarEspecialidad";
+        funcion = "listarEspecialidad";
         $.post("../GestionMisCursos", {funcion}, (response)=> {
             const especialidades = JSON.parse(response);
             let template = "";
@@ -22,7 +22,7 @@ $(document).ready(function () {
     }
 
     function listarGestionCurso() {
-        let funcion = "lisGestionCurso";
+        funcion = "lisGestionCurso";
         $.post("../GestionMisCursos", {funcion, idProfesor}, (response) => {
             const gestion = JSON.parse(response);
             let template = "";

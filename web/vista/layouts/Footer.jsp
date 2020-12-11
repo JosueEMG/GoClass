@@ -1,18 +1,5 @@
 <footer class="main-footer">
     <!-- Left navbar links -->
-    <ul class="navbar-nav">
-        <li class="nav-item d-none d-sm-inline-block">
-            <h2>Enseña en línea</h2>
-            <p>
-                Crea un curso en vídeo en línea, llega a estudiantes de todo el mundo y gana mucho dinero.
-            </p>
-        </li>
-    </ul>
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-        <button type="button" class="btn btn-dark">Enseña en UnitClass</button>
-    </ul>
-    <hr>
     <div class="float-right d-none d-sm-block">
         <b>Version</b> 0.1.9
     </div>

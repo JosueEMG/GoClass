@@ -4,7 +4,7 @@ $(document).ready(function () {
     var funcion = "";
     var tipo = $("#tipo").val();
     listarCursos();
-    
+    listarCursosRecomendados();
     function listarCursos() {
         funcion = "listarCursos";
         $.post("../GestionTienda",{funcion},(response)=>{
@@ -176,6 +176,53 @@ $(document).ready(function () {
             $("#edicionVideo").html(templateEdicion);
             $("#historia").html(templateHistoria);
             $("#arte").html(templateArte);
+        });
+    }
+    
+    function listarCursosRecomendados() {
+        funcion = "listarCursosRecomanedados";
+        let template = "";
+        $.post("../GestionTienda",{funcion},(response)=>{
+            const cursos = JSON.parse(response);
+            console.log(cursos);
+            cursos.forEach(curso=>{
+                template += `
+                        <div class="col-md-4">
+                        <!-- Widget: user widget style 1 -->
+                        <div class="card card-widget widget-user">
+                          <!-- Add the bg color to the header using any of the bg-* classes -->
+                          <div class="widget-user-header text-white" style="background: url('../img/imagenCardSlide/${curso.banner}') center center;">
+
+                          </div>
+
+                          <div class="card-footer">
+                            <div class="row">
+                                <div class="col-sm-6 border-right">
+                                  <div class="description-block">
+                                    <h5 class="description-header">${curso.nombre}</h5>
+                                    <span>${curso.nombre_especialidad}</span>
+                                  </div>
+                                  <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-sm-6">
+                                  <div class="description-block">
+                                    <h5 class="description-header">${curso.nro_inscripciones}</h5>
+                                    <span>Inscripciones</span>
+                                  </div>
+                                  <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+
+                                <!-- /.col -->
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.widget-user -->
+                        </div>
+                `;
+            });
+            $("#recomendacion").html(template);
         });
     }
     

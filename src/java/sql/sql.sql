@@ -33,6 +33,13 @@ from inscripcion i inner join curso c
 on i.id_curso = c.id_curso where i.id_usuario = 1;
 
 
+use goclass;
+select nombre, nro_inscripciones, banner, e.nombre_especialidad
+from curso c inner join especialidad e
+on c.id_especialidad = e.id_especialidad
+order by nro_inscripciones desc limit 8
+
+
 
 
 

@@ -44,6 +44,12 @@ public class GestionMisCursos extends HttpServlet {
         if (request.getParameter("funcion").equals("listarEspecialidad")) {
             listarEspecialidad(request, response);
         }
+        if (request.getParameter("funcion").equals("listarNombres")) {
+            listarNombres(request, response);
+        }
+        if (request.getParameter("funcion").equals("listarInscripciones")) {
+            listarInscripciones(request, response);
+        }
     }
     
     protected void listarMisCursos(HttpServletRequest request, HttpServletResponse response)
@@ -73,6 +79,24 @@ public class GestionMisCursos extends HttpServlet {
         CursoController cc = new CursoController();
         Gson gson = new Gson();
         out.print(gson.toJson(cc.lisGestionCurso(idprofe)));
+    }
+    
+    protected void listarNombres(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        CursoController cc = new CursoController();
+        Gson gson = new Gson();
+        out.print(gson.toJson(cc.getArrayOfNames(cc.graficarCurso())));
+    }
+    
+    protected void listarInscripciones(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        CursoController cc = new CursoController();
+        Gson gson = new Gson();
+        out.print(gson.toJson(cc.getArrayOfInscriptionsNumbers(cc.graficarCurso())));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

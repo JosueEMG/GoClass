@@ -9,6 +9,7 @@ public class curso {
     private int id_especialidad;
     private String detalle;
     private String nombre_especialidad;
+    private int nro_inscripciones;
 
     public int getId_curso() {
         return id_curso;
@@ -72,6 +73,14 @@ public class curso {
 
     public void setNombre_especialidad(String nombre_especialidad) {
         this.nombre_especialidad = nombre_especialidad;
+    }
+
+    public int getNro_inscripciones() {
+        return nro_inscripciones;
+    }
+
+    public void setNro_inscripciones(int nro_inscripciones) {
+        this.nro_inscripciones = nro_inscripciones;
     }
     
 }

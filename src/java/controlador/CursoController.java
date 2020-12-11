@@ -11,13 +11,33 @@ import util.MySQLConexion;
 
 public class CursoController {
     
+    public String[] getArrayOfNames(List<curso> list) {
+        String v[] = new String[list.size()];
+        int i = 0;
+        for (curso c : list) {
+            v[i] = c.getNombre();
+            i++;
+        }
+        return v;
+    }
+    
+    public int[] getArrayOfInscriptionsNumbers(List<curso> list) {
+        int v[] = new int[list.size()];
+        int i = 0;
+        for (curso c : list) {
+            v[i] = c.getNro_inscripciones();
+            i++;
+        }
+        return v;
+    }
+    
     public List<curso> listarCurso() {
         List<curso> lis = new ArrayList<>();
         Connection conn = null;
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select id_curso, nombre, precio, banner, id_especialidad, detalle_curso from curso";
+            String sql = "select id_curso, nombre, precio, banner, id_especialidad, detalle_curso, nro_inscripciones from curso";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             //llenar el arraylist con la clase entidad
@@ -29,6 +49,43 @@ public class CursoController {
                 c.setBanner(rs.getString(4));
                 c.setId_especialidad(rs.getInt(5));
                 c.setDetalle(rs.getString(6));
+                c.setNro_inscripciones(rs.getInt(7));
+                lis.add(c);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+        return lis;
+    }
+    
+    public List<curso> graficarCurso() {
+        List<curso> lis = new ArrayList<>();
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select nombre, nro_inscripciones, banner, e.nombre_especialidad\n" +
+            "from curso c inner join especialidad e\n" +
+            "on c.id_especialidad = e.id_especialidad\n" +
+            "order by nro_inscripciones desc limit 6";
+            PreparedStatement st = conn.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            //llenar el arraylist con la clase entidad
+            while (rs.next()) {
+                curso c = new curso();
+                c.setNombre(rs.getString(1));
+                c.setNro_inscripciones(rs.getInt(2));
+                c.setBanner(rs.getString(3));
+                c.setNombre_especialidad(rs.getString(4));
                 lis.add(c);
             }
         } catch (Exception ex) {

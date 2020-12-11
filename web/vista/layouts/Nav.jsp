@@ -13,7 +13,6 @@
 <link href="../css/adminlte.min.css" rel="stylesheet" type="text/css"/>
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 <!-- LINK CAROUSEL -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -25,7 +24,6 @@
 <link href="../css/bootstrap-4.min.css" rel="stylesheet" type="text/css"/>
 <!-- STYLEBOX -->
 <link href="../css/cssSlider/styleBox.css" rel="stylesheet" type="text/css"/>
-
 </head>
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
@@ -136,6 +134,19 @@
                                 <i class="nav-icon fas fa-folder-open"></i>
                                 <p>
                                     Facturas
+                                </p>
+                            </a>
+                        </li>
+                         <!-- CORREO -->
+                        <%
+                            }
+                            if (tipo == 1) {
+                        %>
+                        <li id="gestionFacturas" class="nav-item">
+                            <a href="Graficos.jsp" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Graficos
                                 </p>
                             </a>
                         </li>

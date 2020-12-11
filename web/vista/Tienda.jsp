@@ -251,42 +251,10 @@
     </section>
     <!-- TABLA UNITCLASS  -->
     <section class="content-header">
-        <h1>Temas recomendados para ti</h1>
+        <h1>Cursos recomendados para ti</h1>
         <hr>
-
-        <div class="row mb-4 mx-5 mt-4">
-            <div class="col-md-4 mb-4">
-                <div class="shadow-box-example z-depth-1 flex-center">
-                    <p class="white-text"> PHP + MySQL</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="shadow-box-example z-depth-1-half flex-center">
-                    <p class="white-text"> Android Studio </p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="shadow-box-example z-depth-2 flex-center">
-                    <p class="white-text"> Python + Flexblox </p>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-5 mx-5">
-            <div class="col-md-4 mb-4">
-                <div class="shadow-box-example z-depth-3 flex-center">
-                    <p class="white-text"> Django </p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="shadow-box-example z-depth-4 flex-center">
-                    <p class="white-text"> Linux </p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="shadow-box-example z-depth-5 flex-center">
-                    <p class="white-text"> C++ </p>
-                </div>
-            </div>
+        <div id="recomendacion" class="row mb-4 mx-5 mt-4">
+            
         </div>
     </section> 
 </div>
