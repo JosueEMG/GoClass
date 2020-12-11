@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <!-- Left navbar links -->
+    <!-- Left navbar links -->git add 
     <div class="float-right d-none d-sm-block">
         <b>Version</b> 0.1.9
     </div>
