@@ -33,13 +33,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-danger">
+                    <div class="card card-danger collapsed-card">
                         <div class="card-header">
                             <h3 class="card-title">Los 8 cursos mas comprados</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
+                                    <i class="fas fa-plus"></i>
                                 </button>
                             </div>
                         </div>
